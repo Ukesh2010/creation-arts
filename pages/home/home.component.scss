@@ -1,17 +1,18 @@
 @import "./../scss/varabiles";
 
-.home-container{
-  padding: 0 4rem;
-  .banner{
+.home-container {
+  .banner {
     background-image: url('/images/main-bg.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     height: calc(100vh - 8rem);
+    width: calc(100% - 8rem);
+    margin: 0 auto;
     position: relative;
 
     .social-icons,
-    .control-icons{
+    .control-icons {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -22,19 +23,23 @@
       }
     }
 
-    .social-icons{
-      left: -3rem;
+    .social-icons {
+      left: -3.25rem;
     }
 
-    .control-icons{
-      right: -3rem;
+    .control-icons {
+      right: -3.25rem;
 
-      .arrow-up{
-        transform: rotate(90deg);
+      .arrow-up {
+        .svg-icon {
+          transform: rotate(90deg);
+        }
       }
 
-      .arrow-down{
-        transform: rotate(-90deg);
+      .arrow-down {
+        .svg-icon {
+          transform: rotate(-90deg);
+        }
       }
     }
   }
@@ -48,7 +53,7 @@
   .new-arrivals-container {
     margin-bottom: 4rem;
 
-    .heading{
+    .heading {
       text-align: center;
       font-size: 1.75rem;
       font-weight: 500;
@@ -68,21 +73,23 @@
       }
     }
 
-    .product-container{
+    .product-container {
       display: grid;
-      grid-gap: 1rem;
-      grid-template-columns: repeat( 4, minmax(10rem, 1fr));
+      grid-gap: 2rem 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      //grid-template-columns: repeat(4 , 15rem);
+      justify-content: center;
       padding: 0;
 
-      .product-item{
+      .product-item {
         cursor: pointer;
 
-        .product-image{
+        .product-image {
           height: 15rem;
           position: relative;
         }
 
-        .item-detail{
+        .item-detail {
           display: flex;
           justify-content: space-between;
           padding: 0.5rem 0;
