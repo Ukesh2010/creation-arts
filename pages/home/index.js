@@ -15,7 +15,7 @@ const Home = () => (
       <link rel="icon" href="/favicon.ico"/>
     </Head>
     <Nav/>
-    <div className="home-container">
+    <section className="home-container">
       <div className="banner">
         <div className="banner-image">
           <Image src={"/images/bg.jpeg"} alt={"banner image"} layout={"fill"}/>
@@ -39,7 +39,6 @@ const Home = () => (
           <button className="btn primary-btn">Shop Now</button>
         </div>
       </div>
-
       <div className="container">
         <div className="featured-container">
           <div className="heading">Featured Shop</div>
@@ -156,7 +155,7 @@ const Home = () => (
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <Footer/>
   </>
 );

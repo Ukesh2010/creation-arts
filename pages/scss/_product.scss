@@ -1,0 +1,44 @@
+.product-item {
+  cursor: pointer;
+  position: relative;
+
+  .product-image {
+    position: relative;
+    height: 22.5rem;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .product-details{
+    text-align: center;
+    padding: 0.5rem 1rem;
+
+    .product-name{
+      margin-bottom: 0.25rem;
+    }
+
+    .product-price{
+      font-weight: bold;
+      font-family: $heading-font;
+    }
+
+
+    &.horizontal {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      font-size: 0.875rem;
+
+      .product-name{
+        flex: 1 1 auto;
+      }
+
+      .product-price{
+        font-weight: normal;
+        flex: 0 0 4rem;
+      }
+    }
+  }
+}
