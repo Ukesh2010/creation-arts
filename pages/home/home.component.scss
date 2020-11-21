@@ -2,14 +2,18 @@
 
 .home-container {
   .banner {
-    background-image: url('/images/main-bg.jpg');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
     height: calc(100vh - 8rem);
     width: calc(100% - 8rem);
     margin: 0 auto;
     position: relative;
+
+    .banner-image {
+      height: 100%;
+      width: 100%;
+      img{
+        object-fit: cover;
+      }
+    }
 
     .social-icons,
     .control-icons {
@@ -42,6 +46,23 @@
         }
       }
     }
+
+    .banner-details {
+      position: absolute;
+      left: 20%;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 25rem;
+
+      .title{
+        font-size: 3rem;
+      }
+
+      .primary-btn{
+        padding: 1.25rem 2.5rem;
+        margin-top: 2rem;
+      }
+    }
   }
 
   .container {
@@ -59,6 +80,7 @@
       font-weight: 500;
       position: relative;
       margin-bottom: 3rem;
+      font-family: $heading-font;
 
       &:after {
         content: "";
@@ -85,8 +107,12 @@
         cursor: pointer;
 
         .product-image {
-          height: 15rem;
           position: relative;
+          min-height: 30rem;
+
+          img {
+            object-fit: cover;
+          }
         }
 
         .item-detail {

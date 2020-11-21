@@ -13,7 +13,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.25rem;
+  line-height: 1.25;
   margin-bottom: 1rem;
   font-family: $heading-font;
   font-weight: 600;
@@ -44,7 +44,7 @@ h6{
 }
 
 .title {
-  line-height: 1.25rem;
+  line-height: 1.25;
   font-family: $heading-font;
   font-weight: 600;
 }
@@ -69,7 +69,6 @@ h6{
 
 .app-navbar{
   padding: 1rem 0;
-  font-family: $nav-font;
   background: $true-white;
 
   a {
@@ -96,7 +95,7 @@ h6{
       font-weight: 500;
       cursor: pointer;
 
-      font-family: $nav-font;
+      font-family: $heading-font;
 
       display: flex;
       align-items: center;

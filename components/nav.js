@@ -19,7 +19,7 @@ const Nav = () => (
           <Link href={"/home"}>Home</Link>
         </div>
         <div className="nav-item">
-          <Link href={"/product"}>Products</Link>
+          <Link href={"/products"}>Products</Link>
         </div>
         <div className="nav-item">
           <Link href={"/about"}>About</Link>

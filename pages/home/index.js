@@ -9,7 +9,7 @@ import IconTwitter from '../../components/icons/icon-twitter';
 import Footer from '../../components/footer';
 
 const Home = () => (
-  <div>
+  <>
     <Head>
       <title>Home</title>
       <link rel="icon" href="/favicon.ico"/>
@@ -17,15 +17,26 @@ const Home = () => (
     <Nav/>
     <div className="home-container">
       <div className="banner">
+        <div className="banner-image">
+          <Image src={"/images/bg.jpeg"} alt={"banner image"} layout={"fill"}/>
+        </div>
+
         <div className="social-icons">
           <div className="icon-button"><IconFacebook/></div>
           <div className="icon-button"><IconInstagram/></div>
           <div className="icon-button"><IconTwitter/></div>
         </div>
-
         <div className="control-icons">
           <div className="icon-button arrow-up"><IconArrowLeft/></div>
           <div className="icon-button arrow-down"><IconArrowLeft/></div>
+        </div>
+
+        <div className="banner-details">
+          <h3 className="title">Hand Crafted Products</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque consequatur cumque doloribus ducimus
+            fugiat inventore, molestias neque nihil perspiciatis, praesentium quae, quibusdam repellat ut vel?
+            Accusantium fuga in ipsum?</p>
+          <button className="btn primary-btn">Shop Now</button>
         </div>
       </div>
 
@@ -62,7 +73,7 @@ const Home = () => (
             <div className="product-item">
               <div className="product-image">
                 <Image
-                  src="/images/product1.jpg"
+                  src="/images/product2.jpg"
                   alt="Picture of the author"
                   layout="fill"
                 />
@@ -75,7 +86,7 @@ const Home = () => (
             <div className="product-item">
               <div className="product-image">
                 <Image
-                  src="/images/product1.jpg"
+                  src="/images/product2.jpg"
                   alt="Picture of the author"
                   layout="fill"
                 />
@@ -147,7 +158,7 @@ const Home = () => (
       </div>
     </div>
     <Footer/>
-  </div>
+  </>
 );
 
 export default Home;
