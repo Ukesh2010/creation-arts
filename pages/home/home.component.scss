@@ -98,8 +98,7 @@
     .product-container {
       display: grid;
       grid-gap: 2rem 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-      //grid-template-columns: repeat(4 , 15rem);
+      grid-template-columns: repeat(auto-fill, 15rem);
       justify-content: center;
       padding: 0;
 
@@ -108,10 +107,10 @@
 
         .product-image {
           position: relative;
-          min-height: 30rem;
+          height: 26.25rem;
 
           img {
-            object-fit: cover;
+            object-fit: contain;
           }
         }
 
