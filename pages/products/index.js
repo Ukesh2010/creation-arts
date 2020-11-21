@@ -1,19 +1,23 @@
-import React from "react";
+import React, {Fragment} from "react";
 import Head from "next/head";
+import Image from 'next/image'
+import Nav from '../../components/nav';
 
 export default () => {
   return (
-    <>
+    <Fragment>
       <Head>
-        <title>Home</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Products</title>
+        <link rel="icon" href="/favicon.ico"/>
       </Head>
 
-      <div class="product-container">
-        <div class="sidebar">
-          <div class="sidebar-heading">Categories</div>
+      <Nav/>
 
-          <div class="category-list">
+      <div className="product-container container">
+        <div className="sidebar">
+          <div className="sidebar-heading">Categories</div>
+
+          <div className="category-list">
             <ul>
               <li>Category One</li>
               <li>Category Two</li>
@@ -25,89 +29,95 @@ export default () => {
           </div>
         </div>
 
-        <div class="product-list-container">
-          <div class="page-heading">Category Name</div>
-          <div class="product-block">
-            <div class="product-item">
-              <div class="prod-image">
-                <img
-                  src="./../../../assets/img/pexels-karolina-grabowska-4219654.jpg"
-                  alt=""
+        <div className="product-list-container">
+          <div className="page-heading">Category Name</div>
+          <div className="product-block">
+            <div className="product-item">
+              <div className="prod-image">
+                <Image
+                  src="/images/product1.jpg"
+                  alt="Picture of the author"
+                  layout="fill"
                 />
               </div>
-              <div class="prod-desc">
-                <div class="prod-title">Item One</div>
-                <div class="prod-price">$ 15.00</div>
+              <div className="prod-desc">
+                <div className="prod-title">Item One</div>
+                <div className="prod-price">$ 15.00</div>
               </div>
             </div>
 
-            <div class="product-item">
-              <div class="prod-image">
-                <img
-                  src="./../../../assets/img/pexels-karolina-grabowska-4219654.jpg"
-                  alt=""
+            <div className="product-item">
+              <div className="prod-image">
+                <Image
+                  src="/images/product1.jpg"
+                  alt="Picture of the author"
+                  layout="fill"
                 />
               </div>
-              <div class="prod-desc">
-                <div class="prod-title">Item One</div>
-                <div class="prod-price">$ 15.00</div>
+              <div className="prod-desc">
+                <div className="prod-title">Item One</div>
+                <div className="prod-price">$ 15.00</div>
               </div>
             </div>
 
-            <div class="product-item">
-              <div class="prod-image">
-                <img
-                  src="./../../../assets/img/pexels-karolina-grabowska-4219654.jpg"
-                  alt=""
+            <div className="product-item">
+              <div className="prod-image">
+                <Image
+                  src="/images/product1.jpg"
+                  alt="Picture of the author"
+                  layout="fill"
                 />
               </div>
-              <div class="prod-desc">
-                <div class="prod-title">Item One</div>
-                <div class="prod-price">$ 15.00</div>
+              <div className="prod-desc">
+                <div className="prod-title">Item One</div>
+                <div className="prod-price">$ 15.00</div>
               </div>
             </div>
 
-            <div class="product-item">
-              <div class="prod-image">
-                <img
-                  src="./../../../assets/img/pexels-karolina-grabowska-4219654.jpg"
-                  alt=""
+            <div className="product-item">
+              <div className="prod-image">
+                <Image
+                  src="/images/product1.jpg"
+                  alt="Picture of the author"
+                  layout="fill"
                 />
               </div>
-              <div class="prod-desc">
-                <div class="prod-title">Item One</div>
-                <div class="prod-price">$ 15.00</div>
+              <div className="prod-desc">
+                <div className="prod-title">Item One</div>
+                <div className="prod-price">$ 15.00</div>
               </div>
             </div>
 
-            <div class="product-item">
-              <div class="prod-image">
-                <img
-                  src="./../../../assets/img/pexels-karolina-grabowska-4219654.jpg"
-                  alt=""
+            <div className="product-item">
+              <div className="prod-image">
+                <Image
+                  src="/images/product1.jpg"
+                  alt="Picture of the author"
+                  layout="fill"
                 />
               </div>
-              <div class="prod-desc">
-                <div class="prod-title">Item One</div>
-                <div class="prod-price">$ 15.00</div>
+              <div className="prod-desc">
+                <div className="prod-title">Item One</div>
+                <div className="prod-price">$ 15.00</div>
               </div>
             </div>
 
-            <div class="product-item">
-              <div class="prod-image">
-                <img
-                  src="./../../../assets/img/pexels-karolina-grabowska-4219654.jpg"
-                  alt=""
+            <div className="product-item">
+              <div className="prod-image">
+                <Image
+                  src="/images/product1.jpg"
+                  alt="Picture of the author"
+                  layout="fill"
                 />
               </div>
-              <div class="prod-desc">
-                <div class="prod-title">Item One</div>
-                <div class="prod-price">$ 15.00</div>
+              <div className="prod-desc">
+                <div className="prod-title">Item One</div>
+                <div className="prod-price">$ 15.00</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </Fragment>
   );
 };

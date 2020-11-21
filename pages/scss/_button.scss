@@ -1,0 +1,92 @@
+
+// mixins
+@mixin app-button($backgroundColor, $text-color) {
+  background-color: $backgroundColor;
+  color: $text-color;
+  border: 1px solid darken($backgroundColor, 2%);
+
+  &:hover {
+    background-color: darken($backgroundColor, 4%);
+  }
+
+  &:focus,
+  &:active {
+    background-color: darken($backgroundColor, 8%);
+    border-color: darken($backgroundColor, 12%);
+  }
+}
+
+@mixin app-outline-button($borderColor, $hover-text-color: $primary-text) {
+  background-color: transparent;
+  color: $borderColor;
+  border: 1px solid darken($borderColor, 2%);
+
+  &:hover {
+    color: $hover-text-color;
+    background-color: $borderColor;
+  }
+
+  &:focus,
+  &:active {
+    color: $hover-text-color;
+    background-color: darken($borderColor, 4%);
+    border-color: darken($borderColor, 8%);
+  }
+}
+
+.btn{
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+
+  font-size: 0.875rem;
+  font-family: $heading-font;
+  font-weight: 500;
+  line-height: 1.25;
+
+  transition: all 0.3s ease;
+  @include app-button($true-white, $primary-text);
+}
+
+.icon-button {
+  height: 2.5rem;
+  width: 2.5rem;
+  min-width: 2.5rem;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+
+  @include app-button($true-white, $primary-text);
+  border: none;
+}
+
+.primary-btn{
+  @include app-button($primary, $primary-text);
+}
+
+.accent-btn{
+  @include app-button($accent, $true-white);
+}
+
+.primary-outline-btn{
+  @include app-outline-button($primary, $primary-text);
+}
+
+.accent-outline-btn{
+  @include app-outline-button($accent, $white);
+}
+
+.default-btn {
+  @include app-button($light-gray, $primary-text);
+}

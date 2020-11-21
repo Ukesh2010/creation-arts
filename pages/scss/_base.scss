@@ -1,0 +1,145 @@
+// base styles
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  color: $primary-text;
+  font-family: $body-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25rem;
+  margin-bottom: 1rem;
+  font-family: $heading-font;
+  font-weight: 600;
+}
+
+h1{
+  font-size: 2.5rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+h3{
+  font-size: 1.75rem;
+}
+
+h4{
+  font-size: 1.5rem;
+}
+
+h5{
+  font-size: 1.25rem;
+}
+
+h6{
+  font-size: 1rem;
+}
+
+.title {
+  line-height: 1.25rem;
+  font-family: $heading-font;
+  font-weight: 600;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+// card
+.card{
+  display: block;
+  padding: 1rem;
+  box-shadow: $default-shadow;
+  position: relative;
+  border-radius: 0.25rem;
+}
+
+// app navbar
+
+.app-navbar{
+  padding: 1rem 0;
+  font-family: $nav-font;
+  background: $true-white;
+
+  a {
+    text-decoration: none;
+    color: $primary-text;
+  }
+
+  @supports (position:sticky) {
+    position: sticky;
+    top: 0;
+    z-index: 101;
+  }
+
+
+  > .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .nav-item {
+      padding: 0.75rem 1.25rem;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+
+      font-family: $nav-font;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      &:hover {
+        background-color: $white;
+      }
+    }
+
+    .nav-left{
+      .logo{
+        cursor: pointer;
+        height: 3rem;
+        width: auto;
+        max-width: 10rem;
+        position: relative;
+
+        > div{
+          height: 100%;
+        }
+      }
+    }
+
+    .nav-container{
+      display: flex;
+    }
+
+    .nav-right{
+      display: flex;
+    }
+  }
+}
+
+// app footer
+.app-footer{
+  background: $primary;
+  padding: 1rem;
+
+  .copyright-text{
+    font-size: 0.875rem;
+    color: $true-white;
+    text-align: center;
+  }
+}

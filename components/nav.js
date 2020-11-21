@@ -1,55 +1,45 @@
 import React from 'react'
 import Link from 'next/link'
-
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+import Image from 'next/image'
+import IconShoppingCart from './icons/icon-shopping-cart';
 
 const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
+  <nav className="app-navbar">
+    <div className="container">
+      <div className="nav-left">
+        <div className="logo">
+          <Link href={"/home"}>
+            <Image src={'/images/logo.png'} height={"3rem"} width={"auto"}/>
+          </Link>
+        </div>
+      </div>
 
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
+      <div className="nav-container">
+        <div className="nav-item">
+          <Link href={"/home"}>Home</Link>
+        </div>
+        <div className="nav-item">
+          <Link href={"/product"}>Products</Link>
+        </div>
+        <div className="nav-item">
+          <Link href={"/about"}>About</Link>
+        </div>
+        <div className="nav-item">
+          <Link href={"/contact"}>Contact</Link>
+        </div>
+      </div>
+
+      <div className="nav-right">
+        <div className="nav-item">
+          <Link href={"/login"}>Login</Link>
+        </div>
+        <div className="nav-item">
+          <Link href={"/cart"}>
+            <IconShoppingCart/>
+          </Link>
+        </div>
+      </div>
+    </div>
   </nav>
 )
 

@@ -1,101 +1,91 @@
+@import "./../scss/varabiles";
+
 .home-container{
   padding: 0 4rem;
   .banner{
-    background-image: url('/./../assets/img/pexels.jpg');
+    background-image: url('/images/main-bg.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     height: calc(100vh - 8rem);
     position: relative;
 
+    .social-icons,
+    .control-icons{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 1rem 0;
+
+      .icon-button {
+        margin: 1rem 0;
+      }
+    }
+
     .social-icons{
-      position: absolute;
       left: -3rem;
-      bottom: 15rem;
-
-      .icon-box{
-        width: 30px;
-        height: 30px;
-        border: 1px solid #C5C3C6;
-        margin: 2px 0;
-        cursor: pointer;
-      }
     }
 
-    .right-icons{
-      position: absolute;
+    .control-icons{
       right: -3rem;
-      bottom: 15rem;
 
-      .icon-box{
-        width: 30px;
-        height: 30px;
-        border: 1px solid #C5C3C6;
-        margin: 2px 0;
-        cursor: pointer;
+      .arrow-up{
+        transform: rotate(90deg);
+      }
+
+      .arrow-down{
+        transform: rotate(-90deg);
       }
     }
   }
 
-  .featured{
-    padding: 2rem;
+  .container {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+
+  .featured-container,
+  .new-arrivals-container {
+    margin-bottom: 4rem;
 
     .heading{
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.75rem;
+      font-weight: 500;
+      position: relative;
+      margin-bottom: 3rem;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 3rem;
+        height: 0.25rem;
+        position: absolute;
+        left: 50%;
+        bottom: -0.5rem;
+        transform: translateX(-50%);
+        background-color: $primary;
+      }
     }
 
-    .image-container{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 2rem 0;
+    .product-container{
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat( 4, minmax(10rem, 1fr));
+      padding: 0;
 
       .product-item{
-        margin: 0.5rem;
         cursor: pointer;
 
-        img{
-          width: 175px;
-          height: 200px;
-          object-fit: cover;
+        .product-image{
+          height: 15rem;
+          position: relative;
         }
 
         .item-detail{
           display: flex;
           justify-content: space-between;
-        }
-      }
-    }
-  }
-
-  .new-arrivals{
-    padding: 2rem;
-
-    .heading{
-      text-align: center;
-      font-size: 1.5rem;
-    }
-
-    .image-container{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 2rem 0;
-
-      .product-item{
-        margin: 0.5rem;
-        cursor: pointer;
-
-        img{
-          width: 175px;
-          height: 200px;
-          object-fit: cover;
-        }
-
-        .item-detail{
-          display: flex;
-          justify-content: space-between;
+          padding: 0.5rem 0;
         }
       }
     }
