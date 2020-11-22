@@ -16,10 +16,10 @@ const Nav = () => (
 
       <div className="nav-container">
         <div className="nav-item">
-          <Link href={"/home"}>Home</Link>
+          <Link href={"/"}>Home</Link>
         </div>
         <div className="nav-item">
-          <Link href={"/product"}>Products</Link>
+          <Link href={"/products"}>Products</Link>
         </div>
         <div className="nav-item">
           <Link href={"/about"}>About</Link>
