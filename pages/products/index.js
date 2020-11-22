@@ -1,17 +1,17 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 import Head from "next/head";
-import Image from 'next/image'
-import Nav from '../../components/nav';
+import Image from "next/image";
+import Nav from "../../components/nav";
 
-export default () => {
+const Products = () => {
   return (
     <Fragment>
       <Head>
         <title>Products</title>
-        <link rel="icon" href="/favicon.ico"/>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Nav/>
+      <Nav />
 
       <div className="product-container container">
         <div className="sidebar">
@@ -121,3 +121,5 @@ export default () => {
     </Fragment>
   );
 };
+
+export default Products;

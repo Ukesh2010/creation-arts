@@ -1,12 +1,12 @@
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Nav from '../../components/nav';
-import IconArrowLeft from '../../components/icons/icon-arrow-left';
-import IconFacebook from '../../components/icons/icon-facebook';
-import IconInstagram from '../../components/icons/icon-instagram';
-import IconTwitter from '../../components/icons/icon-twitter';
-import Footer from '../../components/footer';
+import Nav from '../components/nav';
+import IconArrowLeft from '../components/icons/icon-arrow-left';
+import IconFacebook from '../components/icons/icon-facebook';
+import IconInstagram from '../components/icons/icon-instagram';
+import IconTwitter from '../components/icons/icon-twitter';
+import Footer from '../components/footer';
 
 const Home = () => (
   <div>
