@@ -47,10 +47,16 @@
   font-size: 0.875rem;
   font-family: $heading-font;
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.6;
 
   transition: all 0.3s ease;
   @include app-button($true-white, $primary-text);
+
+
+  svg {
+    fill: currentColor;
+    margin-right: 0.5rem;
+  }
 }
 
 .icon-button {
@@ -72,7 +78,7 @@
 }
 
 .primary-btn{
-  @include app-button($primary, $primary-text);
+  @include app-button($primary, $white);
 }
 
 .accent-btn{
@@ -80,7 +86,7 @@
 }
 
 .primary-outline-btn{
-  @include app-outline-button($primary, $primary-text);
+  @include app-outline-button($primary, $white);
 }
 
 .accent-outline-btn{

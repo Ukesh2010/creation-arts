@@ -36,7 +36,7 @@ const Home = () => (
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque consequatur cumque doloribus ducimus
             fugiat inventore, molestias neque nihil perspiciatis, praesentium quae, quibusdam repellat ut vel?
             Accusantium fuga in ipsum?</p>
-          <button className="btn primary-btn">Shop Now</button>
+          <button className="btn accent-btn">Shop Now</button>
         </div>
       </div>
       <div className="container">
@@ -52,8 +52,8 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
             <div className="product-item">
@@ -65,8 +65,8 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
             <div className="product-item">
@@ -78,8 +78,8 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
             <div className="product-item">
@@ -91,8 +91,8 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
           </div>
@@ -109,8 +109,8 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
             <div className="product-item">
@@ -122,8 +122,8 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
             <div className="product-item">
@@ -135,8 +135,8 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
             <div className="product-item">
@@ -148,8 +148,8 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
           </div>

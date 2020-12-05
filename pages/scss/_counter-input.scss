@@ -1,0 +1,64 @@
+.counter-input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 12rem;
+
+  .add-btn,
+  .remove-btn {
+    position: absolute;
+    height: calc(100% - 2px);
+    top: 1px;
+    padding: 0;
+    border-color: transparent;
+    outline: none;
+    display: flex;
+    align-items: center;
+    background: $white;
+    width: 3rem;
+
+    &:hover:enabled {
+      background:$light-gray;
+    }
+
+    .svg-icon {
+      height: 1.25rem;
+      width: 1.25rem;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .add-btn {
+    right: 1px;
+    border-left: 1px solid $light-gray;
+  }
+
+  .remove-btn {
+    left: 1px;
+    border-right: 1px solid $light-gray;
+  }
+
+  .form-control {
+    font-family: $heading-font;
+    text-align: center;
+    padding: 0.5rem 3.25rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}

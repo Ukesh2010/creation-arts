@@ -1,20 +1,26 @@
 // Colors
-$primary: #FFA987;
-$primary-light: lighten(#FFA987, 40%);
-$accent: #1E1E24;
+$primary: #64396f;
+$primary-light: lighten(#64396f, 40%);
+$accent: #f08080;
+$accent-light: lighten( #f08080, 40%);
 
-$primary-text: #444140;
-$secondary-text: #444140;
-$muted-text: #ADB5BD;
-$light-gray: #C5C3C6;
+$primary-text: #212529;
+$secondary-text: #495057;
+$muted-text: #adb5bd;
+$light-gray: #ced4da;
 
 $true-white: #FFFFFF;
-$white: #F2F3F7;
+$white: #f8f9fa;
 
 $danger: #FF5E5B;
 $warning: #EF8354;
 $info: #275DAD;
 $success: #0F745F;
+
+$nav-background: $primary-text;
+$nav-foreground: $white;
+
+$fb-color: #3b5998;
 
 
 // Font
@@ -27,3 +33,6 @@ $default-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1
 $dropdown-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
 $modal-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
 
+// purple: #64396f
+// orange: #f08080
+// light orange red: #f9c4c4

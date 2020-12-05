@@ -8,7 +8,7 @@ html, body {
   line-height: 1.5;
   margin: 0;
   padding: 0;
-  color: $primary-text;
+  color: $secondary-text;
   font-family: $body-font;
 }
 
@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
   font-family: $heading-font;
   font-weight: 600;
+  color: $primary-text;
 }
 
 h1{
@@ -43,10 +44,20 @@ h6{
   font-size: 1rem;
 }
 
+a {
+  text-decoration: none;
+  color: $accent;
+
+  &:hover {
+    color: darken($accent, 12%);
+  }
+}
+
 .title {
   line-height: 1.25;
   font-family: $heading-font;
   font-weight: 600;
+  color: $primary-text;
 }
 
 .container {
@@ -57,16 +68,45 @@ h6{
 }
 
 
+.form-group {
+  margin-bottom: 1rem;
+
+
+  label {
+    display: block;
+    color: $primary-text;
+    margin-bottom: 0.5rem;
+  }
+
+  &.horizontal {
+    display: flex;
+    align-items: center;
+
+    .form-control {
+      margin-right: 0.5rem;
+      width: auto;
+    }
+
+    label {
+      margin: 0;
+    }
+  }
+}
+
 .form-control {
   border-radius: 0;
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
+  border-width: 1px;
+  border-style: solid;
   border-color: $light-gray;
   transition: all .3s ease;
   outline: none;
   box-shadow: none;
+  display: inline-block;
+  width: 100%;
 
-  &:hover, &:active{
+  &:focus, &:active{
     border-color: $primary-text;
   }
 }
@@ -86,80 +126,6 @@ select.form-control{
   border-radius: 0.25rem;
 }
 
-// app navbar
-
-.app-navbar{
-  padding: 1rem 0;
-  background: $true-white;
-
-  a {
-    text-decoration: none;
-    color: $primary-text;
-  }
-
-  @supports (position:sticky) {
-    position: sticky;
-    top: 0;
-    z-index: 101;
-  }
 
 
-  > .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 
-    .nav-item {
-      padding: 0.75rem 1.25rem;
-      text-transform: uppercase;
-      font-size: 0.875rem;
-      font-weight: 500;
-      cursor: pointer;
-
-      font-family: $heading-font;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-
-      &:hover {
-        background-color: $white;
-      }
-    }
-
-    .nav-left{
-      .logo{
-        cursor: pointer;
-        height: 3rem;
-        width: auto;
-        max-width: 10rem;
-        position: relative;
-
-        > div{
-          height: 100%;
-        }
-      }
-    }
-
-    .nav-container{
-      display: flex;
-    }
-
-    .nav-right{
-      display: flex;
-    }
-  }
-}
-
-// app footer
-.app-footer{
-  background: $primary;
-  padding: 1rem;
-
-  .copyright-text{
-    font-size: 0.875rem;
-    color: $true-white;
-    text-align: center;
-  }
-}

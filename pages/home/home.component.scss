@@ -1,4 +1,4 @@
-@import "./../scss/varabiles";
+@import "../scss/variables";
 
 .home-container {
   .banner {
@@ -58,7 +58,7 @@
         font-size: 3rem;
       }
 
-      .primary-btn{
+      .btn{
         padding: 1.25rem 2.5rem;
         margin-top: 2rem;
       }
@@ -81,6 +81,7 @@
       position: relative;
       margin-bottom: 3rem;
       font-family: $heading-font;
+      color: $primary-text;
 
       &:after {
         content: "";
@@ -91,7 +92,7 @@
         left: 50%;
         bottom: -0.5rem;
         transform: translateX(-50%);
-        background-color: $primary;
+        background-color: $primary-text;
       }
     }
 
@@ -118,6 +119,15 @@
           display: flex;
           justify-content: space-between;
           padding: 0.5rem 0;
+
+          .name {
+            flex: 1 1 auto;
+            max-width: 80%;
+          }
+          .price {
+            font-weight: 700;
+            color: $primary-text;
+          }
         }
       }
     }

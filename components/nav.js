@@ -9,7 +9,8 @@ const Nav = () => (
       <div className="nav-left">
         <div className="logo">
           <Link href={"/home"}>
-            <Image src={'/images/logo.png'} height={"3rem"} width={"auto"}/>
+            {/*<Image src={'/images/logo.png'} height={"3rem"} width={"auto"}/>*/}
+            <h4>Creation Arts</h4>
           </Link>
         </div>
       </div>
