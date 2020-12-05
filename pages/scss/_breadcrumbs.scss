@@ -9,6 +9,7 @@
   .bread-crumb-item {
     text-decoration: none;
     font-family: $heading-font;
+    color: $secondary-text;
 
     &.active {
       color: $primary-text;
