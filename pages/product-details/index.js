@@ -5,6 +5,7 @@ import Footer from '../../components/footer';
 import IconPlus from '../../components/icons/icon-plus';
 import IconMinus from '../../components/icons/icon-minus';
 import Image from 'next/image';
+import CounterInput from '../../components/counterInput';
 
 export default () => {
   return (
@@ -77,11 +78,7 @@ export default () => {
                 <h3>$99.99</h3>
               </div>
               <div className="action-container">
-               <div className="counter-input-container">
-                 <input type="number" className="form-control input" value='2'/>
-                 <button className="btn add-btn"><IconPlus/></button>
-                 <button className="btn remove-btn"><IconMinus/></button>
-               </div>
+               <CounterInput/>
                 <button className="btn primary-btn">Add to Cart</button>
               </div>
               <div className="product-description">

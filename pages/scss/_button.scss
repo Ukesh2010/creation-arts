@@ -52,10 +52,9 @@
   transition: all 0.3s ease;
   @include app-button($true-white, $primary-text);
 
-
   svg {
     fill: currentColor;
-    margin-right: 0.5rem;
+    min-width: 1.125rem;
   }
 }
 

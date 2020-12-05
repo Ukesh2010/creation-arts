@@ -22,8 +22,9 @@
     }
 
     .svg-icon {
-      height: 1.25rem;
-      width: 1.25rem;
+      height: 1.125rem;
+      width: 1.125rem;
+      margin: 0;
     }
 
     &:disabled {
@@ -48,6 +49,22 @@
     padding: 0.5rem 3.25rem;
     width: 100%;
     height: 100%;
+  }
+
+
+
+  &.input-sm {
+    max-width: 7rem;
+
+    .add-btn,
+    .remove-btn {
+      width: 2rem;
+    }
+
+    .form-control{
+      padding-left: 2.25rem;
+      padding-right: 2.25rem;
+    }
   }
 
   /* Chrome, Safari, Edge, Opera */

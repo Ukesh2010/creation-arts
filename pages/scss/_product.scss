@@ -11,19 +11,24 @@
     }
   }
 
-  .product-details{
+  .product-details {
     text-align: center;
     padding: 0.5rem 1rem;
 
-    .product-name{
+    .product-name {
       margin-bottom: 0.25rem;
     }
 
-    .product-price{
+    .product-price {
       font-weight: bold;
       font-family: $heading-font;
     }
 
+    .primary-outline-btn {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+    }
 
     &.horizontal {
       display: flex;
@@ -31,11 +36,11 @@
       padding: 0.5rem 0;
       font-size: 0.875rem;
 
-      .product-name{
+      .product-name {
         flex: 1 1 auto;
       }
 
-      .product-price{
+      .product-price {
         font-weight: normal;
         flex: 0 0 4rem;
       }

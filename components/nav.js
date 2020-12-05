@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import IconShoppingCart from './icons/icon-shopping-cart';
 
 const Nav = () => (
@@ -21,9 +20,6 @@ const Nav = () => (
         </div>
         <div className="nav-item">
           <Link href={"/products"}>Products</Link>
-        </div>
-        <div className="nav-item">
-          <Link href={"/about"}>About</Link>
         </div>
         <div className="nav-item">
           <Link href={"/contact"}>Contact</Link>

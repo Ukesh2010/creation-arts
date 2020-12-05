@@ -1,26 +1,14 @@
 @import "../scss/variables";
 
-.app-page-container{
+.app-page-container {
   margin: 4rem auto;
 
-  .page-heading{
-    display: flex;
-    justify-content: space-between;
+  .product-list-heading {
+    display: grid;
     align-items: center;
+    grid-template-columns: 1fr 12rem;
+    grid-gap: 2rem;
     margin-bottom: 2.5rem;
-
-    .title{
-      font-size: 1.5rem;
-      font-weight: 600;
-      text-transform: capitalize;
-      border: 0;
-    }
-
-    .actions-container {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
   }
 
   .product-grid-container {
@@ -28,35 +16,55 @@
     grid-template-columns: 15rem 1fr;
     grid-gap: 2rem;
 
-    .product-filter-container{
+    .product-filter-container {
       max-width: 15rem;
 
-      .filter-heading{
-        padding: 0 1rem 1rem 1rem;
-        text-transform: capitalize;
-        border-bottom: 1px solid $light-gray;
-        font-family: $heading-font;
-        font-size: 1.125rem;
-        color: $primary-text;
-      }
+      .accordion-block {
+        padding-bottom: 1.5rem;
 
-      .category-list{
-        ul{
-          li{
-            padding: 0.75rem 1rem;
-            cursor: pointer;
+        .accordion-heading {
+          padding: 0.75rem 0.25rem 0.75rem 1rem;
+          text-transform: capitalize;
+          border-top: 1px solid $light-gray;
+          border-bottom: 1px solid $light-gray;
+          font-family: $heading-font;
+          font-size: 1.125rem;
+          color: $primary-text;
+          font-weight: 600;
+          cursor: pointer;
 
-            &:hover {
-              background-color: $white;
-              color: $primary-text;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          &:hover {
+            background-color: $white;
+          }
+        }
+
+        .list-item {
+          padding: 0.75rem 1rem;
+
+          .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+
+            .form-control {
+              margin-right: 0.5rem;
+              width: auto;
             }
+          }
+
+          &:hover {
+            background-color: $white;
+            color: $primary-text;
           }
         }
       }
     }
 
-    .product-list-container{
-      .product-block{
+    .product-list-container {
+      .product-block {
         display: grid;
         grid-auto-flow: row;
         grid-gap: 2rem 1rem;

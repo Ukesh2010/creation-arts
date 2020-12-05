@@ -24,28 +24,36 @@ export default () => {
 
           <div className="right-container">
             <div className="info-block">
-              <div>Don't have an account? <Link href={'/register'}>Register Now</Link></div>
+              <div>Already have an account? <Link href={'/login'}>Login</Link></div>
             </div>
 
-            {/*Login Form*/}
-            <form>
+            {/*Register Form*/}
+            <form action="submit">
               <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="text" className="form-control" id={'email'}/>
+                <label htmlFor="username">Full Name</label>
+                <input type="text" className="form-control" id={'userName'}/>
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Password</label>
+                <label htmlFor="email">Email</label>
+                <input type="email" className="form-control" id={'email'}/>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
                 <input type="password" className="form-control" id={'password'}/>
               </div>
 
-              <div className="form-group horizontal">
-                <input type="checkbox" className="form-control" id={'forgotPassword'}/>
-                <label htmlFor="forgotPassword">Forgot Password?</label>
+              <div className="form-group">
+                <label htmlFor="rePassword">Password</label>
+                <input type="password" className="form-control" id={'rePassword'}/>
               </div>
 
-              <button className="btn primary-btn">login</button>
-
+              <div className="form-group horizontal">
+                <input type="checkbox" className="form-control" id={'terms'}/>
+                <label htmlFor="terms">Password</label>
+              </div>
+              <button className="btn primary-btn">Register</button>
             </form>
 
             <div className="or-block">

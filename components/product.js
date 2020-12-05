@@ -13,6 +13,7 @@ const Product = () => (
     <div className="product-details">
       <div className="product-name">Item One</div>
       <div className="product-price">$ 15.00</div>
+      <button className="btn primary-outline-btn">Add to Cart</button>
     </div>
   </div>
 );
