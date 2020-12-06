@@ -6,23 +6,23 @@ import {faTrashAlt} from '@fortawesome/free-solid-svg-icons/faTrashAlt';
 
 const CartItem = () => (
   <div className="cart-item">
+    <div className="product-image">
+      <Image
+        src="/images/product1.jpg"
+        alt="Picture of the author"
+        layout="fill"
+      />
+    </div>
     <div className="product-name">
-      <div className="product-image">
-        <Image
-          src="/images/product1.jpg"
-          alt="Picture of the author"
-          layout="fill"
-        />
-      </div>
       <span>Item One</span>
     </div>
     <div className="product-price">$ 15.00</div>
-    <div className="product-qtu">
+    <div className="product-qty">
       <CounterInput className={'input-sm'}/>
     </div>
     <div className="remove-option">
       <button className="btn icon-button">
-        <FontAwesomeIcon icon={faTrashAlt} size={"2x"} />
+        <FontAwesomeIcon icon={faTrashAlt} size={"2x"}/>
       </button>
     </div>
   </div>
