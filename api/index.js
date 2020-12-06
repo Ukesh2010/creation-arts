@@ -53,3 +53,9 @@ export const getProducts = (token) => async (params) => {
     .get("/products", { params })
     .then((response) => response.data);
 };
+
+export const getProductDetail = (token) => async (id) => {
+  return await getHttpClient(token)
+    .get(`/products/${id}`)
+    .then((response) => response.data);
+};
