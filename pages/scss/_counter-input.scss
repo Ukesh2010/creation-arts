@@ -1,0 +1,81 @@
+.counter-input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 12rem;
+
+  .add-btn,
+  .remove-btn {
+    position: absolute;
+    height: calc(100% - 2px);
+    top: 1px;
+    padding: 0;
+    border-color: transparent;
+    outline: none;
+    display: flex;
+    align-items: center;
+    background: $white;
+    width: 3rem;
+
+    &:hover:enabled {
+      background:$light-gray;
+    }
+
+    .svg-icon {
+      height: 1.125rem;
+      width: 1.125rem;
+      margin: 0;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .add-btn {
+    right: 1px;
+    border-left: 1px solid $light-gray;
+  }
+
+  .remove-btn {
+    left: 1px;
+    border-right: 1px solid $light-gray;
+  }
+
+  .form-control {
+    font-family: $heading-font;
+    text-align: center;
+    padding: 0.5rem 3.25rem;
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  &.input-sm {
+    max-width: 7rem;
+
+    .add-btn,
+    .remove-btn {
+      width: 2rem;
+    }
+
+    .form-control{
+      padding-left: 2.25rem;
+      padding-right: 2.25rem;
+    }
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}

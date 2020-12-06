@@ -1,0 +1,90 @@
+// app navbar
+
+.app-navbar {
+  padding: 0.5rem 0;
+  background-color: $nav-background;
+
+  @supports (position:sticky) {
+    position: sticky;
+    top: 0;
+    z-index: 101;
+  }
+
+
+  > .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .nav-item {
+      padding: 0.75rem 1.25rem;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+
+      font-family: $heading-font;
+      color: $nav-foreground;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      svg {
+        fill: currentColor;
+      }
+
+      &:hover {
+        background-color: lighten($nav-background, 8%);
+      }
+    }
+
+    .nav-left {
+      .logo {
+        cursor: pointer;
+        height: 3rem;
+        width: auto;
+        max-width: 10rem;
+        position: relative;
+
+        h4 {
+          display: flex;
+          margin: 0;
+          height: 100%;
+          align-items: center;
+          color: $nav-foreground;
+        }
+
+        > div {
+          height: 100%;
+        }
+      }
+    }
+
+    .nav-container {
+      display: flex;
+    }
+
+    .nav-right {
+      display: flex;
+    }
+  }
+}
+
+// app footer
+.app-footer {
+  background: $white;
+  padding: 1rem;
+
+
+  .copyright-text {
+    font-size: 1rem;
+    color: $primary-text;
+    text-align: center;
+  }
+}

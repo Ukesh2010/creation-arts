@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import IconShoppingCart from './icons/icon-shopping-cart';
+import React from "react";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Nav = () => (
   <nav className="app-navbar">
@@ -9,7 +9,8 @@ const Nav = () => (
       <div className="nav-left">
         <div className="logo">
           <Link href={"/home"}>
-            <Image src={'/images/logo.png'} height={"3rem"} width={"auto"}/>
+            {/*<Image src={'/images/logo.png'} height={"3rem"} width={"auto"}/>*/}
+            <h4>Creation Arts</h4>
           </Link>
         </div>
       </div>
@@ -22,9 +23,6 @@ const Nav = () => (
           <Link href={"/products"}>Products</Link>
         </div>
         <div className="nav-item">
-          <Link href={"/about"}>About</Link>
-        </div>
-        <div className="nav-item">
           <Link href={"/contact"}>Contact</Link>
         </div>
       </div>
@@ -35,12 +33,12 @@ const Nav = () => (
         </div>
         <div className="nav-item">
           <Link href={"/cart"}>
-            <IconShoppingCart/>
+            <FontAwesomeIcon icon={faShoppingCart} size={"2x"} />
           </Link>
         </div>
       </div>
     </div>
   </nav>
-)
+);
 
-export default Nav
+export default Nav;
