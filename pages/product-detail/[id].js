@@ -4,8 +4,12 @@ import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import Image from "next/image";
 import CounterInput from "../../components/counterInput";
+import { useRouter } from "next/router";
 
 const ProductDetail = () => {
+  const router = useRouter();
+  const { id } = router.query;
+
   return (
     <Fragment>
       <Head>
