@@ -1,39 +1,31 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 import Head from "next/head";
-import Nav from '../../components/nav';
-import Footer from '../../components/footer';
-import IconPlus from '../../components/icons/icon-plus';
-import IconMinus from '../../components/icons/icon-minus';
-import Image from 'next/image';
-import CounterInput from '../../components/counterInput';
+import Nav from "../../components/nav";
+import Footer from "../../components/footer";
+import Image from "next/image";
+import CounterInput from "../../components/counterInput";
 
-export default () => {
+const ProductDetail = () => {
   return (
     <Fragment>
       <Head>
         <title>Products</title>
-        <link rel="icon" href="/favicon.ico"/>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav/>
+      <Nav />
       <section className="container">
         <div className="app-page-container">
           <div className="bread-crumb-container">
             <a className="bread-crumb-item">
-              <span className="bread-crumb-link">
-                Category
-              </span>
+              <span className="bread-crumb-link">Category</span>
               <span className="bread-crumb-separator">/</span>
             </a>
             <a className="bread-crumb-item">
-              <span className="bread-crumb-link">
-                Product
-              </span>
+              <span className="bread-crumb-link">Product</span>
               <span className="bread-crumb-separator">/</span>
             </a>
             <a className="bread-crumb-item active">
-              <span className="bread-crumb-link">
-                Test Product
-              </span>
+              <span className="bread-crumb-link">Test Product</span>
               <span className="bread-crumb-separator">/</span>
             </a>
           </div>
@@ -72,25 +64,40 @@ export default () => {
               {/*</div>*/}
             </div>
             <div className="product-details">
-              <h4 className="product-title">Sterling Silver Adjustable Tree of Life White Lab Opal & Clear CZ Box Chain Bracelet</h4>
+              <h4 className="product-title">
+                Sterling Silver Adjustable Tree of Life White Lab Opal & Clear
+                CZ Box Chain Bracelet
+              </h4>
               <div className="product-price">
                 <span className="label">Price</span>
                 <h3>$99.99</h3>
               </div>
               <div className="action-container">
-               <CounterInput/>
+                <CounterInput />
                 <button className="btn primary-btn">Add to Cart</button>
               </div>
               <div className="product-description">
                 <span className="label">Description</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eligendi ipsa iusto. Aspernatur optio, velit? Amet dolorem eius eligendi facere nam officia perspiciatis provident, quaerat recusandae! Aliquam eos hic maxime.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eligendi ipsa iusto. Aspernatur optio, velit? Amet dolorem eius eligendi facere nam officia perspiciatis provident, quaerat recusandae! Aliquam eos hic maxime.</p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
+                  eligendi ipsa iusto. Aspernatur optio, velit? Amet dolorem
+                  eius eligendi facere nam officia perspiciatis provident,
+                  quaerat recusandae! Aliquam eos hic maxime.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
+                  eligendi ipsa iusto. Aspernatur optio, velit? Amet dolorem
+                  eius eligendi facere nam officia perspiciatis provident,
+                  quaerat recusandae! Aliquam eos hic maxime.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </Fragment>
   );
 };
+
+export default ProductDetail;
