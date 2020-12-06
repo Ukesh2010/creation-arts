@@ -5,10 +5,16 @@ import Footer from "../../components/footer";
 import Image from "next/image";
 import CounterInput from "../../components/counterInput";
 import { useRouter } from "next/router";
+import cookies from "next-cookies";
+import { getProductDetail, getProducts } from "../../api";
+import { PRODUCT_IMAGE_FILLER } from "../../utils/consts";
 
-const ProductDetail = () => {
+const ProductDetail = ({ product }) => {
   const router = useRouter();
   const { id } = router.query;
+  const { name, price, category, images: [image] = [] } = product;
+
+  console.log("product", product);
 
   return (
     <Fragment>
@@ -38,8 +44,8 @@ const ProductDetail = () => {
             <div className="product-images-container">
               <div className="main-image">
                 <Image
-                  src="/images/product2.jpg"
-                  alt="Picture of the author"
+                  src={image ? image.url : PRODUCT_IMAGE_FILLER}
+                  alt={image ? image.originalname : id}
                   layout="fill"
                 />
               </div>
@@ -68,13 +74,10 @@ const ProductDetail = () => {
               {/*</div>*/}
             </div>
             <div className="product-details">
-              <h4 className="product-title">
-                Sterling Silver Adjustable Tree of Life White Lab Opal & Clear
-                CZ Box Chain Bracelet
-              </h4>
+              <h4 className="product-title">{name}</h4>
               <div className="product-price">
                 <span className="label">Price</span>
-                <h3>$99.99</h3>
+                <h3>${price}</h3>
               </div>
               <div className="action-container">
                 <CounterInput />
@@ -105,3 +108,21 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
+export const getStaticPaths = async (context) => {
+  const token = cookies(context).token;
+  const products = await getProducts(token)();
+
+  const paths = products.map((item) => ({
+    params: { id: item._id },
+  }));
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps = async (context) => {
+  const token = cookies(context).token;
+
+  const product = await getProductDetail(token)(context.params.id);
+  return { props: { product } };
+};

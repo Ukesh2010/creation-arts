@@ -1,9 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import { PRODUCT_IMAGE_FILLER } from "../utils/consts";
+import Link from "next/link";
 
 const Product = ({
   data: {
+    _id,
     name,
     price,
     images: [image],
@@ -11,11 +13,13 @@ const Product = ({
 }) => (
   <div className="product-item">
     <div className="product-image">
-      <Image
-        src={image ? image.url : PRODUCT_IMAGE_FILLER}
-        alt="Picture of the author"
-        layout="fill"
-      />
+      <Link href={`/product-detail/${_id}`}>
+        <Image
+          src={image ? image.url : PRODUCT_IMAGE_FILLER}
+          alt="Picture of the author"
+          layout="fill"
+        />
+      </Link>
     </div>
     <div className="product-details">
       <div className="product-name">{name}</div>
