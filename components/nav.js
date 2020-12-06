@@ -8,7 +8,7 @@ const Nav = () => (
     <div className="container">
       <div className="nav-left">
         <div className="logo">
-          <Link href={"/home"}>
+          <Link href={"/"}>
             {/*<Image src={'/images/logo.png'} height={"3rem"} width={"auto"}/>*/}
             <h4>Creation Arts</h4>
           </Link>
