@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Head from "next/head";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
@@ -7,8 +7,59 @@ import IconSearch from "../../components/icons/icon-search";
 import IconChevronDown from "../../components/icons/icon-chevron-down";
 import { getCategories, getProducts } from "../../api";
 import cookies from "next-cookies";
+import MiniSearch from "minisearch";
 
 const Products = ({ categories, products }) => {
+  const [searchText, setSearchText] = useState();
+  const [searchProducts, setSearchProducts] = useState();
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [sortBy, setSortBy] = useState();
+
+  const searchedProducts = searchProducts || products;
+
+  const filteredProducts =
+    selectedCategories.length > 0
+      ? searchedProducts.filter((sp) =>
+          selectedCategories.find((sc) => sc === sp.category._id)
+        )
+      : searchedProducts;
+  const sortedProducts = sortBy
+    ? filteredProducts.sort((a, b) => {
+        if (sortBy === "top-rated") {
+          return true;
+        }
+        if (sortBy === "high-low") {
+          return b.price - a.price;
+        }
+        if (sortBy === "low-high") {
+          return a.price - b.price;
+        }
+
+        return true;
+      })
+    : filteredProducts;
+
+  const onSearch = () => {
+    if (!searchText) {
+      setSearchProducts(null);
+      return;
+    }
+    const miniSearch = new MiniSearch({
+      fields: ["name", "price"],
+      idField: "_id",
+    });
+    miniSearch.addAll(products);
+    const searchResults = miniSearch.search(searchText, {
+      fuzzy: 0.2,
+      prefix: true,
+    });
+    setSearchProducts(
+      products.filter((product) =>
+        searchResults.find((searchItem) => product._id === searchItem.id)
+      )
+    );
+  };
+
   return (
     <Fragment>
       <Head>
@@ -27,9 +78,29 @@ const Products = ({ categories, products }) => {
                 </div>
                 <div className="accordion-content">
                   {categories.map((item) => (
-                    <div className="list-item">
+                    <div className="list-item" key={item._id}>
                       <label className="checkbox-wrapper">
-                        <input type="checkbox" className="form-control" />
+                        <input
+                          type="checkbox"
+                          className="form-control"
+                          checked={selectedCategories.find(
+                            (id) => id === item._id
+                          )}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setSelectedCategories([
+                                ...selectedCategories,
+                                item._id,
+                              ]);
+                            } else {
+                              setSelectedCategories(
+                                selectedCategories.filter(
+                                  (id) => id !== item._id
+                                )
+                              );
+                            }
+                          }}
+                        />
                         {item.name}
                       </label>
                     </div>
@@ -83,19 +154,30 @@ const Products = ({ categories, products }) => {
                     type="search"
                     className={"form-control"}
                     placeholder={"Search"}
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        onSearch();
+                      }
+                    }}
                   />
                 </div>
                 <div className="select-container">
-                  <select className="form-control">
+                  <select
+                    className="form-control"
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                  >
                     <option>Sort By</option>
-                    <option value={"top"}>Top Rated</option>
-                    <option value={"priceHL"}>Price: High to Low</option>
-                    <option value={"priceLH"}>Price: Low to High</option>
+                    <option value={"top-rated"}>Top Rated</option>
+                    <option value={"high-low"}>Price: High to Low</option>
+                    <option value={"low-high"}>Price: Low to High</option>
                   </select>
                 </div>
               </div>
               <div className="product-block">
-                {products.map((item, index) => (
+                {sortedProducts.map((item, index) => (
                   <Product key={index} data={item} />
                 ))}
               </div>
