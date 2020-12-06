@@ -1,7 +1,7 @@
 import React from "react";
-import Image from 'next/image';
+import Image from "next/image";
 
-const Product = () => (
+const Product = ({ data: { name, price, category } }) => (
   <div className="product-item">
     <div className="product-image">
       <Image
@@ -11,8 +11,8 @@ const Product = () => (
       />
     </div>
     <div className="product-details">
-      <div className="product-name">Item One</div>
-      <div className="product-price">$ 15.00</div>
+      <div className="product-name">{name}</div>
+      <div className="product-price">${price}</div>
       <button className="btn primary-outline-btn">Add to Cart</button>
     </div>
   </div>

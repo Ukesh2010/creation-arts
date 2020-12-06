@@ -5,8 +5,10 @@ import Footer from "../../components/footer";
 import Product from "../../components/product";
 import IconSearch from "../../components/icons/icon-search";
 import IconChevronDown from "../../components/icons/icon-chevron-down";
+import { getCategories, getProducts } from "../../api";
+import cookies from "next-cookies";
 
-const Products = () => {
+const Products = ({ categories, products }) => {
   return (
     <Fragment>
       <Head>
@@ -24,38 +26,16 @@ const Products = () => {
                   <IconChevronDown />
                 </div>
                 <div className="accordion-content">
-                  <div className="list-item">
-                    <label className="checkbox-wrapper">
-                      <input type="checkbox" className="form-control" /> Rings
-                    </label>
-                  </div>
-                  <div className="list-item">
-                    <label className="checkbox-wrapper">
-                      <input type="checkbox" className="form-control" />{" "}
-                      Necklace
-                    </label>
-                  </div>
-                  <div className="list-item">
-                    <label className="checkbox-wrapper">
-                      <input type="checkbox" className="form-control" />{" "}
-                      Earrings
-                    </label>
-                  </div>
-                  <div className="list-item">
-                    <label className="checkbox-wrapper">
-                      <input type="checkbox" className="form-control" />{" "}
-                      Pendants
-                    </label>
-                  </div>
-                  <div className="list-item">
-                    <label className="checkbox-wrapper">
-                      <input type="checkbox" className="form-control" />{" "}
-                      Bracelets
-                    </label>
-                  </div>
+                  {categories.map((item) => (
+                    <div className="list-item">
+                      <label className="checkbox-wrapper">
+                        <input type="checkbox" className="form-control" />
+                        {item.name}
+                      </label>
+                    </div>
+                  ))}
                 </div>
               </div>
-
               <div className="accordion-block">
                 <div className="accordion-heading">
                   <span>Price Range</span>
@@ -115,18 +95,9 @@ const Products = () => {
                 </div>
               </div>
               <div className="product-block">
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
+                {products.map((item) => (
+                  <Product data={item} />
+                ))}
               </div>
             </div>
           </div>
@@ -138,3 +109,16 @@ const Products = () => {
 };
 
 export default Products;
+
+export const getStaticProps = async (context) => {
+  const token = cookies(context).token;
+
+  try {
+    const products = await getProducts(token)();
+    const categories = await getCategories(token)();
+    return { props: { categories, products } };
+  } catch (e) {
+    console.log("error", e.message);
+  }
+  return { props: { categories: [], products: [] } };
+};
