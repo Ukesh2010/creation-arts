@@ -9,26 +9,36 @@ import IconTwitter from '../components/icons/icon-twitter';
 import Footer from '../components/footer';
 
 const Home = () => (
-  <div>
+  <>
     <Head>
       <title>Home</title>
       <link rel="icon" href="/favicon.ico"/>
     </Head>
     <Nav/>
-    <div className="home-container">
+    <section className="home-container">
       <div className="banner">
+        <div className="banner-image">
+          <Image src={"/images/bg.jpeg"} alt={"banner image"} layout={"fill"}/>
+        </div>
+
         <div className="social-icons">
           <div className="icon-button"><IconFacebook/></div>
           <div className="icon-button"><IconInstagram/></div>
           <div className="icon-button"><IconTwitter/></div>
         </div>
-
         <div className="control-icons">
           <div className="icon-button arrow-up"><IconArrowLeft/></div>
           <div className="icon-button arrow-down"><IconArrowLeft/></div>
         </div>
-      </div>
 
+        <div className="banner-details">
+          <h3 className="title">Hand Crafted Products</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque consequatur cumque doloribus ducimus
+            fugiat inventore, molestias neque nihil perspiciatis, praesentium quae, quibusdam repellat ut vel?
+            Accusantium fuga in ipsum?</p>
+          <button className="btn accent-btn">Shop Now</button>
+        </div>
+      </div>
       <div className="container">
         <div className="featured-container">
           <div className="heading">Featured Shop</div>
@@ -42,8 +52,8 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
             <div className="product-item">
@@ -55,34 +65,34 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
             <div className="product-item">
               <div className="product-image">
                 <Image
-                  src="/images/product1.jpg"
+                  src="/images/product2.jpg"
                   alt="Picture of the author"
                   layout="fill"
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
             <div className="product-item">
               <div className="product-image">
                 <Image
-                  src="/images/product1.jpg"
+                  src="/images/product2.jpg"
                   alt="Picture of the author"
                   layout="fill"
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
           </div>
@@ -99,8 +109,8 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
             <div className="product-item">
@@ -112,8 +122,8 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
             <div className="product-item">
@@ -125,8 +135,8 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
             <div className="product-item">
@@ -138,16 +148,16 @@ const Home = () => (
                 />
               </div>
               <div className="item-detail">
-                <div>Title</div>
-                <div>$50</div>
+                <div className="name">Title</div>
+                <div className="price">$50</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <Footer/>
-  </div>
+  </>
 );
 
 export default Home;

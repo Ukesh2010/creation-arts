@@ -2,14 +2,18 @@
 
 .home-container {
   .banner {
-    background-image: url('/images/main-bg.jpg');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
     height: calc(100vh - 8rem);
     width: calc(100% - 8rem);
     margin: 0 auto;
     position: relative;
+
+    .banner-image {
+      height: 100%;
+      width: 100%;
+      img {
+        object-fit: cover;
+      }
+    }
 
     .social-icons,
     .control-icons {
@@ -42,6 +46,23 @@
         }
       }
     }
+
+    .banner-details {
+      position: absolute;
+      left: 20%;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 25rem;
+
+      .title {
+        font-size: 3rem;
+      }
+
+      .btn {
+        padding: 1.25rem 2.5rem;
+        margin-top: 2rem;
+      }
+    }
   }
 
   .container {
@@ -59,6 +80,8 @@
       font-weight: 500;
       position: relative;
       margin-bottom: 3rem;
+      font-family: $heading-font;
+      color: $primary-text;
 
       &:after {
         content: "";
@@ -69,15 +92,14 @@
         left: 50%;
         bottom: -0.5rem;
         transform: translateX(-50%);
-        background-color: $primary;
+        background-color: $primary-text;
       }
     }
 
     .product-container {
       display: grid;
       grid-gap: 2rem 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-      //grid-template-columns: repeat(4 , 15rem);
+      grid-template-columns: repeat(auto-fill, 15rem);
       justify-content: center;
       padding: 0;
 
@@ -85,17 +107,29 @@
         cursor: pointer;
 
         .product-image {
-          height: 15rem;
           position: relative;
+          height: 22.5rem;
+
+          img {
+            object-fit: contain;
+          }
         }
 
         .item-detail {
           display: flex;
           justify-content: space-between;
           padding: 0.5rem 0;
+
+          .name {
+            flex: 1 1 auto;
+            max-width: 80%;
+          }
+          .price {
+            font-weight: 700;
+            color: $primary-text;
+          }
         }
       }
     }
   }
 }
-

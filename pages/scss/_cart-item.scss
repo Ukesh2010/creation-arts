@@ -1,0 +1,30 @@
+.cart-item {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 7rem 7rem 7rem;
+  margin-bottom: 1rem;
+  align-items: center;
+
+  .product-name {
+    display: flex;
+    align-items: center;
+
+    .product-image {
+      position: relative;
+      height: 3rem;
+      width: 3rem;
+      margin-right: 0.75rem;
+    }
+  }
+
+  .product-price {
+  }
+
+  .product-qty {
+    justify-self: center;
+  }
+
+  .remove-option {
+    justify-self: center;
+  }
+}

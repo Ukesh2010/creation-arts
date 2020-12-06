@@ -1,0 +1,68 @@
+@import "../scss/variables";
+
+.product-container {
+  display: grid;
+  grid-template-columns: 30rem 1fr;
+  grid-gap: 2rem;
+
+  .product-images-container{
+
+    .main-image {
+      position: relative;
+      height: 45rem;
+    }
+
+    .product-image{
+      position: relative;
+    }
+
+    .slider-image {
+      .product-image {
+        margin: 0 1rem;
+      }
+    }
+  }
+
+  .product-details{
+    .product-title{
+      font-size: 2rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    .label{
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      font-family: $heading-font;
+    }
+
+    .product-price{
+      font-size: 2rem;
+      color: $secondary-text;
+    }
+
+    .product-description {
+      margin-top: 4rem;
+    }
+
+    .action-container{
+      display: flex;
+      align-items: stretch;
+      margin-top: 2rem;
+
+      .counter-input-container {
+        margin-right: 2rem;
+        .form-control {
+          font-size: 1.125rem;
+        }
+      }
+
+      .primary-btn {
+        width: 20rem;
+      }
+    }
+  }
+
+}
