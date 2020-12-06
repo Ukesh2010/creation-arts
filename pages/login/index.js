@@ -3,6 +3,8 @@ import Head from "next/head";
 import IconFacebook from "../../components/icons/icon-facebook";
 import Image from "next/image";
 import Link from "next/link";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faFacebookF} from '@fortawesome/free-brands-svg-icons';
 
 const Login = () => {
   return (
@@ -54,7 +56,7 @@ const Login = () => {
                 <label htmlFor="forgotPassword">Forgot Password?</label>
               </div>
 
-              <button className="btn primary-btn">login</button>
+              <button className="btn accent-btn">login</button>
             </form>
 
             <div className="or-block">
@@ -62,7 +64,10 @@ const Login = () => {
             </div>
             <div className="social-login-container">
               <button className="btn fb-btn">
-                <IconFacebook />
+                <FontAwesomeIcon
+                  icon={faFacebookF}
+                  size={"2x"}
+                />
                 Continue with Facebook
               </button>
             </div>

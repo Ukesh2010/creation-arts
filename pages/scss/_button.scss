@@ -54,7 +54,7 @@
 
   svg {
     fill: currentColor;
-    min-width: 1.125rem;
+    min-width: 0.875rem;
   }
 }
 
@@ -72,7 +72,7 @@
 
   transition: all 0.3s ease;
 
-  @include app-button($true-white, $primary-text);
+  @include app-button($true-white, $secondary-text);
   border: none;
 }
 

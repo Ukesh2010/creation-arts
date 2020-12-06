@@ -1,28 +1,40 @@
-import React, { Fragment } from "react";
+import React, {Fragment} from "react";
 import Head from "next/head";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import CartItem from "../../components/cartItem";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faShoppingCart} from '@fortawesome/free-solid-svg-icons/faShoppingCart';
 
 const Cart = () => {
   return (
     <Fragment>
       <Head>
         <title>Products</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico"/>
       </Head>
-      <Nav />
+      <Nav/>
       <section className="container">
         <div className="app-page-container">
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          <h4 className="mb-2">Shopping Cart</h4>
+          <div className="cart-item-container">
+            <CartItem/>
+            <CartItem/>
+            <CartItem/>
+            <CartItem/>
+            <CartItem/>
+            <CartItem/>
+          </div>
+
+          <div className="checkout-container">
+          <button className="btn accent-btn checkout-btn">
+            <FontAwesomeIcon icon={faShoppingCart} size={"2x"} />
+            Checkout
+          </button>
+          </div>
         </div>
       </section>
-      <Footer />
+      <Footer/>
     </Fragment>
   );
 };

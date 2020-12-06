@@ -1,7 +1,8 @@
 import React from "react";
 import Image from 'next/image';
-import IconTrash from './icons/icon-trash';
 import CounterInput from './counterInput';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faTrashAlt} from '@fortawesome/free-solid-svg-icons/faTrashAlt';
 
 const CartItem = () => (
   <div className="cart-item">
@@ -21,7 +22,7 @@ const CartItem = () => (
     </div>
     <div className="remove-option">
       <button className="btn icon-button">
-        <IconTrash/>
+        <FontAwesomeIcon icon={faTrashAlt} size={"2x"} />
       </button>
     </div>
   </div>

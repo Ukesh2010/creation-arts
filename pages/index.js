@@ -29,10 +29,6 @@ const Home = () => (
             <FontAwesomeIcon
               icon={faFacebookF}
               size={"2x"}
-              // style={{
-              //   width: "1.5rem",
-              //   height: "1.5rem",
-              // }}
             />
           </div>
           <div className="icon-button">

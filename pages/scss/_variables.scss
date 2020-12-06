@@ -1,8 +1,12 @@
 // Colors
-$primary: #64396f;
-$primary-light: lighten(#64396f, 40%);
+$primary: #212529;
+$primary-light: lighten($primary, 40%);
+
+//$primary: #64396f;
+//$primary-light: lighten(#64396f, 40%);
+
 $accent: #f08080;
-$accent-light: lighten( #f08080, 40%);
+$accent-light: lighten( $accent, 40%);
 
 $primary-text: #212529;
 $secondary-text: #495057;
@@ -17,7 +21,7 @@ $warning: #EF8354;
 $info: #275DAD;
 $success: #0F745F;
 
-$nav-background: $primary-text;
+$nav-background: $primary;
 $nav-foreground: $white;
 
 $fb-color: #3b5998;

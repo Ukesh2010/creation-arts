@@ -72,9 +72,14 @@
     .fb-btn {
       @include app-button($fb-color, $white);
       width: 100%;
+
+      svg {
+        margin-right: 0.75rem;
+      }
     }
 
-    .primary-btn {
+    .primary-btn,
+    .accent-btn{
       width: 100%;
       margin-top: 2rem;
     }

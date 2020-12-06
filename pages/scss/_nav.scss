@@ -35,10 +35,6 @@
         color: inherit;
       }
 
-      svg {
-        fill: currentColor;
-      }
-
       &:hover {
         background-color: lighten($nav-background, 8%);
       }

@@ -53,11 +53,23 @@ a {
   }
 }
 
+svg {
+  &.svg-inline--fa {
+    fill: currentColor;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
 .title {
   line-height: 1.25;
   font-family: $heading-font;
   font-weight: 600;
   color: $primary-text;
+}
+
+.sub-title {
+  color: $secondary-text;
 }
 
 .container {
@@ -163,6 +175,11 @@ select.form-control {
     transform: translateY(-50%);
     left: 0.5rem;
   }
+}
+
+// margin
+.mb-2 {
+  margin-bottom: 2rem;
 }
 
 
