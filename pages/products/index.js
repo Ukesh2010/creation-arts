@@ -95,8 +95,8 @@ const Products = ({ categories, products }) => {
                 </div>
               </div>
               <div className="product-block">
-                {products.map((item) => (
-                  <Product data={item} />
+                {products.map((item, index) => (
+                  <Product key={index} data={item} />
                 ))}
               </div>
             </div>

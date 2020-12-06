@@ -1,2 +1,2 @@
-REACT_APP_API_URL = https://creation-arts-api.herokuapp.com/api/
+REACT_APP_API_URL = https://creation-arts-api.herokuapp.com/
 REACT_APP_TIMEOUT = 60000

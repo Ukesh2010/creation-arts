@@ -1,11 +1,18 @@
 import React from "react";
 import Image from "next/image";
+import { PRODUCT_IMAGE_FILLER } from "../utils/consts";
 
-const Product = ({ data: { name, price, category } }) => (
+const Product = ({
+  data: {
+    name,
+    price,
+    images: [image],
+  },
+}) => (
   <div className="product-item">
     <div className="product-image">
       <Image
-        src="/images/product1.jpg"
+        src={image ? image.url : PRODUCT_IMAGE_FILLER}
         alt="Picture of the author"
         layout="fill"
       />
