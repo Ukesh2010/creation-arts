@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import IconShoppingCart from "./icons/icon-shopping-cart";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Nav = () => (
   <nav className="app-navbar">
@@ -32,7 +33,7 @@ const Nav = () => (
         </div>
         <div className="nav-item">
           <Link href={"/cart"}>
-            <IconShoppingCart />
+            <FontAwesomeIcon icon={faShoppingCart} size={"2x"} />
           </Link>
         </div>
       </div>
