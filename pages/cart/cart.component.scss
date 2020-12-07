@@ -1,0 +1,26 @@
+@import "../scss/variables";
+
+.cart-item-container {
+  margin-bottom: 2rem;
+
+  .cart-item {
+    &:first-child {
+      border-top: 1px solid lighten($light-gray, 8%);
+    }
+  }
+}
+
+.checkout-btn {
+  padding: 1rem 2rem;
+
+  svg {
+    margin-right: 0.75rem;
+  }
+}
+
+.checkout-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+}

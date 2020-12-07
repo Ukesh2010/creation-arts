@@ -1,12 +1,13 @@
 import React from "react";
-import IconPlus from './icons/icon-plus';
-import IconMinus from './icons/icon-minus';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlus} from '@fortawesome/free-solid-svg-icons/faPlus';
+import {faMinus} from '@fortawesome/free-solid-svg-icons/faMinus';
 
 const CounterInput = ({className}) => (
   <div className={`counter-input-container ${className}`}>
     <input type="number" className="form-control input" value='2'/>
-    <button className="btn add-btn"><IconPlus/></button>
-    <button className="btn remove-btn"><IconMinus/></button>
+    <button className="btn add-btn"><FontAwesomeIcon icon={faPlus}/></button>
+    <button className="btn remove-btn"><FontAwesomeIcon icon={faMinus}/></button>
   </div>
 );
 
