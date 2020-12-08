@@ -8,23 +8,40 @@ import IconChevronDown from "../../components/icons/icon-chevron-down";
 import { getCategories, getProducts } from "../../api";
 import cookies from "next-cookies";
 import MiniSearch from "minisearch";
+import { PRICE_FILTER_RANGES } from "../../utils/consts";
 
 const Products = ({ categories, products }) => {
-  const [searchText, setSearchText] = useState();
+  const [searchText, setSearchText] = useState("");
   const [searchProducts, setSearchProducts] = useState();
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [priceRanges, setPriceRanges] = useState([]);
   const [sortBy, setSortBy] = useState();
 
   const searchedProducts = searchProducts || products;
 
-  const filteredProducts =
+  const categoryFilteredProducts =
     selectedCategories.length > 0
-      ? searchedProducts.filter((sp) =>
-          selectedCategories.find((sc) => sc === sp.category._id)
+      ? searchedProducts.filter((item) =>
+          selectedCategories.find(
+            (categoryId) => categoryId === item.category._id
+          )
         )
       : searchedProducts;
+
+  const priceRangeFilteredProducts =
+    priceRanges.length > 0
+      ? categoryFilteredProducts.filter(
+          (item) =>
+            priceRanges.filter(
+              (index) =>
+                PRICE_FILTER_RANGES[index].min <= item.price &&
+                PRICE_FILTER_RANGES[index].max >= item.price
+            ).length > 0
+        )
+      : categoryFilteredProducts;
+
   const sortedProducts = sortBy
-    ? filteredProducts.sort((a, b) => {
+    ? priceRangeFilteredProducts.sort((a, b) => {
         if (sortBy === "top-rated") {
           return true;
         }
@@ -37,10 +54,26 @@ const Products = ({ categories, products }) => {
 
         return true;
       })
-    : filteredProducts;
+    : priceRangeFilteredProducts;
 
-  const onSearch = () => {
-    if (!searchText) {
+  const onCategoryChange = (checked, id) => {
+    if (checked) {
+      setSelectedCategories((prev) => [...prev, id]);
+    } else {
+      setSelectedCategories(selectedCategories.filter((item) => item !== id));
+    }
+  };
+
+  const onPriceRangeChange = (checked, index) => {
+    if (checked) {
+      setPriceRanges((prev) => [...prev, index]);
+    } else {
+      setPriceRanges(priceRanges.filter((item) => item !== index));
+    }
+  };
+
+  useEffect(() => {
+    if (searchText === "") {
       setSearchProducts(null);
       return;
     }
@@ -58,7 +91,7 @@ const Products = ({ categories, products }) => {
         searchResults.find((searchItem) => product._id === searchItem.id)
       )
     );
-  };
+  }, [searchText]);
 
   return (
     <Fragment>
@@ -83,22 +116,9 @@ const Products = ({ categories, products }) => {
                         <input
                           type="checkbox"
                           className="form-control"
-                          checked={selectedCategories.find(
-                            (id) => id === item._id
-                          )}
+                          checked={selectedCategories.includes(item._id)}
                           onChange={(e) => {
-                            if (e.target.checked) {
-                              setSelectedCategories([
-                                ...selectedCategories,
-                                item._id,
-                              ]);
-                            } else {
-                              setSelectedCategories(
-                                selectedCategories.filter(
-                                  (id) => id !== item._id
-                                )
-                              );
-                            }
+                            onCategoryChange(e.target.checked, item._id);
                           }}
                         />
                         {item.name}
@@ -113,36 +133,21 @@ const Products = ({ categories, products }) => {
                   <IconChevronDown />
                 </div>
                 <div className="accordion-content">
-                  <div className="list-item">
-                    <label className="checkbox-wrapper">
-                      <input type="checkbox" className="form-control" /> $30 and
-                      Under
-                    </label>
-                  </div>
-                  <div className="list-item">
-                    <label className="checkbox-wrapper">
-                      <input type="checkbox" className="form-control" /> $31 to
-                      $50
-                    </label>
-                  </div>
-                  <div className="list-item">
-                    <label className="checkbox-wrapper">
-                      <input type="checkbox" className="form-control" /> $51 to
-                      $75
-                    </label>
-                  </div>
-                  <div className="list-item">
-                    <label className="checkbox-wrapper">
-                      <input type="checkbox" className="form-control" /> $76 to
-                      $100
-                    </label>
-                  </div>
-                  <div className="list-item">
-                    <label className="checkbox-wrapper">
-                      <input type="checkbox" className="form-control" /> Above
-                      $100
-                    </label>
-                  </div>
+                  {PRICE_FILTER_RANGES.map((item, index) => (
+                    <div className="list-item" key={index}>
+                      <label className="checkbox-wrapper">
+                        <input
+                          type="checkbox"
+                          className="form-control"
+                          checked={priceRanges.includes(index)}
+                          onChange={(e) => {
+                            onPriceRangeChange(e.target.checked, index);
+                          }}
+                        />
+                        {item.label}
+                      </label>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -155,11 +160,8 @@ const Products = ({ categories, products }) => {
                     className={"form-control"}
                     placeholder={"Search"}
                     value={searchText}
-                    onChange={(e) => setSearchText(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") {
-                        onSearch();
-                      }
+                    onChange={(e) => {
+                      setSearchText(e.target.value);
                     }}
                   />
                 </div>
