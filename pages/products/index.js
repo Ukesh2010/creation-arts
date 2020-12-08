@@ -206,3 +206,5 @@ export const getStaticProps = async (context) => {
   }
   return { props: { categories: [], products: [] } };
 };
+
+
