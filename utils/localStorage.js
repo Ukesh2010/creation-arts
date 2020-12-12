@@ -1,13 +1,7 @@
 import Cookies from "js-cookie";
 
-export const setItem = (key, value, expiryTime = false) => {
-  if (expiryTime) {
-    Cookies.set(key, value, {
-      expires: expiryTime,
-    });
-  } else {
-    Cookies.set(key, value);
-  }
+export const setItem = (key, value) => {
+  Cookies.set(key, value);
 };
 
 export const getItem = (key) => {

@@ -1,31 +1,55 @@
 import React from "react";
-import Image from 'next/image';
-import CounterInput from './counterInput';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faTrashAlt} from '@fortawesome/free-solid-svg-icons/faTrashAlt';
+import Image from "next/image";
+import CounterInput from "./counterInput";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons/faTrashAlt";
+import { useCartActions } from "../contexts/CartContext";
 
-const CartItem = () => (
-  <div className="cart-item">
-    <div className="product-image">
-      <Image
-        src="/images/product1.jpg"
-        alt="Picture of the author"
-        layout="fill"
-      />
+const CartItem = ({ data }) => {
+  const {
+    _id,
+    name,
+    price,
+    images: [image],
+    quantity,
+  } = data;
+
+  const { updateItem, removeItem } = useCartActions();
+  const onChange = (value) => {
+    updateItem(_id, { ...data, quantity: value, total_amount: value * price });
+  };
+
+  const onRemove = () => {
+    removeItem(_id);
+  };
+
+  return (
+    <div className="cart-item">
+      <div className="product-image">
+        <Image
+          src={image ? image.url : PRODUCT_IMAGE_FILLER}
+          alt={name}
+          layout="fill"
+        />
+      </div>
+      <div className="product-name">
+        <span>{name}</span>
+      </div>
+      <div className="product-price">${price}</div>
+      <div className="product-qty">
+        <CounterInput
+          className={"input-sm"}
+          value={quantity}
+          onChange={onChange}
+        />
+      </div>
+      <div className="remove-option">
+        <button className="btn icon-button">
+          <FontAwesomeIcon icon={faTrashAlt} size={"2x"} onClick={onRemove} />
+        </button>
+      </div>
     </div>
-    <div className="product-name">
-      <span>Item One</span>
-    </div>
-    <div className="product-price">$ 15.00</div>
-    <div className="product-qty">
-      <CounterInput className={'input-sm'}/>
-    </div>
-    <div className="remove-option">
-      <button className="btn icon-button">
-        <FontAwesomeIcon icon={faTrashAlt} size={"2x"}/>
-      </button>
-    </div>
-  </div>
-);
+  );
+};
 
 export default CartItem;

@@ -1,20 +1,27 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Head from "next/head";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import Image from "next/image";
 import CounterInput from "../../components/counterInput";
-import { useRouter } from "next/router";
 import cookies from "next-cookies";
 import { getProductDetail, getProducts } from "../../api";
 import { PRODUCT_IMAGE_FILLER } from "../../utils/consts";
+import { useCartActions } from "../../contexts/CartContext";
 
 const ProductDetail = ({ product }) => {
-  const router = useRouter();
-  const { id } = router.query;
-  const { name, price, category, images: [image] = [] } = product;
+  // const router = useRouter();
+  // const { id } = router.query;
+  const { _id, name, price, category, images: [image] = [] } = product;
 
-  console.log("product", product);
+  const { findItem, addItem } = useCartActions();
+  const disableButton = Boolean(findItem(_id));
+
+  const [quantity, setQuantity] = useState(1);
+
+  const onAddToCart = () => {
+    addItem({ ...product, quantity, total_amount: price * quantity });
+  };
 
   return (
     <Fragment>
@@ -45,7 +52,7 @@ const ProductDetail = ({ product }) => {
               <div className="main-image">
                 <Image
                   src={image ? image.url : PRODUCT_IMAGE_FILLER}
-                  alt={image ? image.originalname : id}
+                  alt={name}
                   layout="fill"
                 />
               </div>
@@ -80,8 +87,17 @@ const ProductDetail = ({ product }) => {
                 <h3>${price}</h3>
               </div>
               <div className="action-container">
-                <CounterInput />
-                <button className="btn primary-btn">Add to Cart</button>
+                <CounterInput
+                  value={quantity}
+                  onChange={(value) => setQuantity(value)}
+                />
+                <button
+                  className="btn primary-btn"
+                  disabled={disableButton}
+                  onClick={onAddToCart}
+                >
+                  Add to Cart
+                </button>
               </div>
               <div className="product-description">
                 <span className="label">Description</span>
