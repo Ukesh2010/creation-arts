@@ -59,3 +59,22 @@ export const getProductDetail = (token) => async (id) => {
     .get(`/products/${id}`)
     .then((response) => response.data);
 };
+
+export const createOrder = async (data) => {
+  return await getHttpClient().post("/orders", data);
+};
+
+export const createPayPalTransaction = async (data) => {
+  const response = await authHttpClient.post(
+    `/create-paypal-transaction`,
+    data
+  );
+
+  return response.data;
+};
+
+export const captureOrder = async (data) => {
+  const response = await authHttpClient.post(`/capture-order`, data);
+
+  return response.data;
+};
