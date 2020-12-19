@@ -104,6 +104,7 @@ const Products = ({ categories, products }) => {
         <div className="app-page-container">
           <div className="product-grid-container">
             <div className="product-filter-container">
+              <h3 className="filter-title">Filters</h3>
               <div className="accordion-block">
                 <div className="accordion-heading">
                   <span>Type</span>
@@ -150,6 +151,14 @@ const Products = ({ categories, products }) => {
                   ))}
                 </div>
               </div>
+              <div className="filter-actions">
+                <button className="btn primary-outline-btn">
+                  Reset
+                </button>
+                <button className="btn primary-btn">
+                  Apply
+                </button>
+              </div>
             </div>
             <div className="product-list-container">
               <div className="product-list-heading">
@@ -164,6 +173,9 @@ const Products = ({ categories, products }) => {
                       setSearchText(e.target.value);
                     }}
                   />
+                </div>
+                <div className="filter-toggle">
+                  <button className="btn primary-outline-btn">Filter</button>
                 </div>
                 <div className="select-container">
                   <select
