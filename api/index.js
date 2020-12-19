@@ -38,10 +38,6 @@ const getHttpClient = (
   return httpClient(axiosConfig);
 };
 
-export const login = async (data) => {
-  return await getHttpClient().post("/customer/login", data);
-};
-
 export const getCategories = (token) => async (params) => {
   return await getHttpClient(token)
     .get("/categories", { params })
@@ -70,6 +66,12 @@ export const captureOrder = (token) => async (data) => {
     `/orders/capture-order`,
     data
   );
+
+  return response.data;
+};
+
+export const login = (token) => async (data) => {
+  const response = await getHttpClient(token).post(`/users/login`, data);
 
   return response.data;
 };
