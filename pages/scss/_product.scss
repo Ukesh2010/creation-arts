@@ -1,10 +1,13 @@
 .product-item {
   cursor: pointer;
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   .product-image {
     position: relative;
     height: 22.5rem;
+    flex: 0 0 22.5rem;
 
     img {
       object-fit: contain;
@@ -12,11 +15,17 @@
   }
 
   .product-details {
+    flex: 1 1 auto;
+
     text-align: center;
     padding: 0.5rem 1rem;
 
+    display: flex;
+    flex-direction: column;
+
     .product-name {
       margin-bottom: 0.25rem;
+      flex: 1 1 auto;
     }
 
     .product-price {

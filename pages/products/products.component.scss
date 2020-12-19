@@ -73,7 +73,11 @@
       }
 
       .product-item {
+        display: flex;
+        flex-direction: column;
+
         .product-image {
+          flex: 0 0 18rem;
           position: relative;
           height: 18rem;
 
