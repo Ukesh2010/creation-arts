@@ -59,3 +59,17 @@ export const getProductDetail = (token) => async (id) => {
     .get(`/products/${id}`)
     .then((response) => response.data);
 };
+
+export const createPayPalTransaction = (token) => async (data) =>
+  await getHttpClient(token)
+    .post(`/orders/create-paypal-transaction`, data)
+    .then((response) => response.data);
+
+export const captureOrder = (token) => async (data) => {
+  const response = await getHttpClient(token).post(
+    `/orders/capture-order`,
+    data
+  );
+
+  return response.data;
+};
