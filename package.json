@@ -13,6 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.13",
     "axios": "^0.21.0",
+    "formik": "^2.2.6",
     "js-cookie": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
     "minisearch": "^3.0.2",
@@ -21,6 +22,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "sass": "^1.29.0",
-    "theme-ui": "^0.3.3"
+    "theme-ui": "^0.3.3",
+    "yup": "^0.32.8"
   }
 }
