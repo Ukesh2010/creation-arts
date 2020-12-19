@@ -1,5 +1,6 @@
 export const PRODUCT_IMAGE_FILLER = "/images/product1.jpg";
 
+
 export const PRICE_FILTER_RANGES = [
   { min: 0, max: 30, label: "$30 and Under" },
   { min: 31, max: 50, label: "$31 to $50" },
