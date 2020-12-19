@@ -3,20 +3,22 @@ import Head from "next/head";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import CartItem from "../../components/cartItem";
+import { useCartActions, useCartState } from "../../contexts/CartContext";
+import { captureOrder, createPayPalTransaction } from "../../api";
+import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons/faShoppingCart";
-import { useCartActions, useCartState } from "../../contexts/CartContext";
 
 const Cart = () => {
   const cart = useCartState();
-  const { countItem } = useCartActions();
-  const paypal = useRef(window.paypal);
+  const { countItem, clearCart } = useCartActions();
+  const router = useRouter();
 
-  const initializePaypalButton = useCallback(() => {
-    paypal.current
+  useEffect(() => {
+    window.paypal
       .Buttons({
         createOrder: function () {
-          return createPayPalTransaction({
+          return createPayPalTransaction()({
             total_amount: cart?.total_amount,
           }).then((data) => {
             return data.result.id;
@@ -28,7 +30,7 @@ const Cart = () => {
           //   cart.guest = null;
           // }
 
-          return captureOrder({
+          return captureOrder()({
             paypal_order_id: data.orderID,
             order: cart,
           }).then((response) => {
@@ -36,24 +38,13 @@ const Cart = () => {
               return actions.restart();
             }
 
-            // history.push({
-            //   pathname: "/notification",
-            //   state: {
-            //     title: "Order placed.",
-            //     message:
-            //       "We have emailed your vouchers. please check your email.",
-            //   },
-            // });
-            // clearCart(dispatch);
+            clearCart();
+            router.push("/products");
           });
         },
       })
       .render("#paypal-button-container");
-  }, [cart]);
-
-  useEffect(() => {
-    initializePaypalButton();
-  }, []);
+  }, [cart?.total_amount]);
 
   if (countItem() === 0) {
     return (
@@ -92,10 +83,10 @@ const Cart = () => {
           </div>
 
           <div className="checkout-container">
-            {/* <button className="btn accent-btn checkout-btn">
+            <button className="btn accent-btn checkout-btn">
               <FontAwesomeIcon icon={faShoppingCart} size={"2x"} />
               Checkout
-            </button> */}
+            </button>
             <div id="paypal-button-container" />
           </div>
         </div>
