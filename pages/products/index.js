@@ -104,60 +104,62 @@ const Products = ({ categories, products }) => {
         <div className="app-page-container">
           <div className="product-grid-container">
             <div className="product-filter-container">
-              <h3 className="filter-title">Filters</h3>
-              <div className="accordion-block">
-                <div className="accordion-heading">
-                  <span>Type</span>
-                  <IconChevronDown />
+              <div className="container">
+                <h3 className="filter-title">Filters</h3>
+                <div className="accordion-block">
+                  <div className="accordion-heading">
+                    <span>Type</span>
+                    <IconChevronDown />
+                  </div>
+                  <div className="accordion-content">
+                    {categories.map((item) => (
+                      <div className="list-item" key={item._id}>
+                        <label className="checkbox-wrapper">
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            checked={selectedCategories.includes(item._id)}
+                            onChange={(e) => {
+                              onCategoryChange(e.target.checked, item._id);
+                            }}
+                          />
+                          {item.name}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="accordion-content">
-                  {categories.map((item) => (
-                    <div className="list-item" key={item._id}>
-                      <label className="checkbox-wrapper">
-                        <input
-                          type="checkbox"
-                          className="form-control"
-                          checked={selectedCategories.includes(item._id)}
-                          onChange={(e) => {
-                            onCategoryChange(e.target.checked, item._id);
-                          }}
-                        />
-                        {item.name}
-                      </label>
-                    </div>
-                  ))}
+                <div className="accordion-block">
+                  <div className="accordion-heading">
+                    <span>Price Range</span>
+                    <IconChevronDown />
+                  </div>
+                  <div className="accordion-content">
+                    {PRICE_FILTER_RANGES.map((item, index) => (
+                      <div className="list-item" key={index}>
+                        <label className="checkbox-wrapper">
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            checked={priceRanges.includes(index)}
+                            onChange={(e) => {
+                              onPriceRangeChange(e.target.checked, index);
+                            }}
+                          />
+                          {item.label}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="accordion-block">
-                <div className="accordion-heading">
-                  <span>Price Range</span>
-                  <IconChevronDown />
+                <div className="filter-actions">
+                  <button className="btn primary-outline-btn">
+                    Reset
+                  </button>
+                  <button className="btn primary-btn">
+                    Apply
+                  </button>
                 </div>
-                <div className="accordion-content">
-                  {PRICE_FILTER_RANGES.map((item, index) => (
-                    <div className="list-item" key={index}>
-                      <label className="checkbox-wrapper">
-                        <input
-                          type="checkbox"
-                          className="form-control"
-                          checked={priceRanges.includes(index)}
-                          onChange={(e) => {
-                            onPriceRangeChange(e.target.checked, index);
-                          }}
-                        />
-                        {item.label}
-                      </label>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="filter-actions">
-                <button className="btn primary-outline-btn">
-                  Reset
-                </button>
-                <button className="btn primary-btn">
-                  Apply
-                </button>
               </div>
             </div>
             <div className="product-list-container">
