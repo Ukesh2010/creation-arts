@@ -4,6 +4,8 @@ import CounterInput from "./counterInput";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons/faTrashAlt";
 import { useCartActions } from "../contexts/CartContext";
+import { PRODUCT_IMAGE_FILLER } from "../utils/consts";
+
 
 const CartItem = ({ data }) => {
   const {
@@ -27,7 +29,8 @@ const CartItem = ({ data }) => {
     <div className="cart-item">
       <div className="product-image">
         <Image
-          src={image ? image.url : PRODUCT_IMAGE_FILLER}
+          src={PRODUCT_IMAGE_FILLER}
+          // src={image ? image.url : PRODUCT_IMAGE_FILLER}
           alt={name}
           layout="fill"
         />

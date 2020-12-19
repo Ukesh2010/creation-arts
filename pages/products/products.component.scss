@@ -1,13 +1,14 @@
 @import "../scss/variables";
 
 .app-page-container {
-  margin: 0 auto 4rem auto;
+  margin: 4rem auto;
 
   .product-list-heading {
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 12rem;
     grid-gap: 2rem;
+    margin-top: -4rem;
     padding-top: 4rem;
     padding-bottom: 2.5rem;
     background-color: $true-white;
@@ -15,7 +16,7 @@
     @supports (position: sticky) {
       position: sticky;
       top: 4rem;
-      z-index: 101;
+      z-index: 99;
     }
 
     .filter-toggle{
@@ -35,7 +36,7 @@
         @supports (position: sticky) {
           position: sticky;
           top: 8rem;
-          z-index: 101;
+          z-index: 99;
         }
       }
 
@@ -126,9 +127,9 @@
 
 @media (max-width: 768px) {
   .app-page-container {
-    margin: 4rem auto;
-
     .product-list-heading {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
       grid-gap: 1rem;
       grid-template-columns: 1fr 1fr;
 
@@ -164,7 +165,7 @@
         width: 100%;
         max-width: 30rem;
         position: fixed;
-        z-index: 100;
+        z-index: 99;
         padding: 2rem;
         top: 56px;
         bottom: 0;
@@ -199,21 +200,18 @@
 
 @media (max-width: 575px) {
   .app-page-container {
-
     .product-grid-container {
-
       .product-list-container {
         .product-block {
           grid-gap: 2rem 1rem;
-          grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+          grid-template-columns: 1fr 1fr;
         }
-
         .product-item {
           display: flex;
           flex-direction: column;
 
           .product-image {
-            flex: 0 0 17rem;
+            flex: 0 0 18rem;
           }
         }
       }
