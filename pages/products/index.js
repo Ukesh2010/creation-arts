@@ -6,9 +6,9 @@ import Product from "../../components/product";
 import IconSearch from "../../components/icons/icon-search";
 import IconChevronDown from "../../components/icons/icon-chevron-down";
 import { getCategories, getProducts } from "../../api";
-import cookies from "next-cookies";
 import MiniSearch from "minisearch";
 import { PRICE_FILTER_RANGES } from "../../utils/consts";
+import { getServerSideCookie } from "../../utils/serverSideStorage";
 
 const Products = ({ categories, products }) => {
   const [searchText, setSearchText] = useState("");
@@ -104,50 +104,57 @@ const Products = ({ categories, products }) => {
         <div className="app-page-container">
           <div className="product-grid-container">
             <div className="product-filter-container">
-              <div className="accordion-block">
-                <div className="accordion-heading">
-                  <span>Type</span>
-                  <IconChevronDown />
+              <div className="wrapper">
+                <h3 className="filter-title">Filters</h3>
+                <div className="accordion-block">
+                  <div className="accordion-heading">
+                    <span>Type</span>
+                    <IconChevronDown />
+                  </div>
+                  <div className="accordion-content">
+                    {categories.map((item) => (
+                      <div className="list-item" key={item._id}>
+                        <label className="checkbox-wrapper">
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            checked={selectedCategories.includes(item._id)}
+                            onChange={(e) => {
+                              onCategoryChange(e.target.checked, item._id);
+                            }}
+                          />
+                          {item.name}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="accordion-content">
-                  {categories.map((item) => (
-                    <div className="list-item" key={item._id}>
-                      <label className="checkbox-wrapper">
-                        <input
-                          type="checkbox"
-                          className="form-control"
-                          checked={selectedCategories.includes(item._id)}
-                          onChange={(e) => {
-                            onCategoryChange(e.target.checked, item._id);
-                          }}
-                        />
-                        {item.name}
-                      </label>
-                    </div>
-                  ))}
+                <div className="accordion-block">
+                  <div className="accordion-heading">
+                    <span>Price Range</span>
+                    <IconChevronDown />
+                  </div>
+                  <div className="accordion-content">
+                    {PRICE_FILTER_RANGES.map((item, index) => (
+                      <div className="list-item" key={index}>
+                        <label className="checkbox-wrapper">
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            checked={priceRanges.includes(index)}
+                            onChange={(e) => {
+                              onPriceRangeChange(e.target.checked, index);
+                            }}
+                          />
+                          {item.label}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="accordion-block">
-                <div className="accordion-heading">
-                  <span>Price Range</span>
-                  <IconChevronDown />
-                </div>
-                <div className="accordion-content">
-                  {PRICE_FILTER_RANGES.map((item, index) => (
-                    <div className="list-item" key={index}>
-                      <label className="checkbox-wrapper">
-                        <input
-                          type="checkbox"
-                          className="form-control"
-                          checked={priceRanges.includes(index)}
-                          onChange={(e) => {
-                            onPriceRangeChange(e.target.checked, index);
-                          }}
-                        />
-                        {item.label}
-                      </label>
-                    </div>
-                  ))}
+                <div className="filter-actions">
+                  <button className="btn primary-outline-btn">Reset</button>
+                  <button className="btn primary-btn">Apply</button>
                 </div>
               </div>
             </div>
@@ -164,6 +171,9 @@ const Products = ({ categories, products }) => {
                       setSearchText(e.target.value);
                     }}
                   />
+                </div>
+                <div className="filter-toggle">
+                  <button className="btn primary-outline-btn">Filter</button>
                 </div>
                 <div className="select-container">
                   <select
@@ -194,8 +204,8 @@ const Products = ({ categories, products }) => {
 
 export default Products;
 
-export const getStaticProps = async (context) => {
-  const token = cookies(context).token;
+export const getServerSideProps = async (context) => {
+  const token = getServerSideCookie(context).token;
 
   try {
     const products = await getProducts(token)();

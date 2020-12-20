@@ -4,14 +4,14 @@ import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import Image from "next/image";
 import CounterInput from "../../components/counterInput";
-import cookies from "next-cookies";
-import { getProductDetail, getProducts } from "../../api";
+import { getProductDetail } from "../../api";
 import { PRODUCT_IMAGE_FILLER } from "../../utils/consts";
 import { useCartActions } from "../../contexts/CartContext";
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons/faShoppingBag";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { getServerSideCookie } from "../../utils/serverSideStorage";
 
 const ProductDetail = ({ product }) => {
-  // const router = useRouter();
-  // const { id } = router.query;
   const { _id, name, price, category, images: [image] = [] } = product;
 
   const { findItem, addItem } = useCartActions();
@@ -32,55 +32,51 @@ const ProductDetail = ({ product }) => {
       <Nav />
       <section className="container">
         <div className="app-page-container">
-          <div className="bread-crumb-container">
-            <a className="bread-crumb-item">
-              <span className="bread-crumb-link">Category</span>
-              <span className="bread-crumb-separator">/</span>
-            </a>
-            <a className="bread-crumb-item">
-              <span className="bread-crumb-link">Product</span>
-              <span className="bread-crumb-separator">/</span>
-            </a>
-            <a className="bread-crumb-item active">
-              <span className="bread-crumb-link">Test Product</span>
-              <span className="bread-crumb-separator">/</span>
-            </a>
-          </div>
-
           <div className="product-container">
             <div className="product-images-container">
               <div className="main-image">
                 <Image
-                  src={image ? image.url : PRODUCT_IMAGE_FILLER}
+                  src={PRODUCT_IMAGE_FILLER}
+                  // src={image ? image.url : PRODUCT_IMAGE_FILLER}
                   alt={name}
                   layout="fill"
                 />
               </div>
-              {/*<div className="image-slider">*/}
-              {/*  <div className="product-image">*/}
-              {/*    <Image*/}
-              {/*      src="/images/product2.jpg"*/}
-              {/*      alt="Picture of the author"*/}
-              {/*      layout="fill"*/}
-              {/*    />*/}
-              {/*  </div>*/}
-              {/*  <div className="product-image">*/}
-              {/*    <Image*/}
-              {/*      src="/images/product2.jpg"*/}
-              {/*      alt="Picture of the author"*/}
-              {/*      layout="fill"*/}
-              {/*    />*/}
-              {/*  </div>*/}
-              {/*  <div className="product-image">*/}
-              {/*    <Image*/}
-              {/*      src="/images/product2.jpg"*/}
-              {/*      alt="Picture of the author"*/}
-              {/*      layout="fill"*/}
-              {/*    />*/}
-              {/*  </div>*/}
-              {/*</div>*/}
+              <div className="image-slider">
+                <div className="product-image">
+                  <Image
+                    src={PRODUCT_IMAGE_FILLER}
+                    alt="Picture of the author"
+                    layout="fill"
+                  />
+                </div>
+                <div className="product-image">
+                  <Image
+                    src={PRODUCT_IMAGE_FILLER}
+                    alt="Picture of the author"
+                    layout="fill"
+                  />
+                </div>
+                <div className="product-image">
+                  <Image
+                    src={PRODUCT_IMAGE_FILLER}
+                    alt="Picture of the author"
+                    layout="fill"
+                  />
+                </div>
+                <div className="product-image">
+                  <Image
+                    src={PRODUCT_IMAGE_FILLER}
+                    alt="Picture of the author"
+                    layout="fill"
+                  />
+                </div>
+              </div>
             </div>
             <div className="product-details">
+              <div className="mb-1">
+                <div className="badge">Category Name</div>
+              </div>
               <h4 className="product-title">{name}</h4>
               <div className="product-price">
                 <span className="label">Price</span>
@@ -92,10 +88,11 @@ const ProductDetail = ({ product }) => {
                   onChange={(value) => setQuantity(value)}
                 />
                 <button
-                  className="btn primary-btn"
+                  className="btn accent-btn"
                   disabled={disableButton}
                   onClick={onAddToCart}
                 >
+                  <FontAwesomeIcon icon={faShoppingBag} size={"2x"} />
                   Add to Cart
                 </button>
               </div>
@@ -125,20 +122,16 @@ const ProductDetail = ({ product }) => {
 
 export default ProductDetail;
 
-export const getStaticPaths = async (context) => {
-  const token = cookies(context).token;
-  const products = await getProducts(token)();
+export const getServerSideProps = async (ctx) => {
+  const token = getServerSideCookie(ctx)("token");
+  try {
+    const product = await getProductDetail(token)(ctx.params.id);
 
-  const paths = products.map((item) => ({
-    params: { id: item._id },
-  }));
+    return { props: { product } };
+  } catch (e) {
+    ctx.res.writeHead(302, { Location: "/products" });
+    ctx.res.end();
+  }
 
-  return { paths, fallback: false };
-};
-
-export const getStaticProps = async (context) => {
-  const token = cookies(context).token;
-
-  const product = await getProductDetail(token)(context.params.id);
-  return { props: { product } };
+  return { props: {} };
 };

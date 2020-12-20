@@ -21,7 +21,8 @@ const Product = ({ data }) => {
       <div className="product-image">
         <Link href={`/product-detail/${_id}`}>
           <Image
-            src={image ? image.url : PRODUCT_IMAGE_FILLER}
+            src={PRODUCT_IMAGE_FILLER}
+            // src={image ? image.url : PRODUCT_IMAGE_FILLER}
             alt={name}
             layout="fill"
           />
