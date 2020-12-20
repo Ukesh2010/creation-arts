@@ -12,26 +12,22 @@ import { useAuth } from "../../contexts/AuthContext";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email().required(),
-  password: Yup.string()
-    .min(8)
-    .max(16)
-    // .matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]$")
-    .required(),
+  password: Yup.string().min(5).required(),
 });
 
 const Login = () => {
   const router = useRouter();
   const { login: setAuthToken } = useAuth();
 
-  const onSubmit = async (values, { setSubmitting }) => {
+  const onSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
       setSubmitting(false);
 
-      const response = await login(null)(values);
+      const response = await login(values);
       setAuthToken(response.token);
       router.push("/");
-    } catch (e) {
-      alert(e.message);
+    } catch (response) {
+      setErrors(response?.errors?.reduce((p, c) => ({ ...p, ...c }), {}));
     }
   };
 
