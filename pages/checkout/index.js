@@ -6,45 +6,77 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
 import { useCartActions, useCartState } from "../../contexts/CartContext";
 import { captureOrder, createPayPalTransaction } from "../../api";
-import { router } from "next/client";
 import Image from "next/image";
 import { PRODUCT_IMAGE_FILLER } from "../../utils/consts";
+import { useRouter } from "next/router";
+import { useAuth } from "../../contexts/AuthContext";
+
+const paypal_load = (onLoad = () => {}) => {
+  const aScript = document.createElement("script");
+  aScript.type = "text/javascript";
+  aScript.src =
+    "https://www.paypal.com/sdk/js?client-id=Ac1N1G72VYm_9nP3q3KFWX_RCfpUZkwLbRcUI8_NrerFWVSBDvDRXGYKoSNYLdKiYC_C7_gOT6R2Yy-Q&currency=USD";
+
+  document.head.appendChild(aScript);
+  aScript.onload = onLoad;
+};
 
 const Checkout = () => {
   const cart = useCartState();
   const { clearCart } = useCartActions();
+  const { authenticated } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
-    window.paypal
-      .Buttons({
-        createOrder: function () {
-          return createPayPalTransaction()({
-            total_amount: cart?.total_amount,
-          }).then((data) => {
-            return data.result.id;
-          });
-        },
-        onApprove: function (data, actions) {
-          return captureOrder()({
-            paypal_order_id: data.orderID,
-            order: cart,
-          }).then((response) => {
-            if (response.error === "INSTRUMENT_DECLINED") {
-              return actions.restart();
-            }
+    paypal_load(() => {
+      window.paypal
+        .Buttons({
+          createOrder: function () {
+            return createPayPalTransaction()({
+              total_amount: cart?.total_amount,
+            }).then((data) => {
+              return data.result.id;
+            });
+          },
+          onApprove: function (data, actions) {
+            return captureOrder()({
+              paypal_order_id: data.orderID,
+              order: cart,
+            }).then((response) => {
+              if (response.error === "INSTRUMENT_DECLINED") {
+                return actions.restart();
+              }
 
-            clearCart();
-            router.push("/products");
-          });
-        },
-      })
-      .render("#paypal-button-container");
+              clearCart();
+              router.push("/products");
+            });
+          },
+        })
+        .render("#paypal-button-container");
+    });
   }, []);
+
+  if (!authenticated) {
+    return (
+      <Fragment>
+        <Head>
+          <title>Checkout</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <Nav />
+        <section className="container">
+          <div className="app-page-container">
+            <h4 className="mb-2">Please login to continue.</h4>
+          </div>
+        </section>
+      </Fragment>
+    );
+  }
 
   return (
     <Fragment>
       <Head>
-        <title>Products</title>
+        <title>Checkout</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
