@@ -23,7 +23,7 @@ const Products = ({ categories, products }) => {
     selectedCategories.length > 0
       ? searchedProducts.filter((item) =>
           selectedCategories.find(
-            (categoryId) => categoryId === item.category._id
+            (categoryId) => categoryId === item?.category?._id
           )
         )
       : searchedProducts;
