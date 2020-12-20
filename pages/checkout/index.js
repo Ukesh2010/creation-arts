@@ -4,10 +4,9 @@ import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import CartItem from "../../components/cartItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons/faShoppingCart";
-import {faArrowLeft} from '@fortawesome/free-solid-svg-icons/faArrowLeft';
-import {useCartActions, useCartState} from '../../contexts/CartContext';
-import {faShoppingBag} from '@fortawesome/free-solid-svg-icons/faShoppingBag';
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
+import { useCartActions, useCartState } from "../../contexts/CartContext";
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons/faShoppingBag";
 
 const Checkout = () => {
   const cart = useCartState();

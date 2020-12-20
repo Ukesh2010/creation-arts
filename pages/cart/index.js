@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useEffect, useRef } from "react";
+import React, { Fragment, useEffect } from "react";
 import Head from "next/head";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
@@ -7,9 +7,8 @@ import { useCartActions, useCartState } from "../../contexts/CartContext";
 import { captureOrder, createPayPalTransaction } from "../../api";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons/faShoppingCart";
-import {faArrowLeft} from '@fortawesome/free-solid-svg-icons/faArrowLeft';
-import {faShoppingBag} from '@fortawesome/free-solid-svg-icons/faShoppingBag';
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons/faShoppingBag";
 
 const Cart = () => {
   const cart = useCartState();
@@ -27,11 +26,6 @@ const Cart = () => {
           });
         },
         onApprove: function (data, actions) {
-          // if (authentication) {
-          //   cart.checkout_as_guest = false;
-          //   cart.guest = null;
-          // }
-
           return captureOrder()({
             paypal_order_id: data.orderID,
             order: cart,

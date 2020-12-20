@@ -1,10 +1,9 @@
 import React, { Fragment } from "react";
 import Head from "next/head";
-import IconFacebook from "../../components/icons/icon-facebook";
 import Image from "next/image";
 import Link from "next/link";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faFacebookF} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 const Register = () => {
   return (
@@ -72,10 +71,7 @@ const Register = () => {
             </div>
             <div className="social-login-container">
               <button className="btn fb-btn">
-                <FontAwesomeIcon
-                  icon={faFacebookF}
-                  size={"2x"}
-                />
+                <FontAwesomeIcon icon={faFacebookF} size={"2x"} />
                 Continue with Facebook
               </button>
             </div>

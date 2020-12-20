@@ -6,9 +6,9 @@ import Product from "../../components/product";
 import IconSearch from "../../components/icons/icon-search";
 import IconChevronDown from "../../components/icons/icon-chevron-down";
 import { getCategories, getProducts } from "../../api";
-import cookies from "next-cookies";
 import MiniSearch from "minisearch";
 import { PRICE_FILTER_RANGES } from "../../utils/consts";
+import { getServerSideCookie } from "../../utils/serverSideStorage";
 
 const Products = ({ categories, products }) => {
   const [searchText, setSearchText] = useState("");
@@ -153,12 +153,8 @@ const Products = ({ categories, products }) => {
                   </div>
                 </div>
                 <div className="filter-actions">
-                  <button className="btn primary-outline-btn">
-                    Reset
-                  </button>
-                  <button className="btn primary-btn">
-                    Apply
-                  </button>
+                  <button className="btn primary-outline-btn">Reset</button>
+                  <button className="btn primary-btn">Apply</button>
                 </div>
               </div>
             </div>
@@ -208,8 +204,8 @@ const Products = ({ categories, products }) => {
 
 export default Products;
 
-export const getStaticProps = async (context) => {
-  const token = cookies(context).token;
+export const getServerSideProps = async (context) => {
+  const token = getServerSideCookie(context).token;
 
   try {
     const products = await getProducts(token)();

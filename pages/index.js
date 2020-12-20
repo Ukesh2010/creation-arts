@@ -26,10 +26,7 @@ const Home = () => (
 
         <div className="social-icons">
           <div className="icon-button">
-            <FontAwesomeIcon
-              icon={faFacebookF}
-              size={"2x"}
-            />
+            <FontAwesomeIcon icon={faFacebookF} size={"2x"} />
           </div>
           <div className="icon-button">
             <FontAwesomeIcon icon={faInstagram} size={"2x"} />
