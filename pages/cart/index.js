@@ -8,7 +8,6 @@ import { captureOrder, createPayPalTransaction } from "../../api";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons/faShoppingCart";
-import { useCartActions, useCartState } from "../../contexts/CartContext";
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import {faShoppingBag} from '@fortawesome/free-solid-svg-icons/faShoppingBag';
 
