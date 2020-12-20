@@ -5,9 +5,11 @@ import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons/faShoppingBag";
 import { useAuth } from "../contexts/AuthContext";
 import { useRouter } from "next/router";
+import { useCartState } from "../contexts/CartContext";
 
 const Nav = () => {
   const { authenticated, logout } = useAuth();
+  const { items } = useCartState();
   const router = useRouter();
 
   const onLogoutClick = () => {
@@ -47,7 +49,9 @@ const Nav = () => {
             )}{" "}
           </div>
           <div className="nav-item nav-cart-item">
-            <span className="badge accent"> 8 </span>
+            {items.length > 0 && (
+              <span className="badge accent"> {items.length} </span>
+            )}
             <Link href={"/cart"}>
               <FontAwesomeIcon icon={faShoppingBag} size={"2x"} />
             </Link>
