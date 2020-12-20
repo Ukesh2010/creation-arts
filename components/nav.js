@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
+import {faShoppingBag} from '@fortawesome/free-solid-svg-icons/faShoppingBag';
 
 const Nav = () => (
   <nav className="app-navbar">
@@ -32,9 +32,10 @@ const Nav = () => (
         <div className="nav-item">
           <Link href={"/login"}>Login</Link>
         </div>
-        <div className="nav-item">
+        <div className="nav-item nav-cart-item">
+          <span className="badge accent"> 8 </span>
           <Link href={"/cart"}>
-            <FontAwesomeIcon icon={faShoppingCart} size={"2x"} />
+            <FontAwesomeIcon icon={faShoppingBag} size={"2x"} />
           </Link>
         </div>
         <div className="nav-item mobile-nav">

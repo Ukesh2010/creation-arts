@@ -8,7 +8,7 @@
   @supports (position:sticky) {
     position: sticky;
     top: 0;
-    z-index: 101;
+    z-index: 100;
   }
 
 
@@ -43,6 +43,19 @@
 
       svg {
         width: 1.25rem;
+      }
+
+
+      &.nav-cart-item{
+        position: relative;
+
+        .badge {
+          line-height: 1.2;
+          position: absolute;
+          top: 0;
+          right: 0.125rem;
+          border-radius: 50%;
+        }
       }
     }
 
@@ -108,7 +121,6 @@
 .app-footer {
   background: $white;
   padding: 1rem;
-
 
   .copyright-text {
     font-size: 1rem;

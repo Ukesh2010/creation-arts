@@ -76,7 +76,7 @@
   border: none;
 }
 
-.primary-btn{
+.primary-btn {
   @include app-button($primary, $white);
 }
 

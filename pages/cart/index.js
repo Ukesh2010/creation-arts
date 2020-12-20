@@ -8,6 +8,9 @@ import { captureOrder, createPayPalTransaction } from "../../api";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons/faShoppingCart";
+import { useCartActions, useCartState } from "../../contexts/CartContext";
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons/faArrowLeft';
+import {faShoppingBag} from '@fortawesome/free-solid-svg-icons/faShoppingBag';
 
 const Cart = () => {
   const cart = useCartState();
@@ -83,8 +86,12 @@ const Cart = () => {
           </div>
 
           <div className="checkout-container">
+            <button className="btn primary-outline-btn checkout-btn">
+              <FontAwesomeIcon icon={faArrowLeft} size={"2x"} />
+              Back to shopping
+            </button>
             <button className="btn accent-btn checkout-btn">
-              <FontAwesomeIcon icon={faShoppingCart} size={"2x"} />
+              <FontAwesomeIcon icon={faShoppingBag} size={"2x"} />
               Checkout
             </button>
             <div id="paypal-button-container" />

@@ -8,6 +8,8 @@ import cookies from "next-cookies";
 import { getProductDetail, getProducts } from "../../api";
 import { PRODUCT_IMAGE_FILLER } from "../../utils/consts";
 import { useCartActions } from "../../contexts/CartContext";
+import {faShoppingBag} from '@fortawesome/free-solid-svg-icons/faShoppingBag';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 const ProductDetail = ({ product }) => {
   // const router = useRouter();
@@ -32,55 +34,49 @@ const ProductDetail = ({ product }) => {
       <Nav />
       <section className="container">
         <div className="app-page-container">
-          <div className="bread-crumb-container">
-            <a className="bread-crumb-item">
-              <span className="bread-crumb-link">Category</span>
-              <span className="bread-crumb-separator">/</span>
-            </a>
-            <a className="bread-crumb-item">
-              <span className="bread-crumb-link">Product</span>
-              <span className="bread-crumb-separator">/</span>
-            </a>
-            <a className="bread-crumb-item active">
-              <span className="bread-crumb-link">Test Product</span>
-              <span className="bread-crumb-separator">/</span>
-            </a>
-          </div>
-
           <div className="product-container">
             <div className="product-images-container">
               <div className="main-image">
                 <Image
-                  src={image ? image.url : PRODUCT_IMAGE_FILLER}
+                  src={ PRODUCT_IMAGE_FILLER}
+                  // src={image ? image.url : PRODUCT_IMAGE_FILLER}
                   alt={name}
                   layout="fill"
                 />
               </div>
-              {/*<div className="image-slider">*/}
-              {/*  <div className="product-image">*/}
-              {/*    <Image*/}
-              {/*      src="/images/product2.jpg"*/}
-              {/*      alt="Picture of the author"*/}
-              {/*      layout="fill"*/}
-              {/*    />*/}
-              {/*  </div>*/}
-              {/*  <div className="product-image">*/}
-              {/*    <Image*/}
-              {/*      src="/images/product2.jpg"*/}
-              {/*      alt="Picture of the author"*/}
-              {/*      layout="fill"*/}
-              {/*    />*/}
-              {/*  </div>*/}
-              {/*  <div className="product-image">*/}
-              {/*    <Image*/}
-              {/*      src="/images/product2.jpg"*/}
-              {/*      alt="Picture of the author"*/}
-              {/*      layout="fill"*/}
-              {/*    />*/}
-              {/*  </div>*/}
-              {/*</div>*/}
+              <div className="image-slider">
+                <div className="product-image">
+                  <Image
+                    src={ PRODUCT_IMAGE_FILLER}
+                    alt="Picture of the author"
+                    layout="fill"
+                  />
+                </div>
+                <div className="product-image">
+                  <Image
+                    src={ PRODUCT_IMAGE_FILLER}
+                    alt="Picture of the author"
+                    layout="fill"
+                  />
+                </div>
+                <div className="product-image">
+                  <Image
+                    src={ PRODUCT_IMAGE_FILLER}
+                    alt="Picture of the author"
+                    layout="fill"
+                  />
+                </div>
+                <div className="product-image">
+                  <Image
+                    src={ PRODUCT_IMAGE_FILLER}
+                    alt="Picture of the author"
+                    layout="fill"
+                  />
+                </div>
+              </div>
             </div>
             <div className="product-details">
+              <div className="mb-1"><div className="badge">Category Name</div></div>
               <h4 className="product-title">{name}</h4>
               <div className="product-price">
                 <span className="label">Price</span>
@@ -92,10 +88,11 @@ const ProductDetail = ({ product }) => {
                   onChange={(value) => setQuantity(value)}
                 />
                 <button
-                  className="btn primary-btn"
+                  className="btn accent-btn"
                   disabled={disableButton}
                   onClick={onAddToCart}
                 >
+                  <FontAwesomeIcon icon={faShoppingBag} size={"2x"} />
                   Add to Cart
                 </button>
               </div>
