@@ -70,8 +70,20 @@ export const captureOrder = (token) => async (data) => {
   return response.data;
 };
 
-export const login = (token) => async (data) => {
-  const response = await getHttpClient(token).post(`/users/login`, data);
+export const login = async (data) => {
+  return await getHttpClient()
+    .post(`/users/login`, data)
+    .then((response) => response.data)
+    .catch((e) => {
+      throw e?.response?.data;
+    });
+};
 
-  return response.data;
+export const register = async (data) => {
+  return await getHttpClient()
+    .post(`/users/register`, data)
+    .then((response) => response.data)
+    .catch((e) => {
+      throw e?.response?.data;
+    });
 };
