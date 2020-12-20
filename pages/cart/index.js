@@ -1,10 +1,9 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import Head from "next/head";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import CartItem from "../../components/cartItem";
 import { useCartActions, useCartState } from "../../contexts/CartContext";
-import { captureOrder, createPayPalTransaction } from "../../api";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
@@ -12,35 +11,8 @@ import { faShoppingBag } from "@fortawesome/free-solid-svg-icons/faShoppingBag";
 
 const Cart = () => {
   const cart = useCartState();
-  const { countItem, clearCart } = useCartActions();
+  const { countItem } = useCartActions();
   const router = useRouter();
-
-  useEffect(() => {
-    window.paypal
-      .Buttons({
-        createOrder: function () {
-          return createPayPalTransaction()({
-            total_amount: cart?.total_amount,
-          }).then((data) => {
-            return data.result.id;
-          });
-        },
-        onApprove: function (data, actions) {
-          return captureOrder()({
-            paypal_order_id: data.orderID,
-            order: cart,
-          }).then((response) => {
-            if (response.error === "INSTRUMENT_DECLINED") {
-              return actions.restart();
-            }
-
-            clearCart();
-            router.push("/products");
-          });
-        },
-      })
-      .render("#paypal-button-container");
-  }, [cart?.total_amount]);
 
   if (countItem() === 0) {
     return (
@@ -79,15 +51,20 @@ const Cart = () => {
           </div>
 
           <div className="checkout-container">
-            <button className="btn primary-outline-btn checkout-btn">
+            <button
+              className="btn primary-outline-btn checkout-btn"
+              onClick={() => router.push("/products")}
+            >
               <FontAwesomeIcon icon={faArrowLeft} size={"2x"} />
               Back to shopping
             </button>
-            <button className="btn accent-btn checkout-btn">
+            <button
+              className="btn accent-btn checkout-btn"
+              onClick={() => router.push("/checkout")}
+            >
               <FontAwesomeIcon icon={faShoppingBag} size={"2x"} />
               Checkout
             </button>
-            <div id="paypal-button-container" />
           </div>
         </div>
       </section>

@@ -9,7 +9,7 @@ const ID_KEY = "_id";
 
 const calculateTotal = (items, key = "total_amount") => {
   if (items.length === 0) return 0;
-  return items.map((item) => item[key]).reduce((t, i) => t + i);
+  return items.map((item) => item[key]).reduce((t, i) => t + i, 0);
 };
 
 const CartProvider = ({ children }) => {
