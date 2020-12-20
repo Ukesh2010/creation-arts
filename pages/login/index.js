@@ -7,8 +7,8 @@ import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { login } from "../../api";
-import { setItem } from "../../utils/localStorage";
 import { useRouter } from "next/router";
+import { useAuth } from "../../contexts/AuthContext";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email().required(),
@@ -21,13 +21,14 @@ const LoginSchema = Yup.object().shape({
 
 const Login = () => {
   const router = useRouter();
+  const { login: setAuthToken } = useAuth();
 
   const onSubmit = async (values, { setSubmitting }) => {
     try {
       setSubmitting(false);
 
       const response = await login(null)(values);
-      setItem("token", response.token);
+      setAuthToken(response.token);
       router.push("/");
     } catch (e) {
       alert(e.message);
