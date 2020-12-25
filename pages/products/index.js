@@ -104,7 +104,7 @@ const Products = ({ categories, products }) => {
         <div className="app-page-container">
           <div className="product-grid-container">
             <div className="product-filter-container">
-              <div className="wrapper">
+              <div className="sticky-container">
                 <h3 className="filter-title">Filters</h3>
                 <div className="accordion-block">
                   <div className="accordion-heading">

@@ -26,6 +26,11 @@
     justify-self: center;
   }
 
+  .total-amount{
+    font-weight: 600;
+    justify-self: center;
+  }
+
   .product-qty {
     justify-self: center;
   }
@@ -53,8 +58,20 @@
     }
 
     .product-qty,
-    .remove-option {
+    .remove-option,
+    .total-amount{
       grid-row: 2;
     }
+  }
+}
+
+.cart-item-header {
+  @extend .cart-item;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+
+  @media (max-width: 768px) {
+    display: none;
   }
 }

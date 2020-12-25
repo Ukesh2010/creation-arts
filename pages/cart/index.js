@@ -45,6 +45,13 @@ const Cart = () => {
         <div className="app-page-container">
           <h4 className="mb-2">Shopping Cart</h4>
           <div className="cart-item-container">
+            <div className="cart-item-header">
+              <div className="product-name">
+                Product
+              </div>
+              <div className="product-price">Product Price</div>
+              <div className="product-qty">Quantity</div>
+            </div>
             {cart.items.map((item) => (
               <CartItem data={item} />
             ))}

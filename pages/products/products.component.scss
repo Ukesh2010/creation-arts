@@ -32,11 +32,11 @@
     .product-filter-container {
       max-width: 15rem;
 
-      .container {
+      .sticky-container {
         @supports (position: sticky) {
           position: sticky;
           top: 8rem;
-          z-index: 99;
+          z-index: 10;
         }
       }
 
@@ -125,7 +125,8 @@
 }
 
 
-@media (max-width: 768px) {
+
+@media (max-width: 992px) {
   .app-page-container {
     .product-list-heading {
       padding-top: 2rem;
@@ -165,14 +166,17 @@
         width: 100%;
         max-width: 30rem;
         position: fixed;
-        z-index: 99;
+        z-index: 100;
         padding: 2rem;
-        top: 56px;
+        top: 4rem;
         bottom: 0;
         left: 100%;
         background: $true-white;
         box-shadow: $default-shadow;
 
+        .sticky-container{
+          position: static;
+        }
 
         &.active{
           left: 0;

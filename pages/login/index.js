@@ -22,7 +22,6 @@ const Login = () => {
   const onSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
       setSubmitting(false);
-
       const response = await login(values);
       setAuthToken(response.token);
       router.push("/");

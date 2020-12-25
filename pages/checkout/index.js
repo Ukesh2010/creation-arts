@@ -83,7 +83,15 @@ const Checkout = () => {
       <section className="container">
         <div className="app-page-container">
           <h4 className="mb-2">Checkout</h4>
-          <div className="cart-item-container">
+          <div className="cart-item-container checkout-page">
+            <div className="cart-item-header">
+              <div className="product-name">
+                Product
+              </div>
+              <div className="product-price">Product Price</div>
+              <div className="product-qty">Quantity</div>
+              <div className="total-amount">Total Amount</div>
+            </div>
             {cart.items.map(
               ({ name, price, quantity, total_amount }, index) => (
                 <div className="cart-item" key={index}>
@@ -100,19 +108,19 @@ const Checkout = () => {
                   </div>
                   <div className="product-price">${price}</div>
                   <div className="product-qty">{quantity}</div>
-                  <div className="product-price">${total_amount}</div>
+                  <div className="total-amount">${total_amount}</div>
                 </div>
               )
             )}
           </div>
 
-          <div className="checkout-container">
+          <div className="checkout-container paypal-container">
             <button
               className="btn primary-outline-btn checkout-btn"
-              onClick={() => router.push("/products")}
+              onClick={() => router.push("/cart")}
             >
               <FontAwesomeIcon icon={faArrowLeft} size={"2x"} />
-              Back to shopping
+              Back to Cart
             </button>
             <div id="paypal-button-container" />
           </div>

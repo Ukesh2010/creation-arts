@@ -3,10 +3,10 @@
   align-items: center;
   justify-content: center;
   font-family: $heading-font;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: rgba($primary, 0.24);
-  padding: 0 1rem;
+  padding: 1rem;
 
   .auth-card {
     display: grid;
