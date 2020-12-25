@@ -1,17 +1,18 @@
-import React, { Fragment, useEffect } from "react";
+import React, {Fragment, useEffect} from "react";
 import Head from "next/head";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
-import { useCartActions, useCartState } from "../../contexts/CartContext";
-import { captureOrder, createPayPalTransaction } from "../../api";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons/faArrowLeft";
+import {useCartActions, useCartState} from "../../contexts/CartContext";
+import {captureOrder, createPayPalTransaction} from "../../api";
 import Image from "next/image";
-import { PRODUCT_IMAGE_FILLER } from "../../utils/consts";
-import { useRouter } from "next/router";
-import { useAuth } from "../../contexts/AuthContext";
+import {PRODUCT_IMAGE_FILLER} from "../../utils/consts";
+import {useRouter} from "next/router";
+import {useAuth} from "../../contexts/AuthContext";
 
-const paypal_load = (onLoad = () => {}) => {
+const paypal_load = (onLoad = () => {
+}) => {
   const aScript = document.createElement("script");
   aScript.type = "text/javascript";
   aScript.src =
@@ -23,8 +24,8 @@ const paypal_load = (onLoad = () => {}) => {
 
 const Checkout = () => {
   const cart = useCartState();
-  const { clearCart } = useCartActions();
-  const { authenticated } = useAuth();
+  const {clearCart} = useCartActions();
+  const {authenticated} = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -61,9 +62,9 @@ const Checkout = () => {
       <Fragment>
         <Head>
           <title>Checkout</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.ico"/>
         </Head>
-        <Nav />
+        <Nav/>
         <section className="container">
           <div className="app-page-container">
             <h4 className="mb-2">Please login to continue.</h4>
@@ -77,9 +78,9 @@ const Checkout = () => {
     <Fragment>
       <Head>
         <title>Checkout</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico"/>
       </Head>
-      <Nav />
+      <Nav/>
       <section className="container">
         <div className="app-page-container">
           <h4 className="mb-2">Checkout</h4>
@@ -93,7 +94,7 @@ const Checkout = () => {
               <div className="total-amount">Total Amount</div>
             </div>
             {cart.items.map(
-              ({ name, price, quantity, total_amount }, index) => (
+              ({name, price, quantity, total_amount}, index) => (
                 <div className="cart-item" key={index}>
                   <div className="product-image">
                     <Image
@@ -119,14 +120,14 @@ const Checkout = () => {
               className="btn primary-outline-btn checkout-btn"
               onClick={() => router.push("/cart")}
             >
-              <FontAwesomeIcon icon={faArrowLeft} size={"2x"} />
+              <FontAwesomeIcon icon={faArrowLeft} size={"2x"}/>
               Back to Cart
             </button>
-            <div id="paypal-button-container" />
+            <div id="paypal-button-container"/>
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer/>
     </Fragment>
   );
 };
