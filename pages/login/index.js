@@ -110,15 +110,15 @@ const Login = () => {
                 </form>
               )}
             </Formik>
-            <div className="or-block">
-              <span>OR</span>
-            </div>
-            <div className="social-login-container">
-              <button className="btn fb-btn">
-                <FontAwesomeIcon icon={faFacebookF} size={"2x"} />
-                Continue with Facebook
-              </button>
-            </div>
+            {/*<div className="or-block">*/}
+            {/*  <span>OR</span>*/}
+            {/*</div>*/}
+            {/*<div className="social-login-container">*/}
+            {/*  <button className="btn fb-btn">*/}
+            {/*    <FontAwesomeIcon icon={faFacebookF} size={"2x"} />*/}
+            {/*    Continue with Facebook*/}
+            {/*  </button>*/}
+            {/*</div>*/}
           </div>
         </div>
       </section>
