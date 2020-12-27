@@ -27,7 +27,7 @@ MyApp.getInitialProps = async (appContext) => {
   const token = getServerSideCookie(ctx)("token");
   const authenticated = token && JWTValidator(token);
   const NoAuthPages = ["/login"];
-  const AuthPages = ["/checkout"];
+  const AuthPages = ["/checkout", "/change-password"];
 
   if (NoAuthPages.includes(ctx.pathname)) {
     if (authenticated) {
@@ -36,7 +36,6 @@ MyApp.getInitialProps = async (appContext) => {
       return {};
     }
   }
-
 
   const appProps = await App.getInitialProps(appContext);
 

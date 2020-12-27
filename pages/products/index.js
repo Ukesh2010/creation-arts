@@ -104,8 +104,8 @@ const Products = ({ categories, products }) => {
         <div className="app-page-container">
           <div className="product-grid-container">
             <div className="product-filter-container">
-              <div className="wrapper">
-                <h3 className="filter-title">Filters</h3>
+              <h3 className="filter-title">Filters</h3>
+              <div className="filter-block-list">
                 <div className="accordion-block">
                   <div className="accordion-heading">
                     <span>Type</span>
@@ -152,10 +152,10 @@ const Products = ({ categories, products }) => {
                     ))}
                   </div>
                 </div>
-                <div className="filter-actions">
-                  <button className="btn primary-outline-btn">Reset</button>
-                  <button className="btn primary-btn">Apply</button>
-                </div>
+              </div>
+              <div className="filter-actions">
+                <button className="btn primary-outline-btn">Reset</button>
+                <button className="btn primary-btn">Apply</button>
               </div>
             </div>
             <div className="product-list-container">
@@ -205,7 +205,7 @@ const Products = ({ categories, products }) => {
 export default Products;
 
 export const getServerSideProps = async (context) => {
-  const token = getServerSideCookie(context).token;
+  const token = getServerSideCookie(context)("token");
 
   try {
     const products = await getProducts(token)();

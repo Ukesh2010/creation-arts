@@ -56,13 +56,13 @@ export const getProductDetail = (token) => async (id) => {
     .then((response) => response.data);
 };
 
-export const createPayPalTransaction = (token) => async (data) =>
-  await getHttpClient(token)
+export const createPayPalTransaction = () => async (data) =>
+  await getHttpClient(getItem("token"))
     .post(`/orders/create-paypal-transaction`, data)
     .then((response) => response.data);
 
-export const captureOrder = (token) => async (data) => {
-  const response = await getHttpClient(token).post(
+export const captureOrder = () => async (data) => {
+  const response = await getHttpClient(getItem("token")).post(
     `/orders/capture-order`,
     data
   );
@@ -70,12 +70,29 @@ export const captureOrder = (token) => async (data) => {
   return response.data;
 };
 
+export const getOrders = (token) => async (params) => {
+  return await getHttpClient(token)
+    .get("/orders", { params })
+    .then((response) => response.data)
+    .catch((e) => {
+      throw e?.response?.data || e;
+    });
+};
+
 export const login = async (data) => {
   return await getHttpClient()
     .post(`/users/login`, data)
     .then((response) => response.data)
     .catch((e) => {
-      throw e?.response?.data;
+      throw e?.response?.data || e;
+    });
+};
+export const forgotPassword = async (data) => {
+  return await getHttpClient()
+    .post(`/users/forgot-password`, data)
+    .then((response) => response.data)
+    .catch((e) => {
+      throw e?.response?.data || e;
     });
 };
 
@@ -84,6 +101,23 @@ export const register = async (data) => {
     .post(`/users/register`, data)
     .then((response) => response.data)
     .catch((e) => {
-      throw e?.response?.data;
+      throw e?.response?.data || e;
+    });
+};
+
+export const setNewPassword = async (data) => {
+  return await getHttpClient()
+    .post(`/users/set-new-password`, data)
+    .then((response) => response.data)
+    .catch((e) => {
+      throw e?.response?.data || e;
+    });
+};
+export const changePassword = async (data) => {
+  return await getHttpClient(getItem("token"))
+    .post(`/users/change-password`, data)
+    .then((response) => response.data)
+    .catch((e) => {
+      throw e?.response?.data || e;
     });
 };

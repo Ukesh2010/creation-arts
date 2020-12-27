@@ -26,7 +26,7 @@ const ProductDetail = ({ product }) => {
   return (
     <Fragment>
       <Head>
-        <title>Products</title>
+        <title>Product detail</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />

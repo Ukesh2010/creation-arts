@@ -1,27 +1,25 @@
 import React, { Fragment } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { register } from "../../api";
+import { setNewPassword } from "../../api";
 import { useRouter } from "next/router";
 
-const RegisterSchema = Yup.object().shape({
-  email: Yup.string().email().required(),
+const SetNewPasswordSchema = Yup.object().shape({
   password: Yup.string().min(8).max(16).required(),
   password2: Yup.string()
     .oneOf([Yup.ref("password")], "should match with password")
     .required("password confirmation is a required field"),
 });
 
-const Register = () => {
+const SetNewPassword = ({ token }) => {
   const router = useRouter();
 
   const onSubmit = async (values, { setSubmitting, setErrors }) => {
     setSubmitting(true);
     try {
-      await register({ ...values, role: "customer" });
+      await setNewPassword({ ...values, token: token });
       router.push("/login");
     } catch (response) {
       if (response.errors) {
@@ -37,7 +35,7 @@ const Register = () => {
   return (
     <Fragment>
       <Head>
-        <title>Register</title>
+        <title>Set new password</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="auth-container">
@@ -52,13 +50,11 @@ const Register = () => {
 
           <div className="right-container">
             <div className="info-block">
-              <div>
-                Already have an account? <Link href={"/login"}>Login</Link>
-              </div>
+              <div>This link is valid only for 24hrs.</div>
             </div>
             <Formik
-              initialValues={{ email: "", password: "", password2: "" }}
-              validationSchema={RegisterSchema}
+              initialValues={{ password: "", password2: "" }}
+              validationSchema={SetNewPasswordSchema}
               onSubmit={onSubmit}
             >
               {({
@@ -69,23 +65,9 @@ const Register = () => {
                 handleBlur,
                 handleSubmit,
                 isSubmitting,
+                isValid,
               }) => (
                 <form onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      name={"email"}
-                      value={values.email}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                    {errors.email && touched.email && (
-                      <span className={"error-message"}>{errors.email}</span>
-                    )}
-                  </div>
-
                   <div className="form-group">
                     <label htmlFor="password">Password</label>
                     <input
@@ -102,7 +84,7 @@ const Register = () => {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="rePassword">Password</label>
+                    <label htmlFor="rePassword">Password confirmation</label>
                     <input
                       type="password"
                       className="form-control"
@@ -117,7 +99,12 @@ const Register = () => {
                       </span>
                     )}
                   </div>
-                  <button className="btn accent-btn">Register</button>
+                  <button
+                    className="btn accent-btn"
+                    disabled={isSubmitting || !isValid}
+                  >
+                    Set new password
+                  </button>
                 </form>
               )}
             </Formik>
@@ -128,4 +115,8 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default SetNewPassword;
+
+export const getServerSideProps = async (ctx) => {
+  return { props: { token: ctx.query.token || null } };
+};
