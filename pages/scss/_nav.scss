@@ -37,14 +37,12 @@
       }
 
       &:hover {
-        background-color: lighten($nav-background, 8%);
+        background-color: lighten($nav-background, 4%);
       }
-
 
       svg {
         width: 1.25rem;
       }
-
 
       &.nav-cart-item{
         position: relative;
@@ -59,6 +57,11 @@
           height: 1.5rem;
           width: 1.5rem;
         }
+      }
+
+
+      &.active {
+        background-color: lighten($nav-background, 8%);
       }
     }
 

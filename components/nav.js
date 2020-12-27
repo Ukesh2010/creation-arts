@@ -29,7 +29,7 @@ const Nav = () => {
         </div>
 
         <div className="nav-container">
-          <div className="nav-item">
+          <div className="nav-item active">
             <Link href={"/"}>Home</Link>
           </div>
           <div className="nav-item">

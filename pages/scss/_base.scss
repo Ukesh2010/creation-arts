@@ -102,7 +102,6 @@ svg {
   margin-bottom: 1rem;
 }
 
-
 .app-page-container {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -111,6 +110,22 @@ svg {
   @media (max-width: 575px) {
     margin-top: 2rem;
     margin-bottom: 2rem;
+  }
+
+  .illustration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .img {
+      height: 100%;
+      width: 100%;
+      max-height: 30rem;
+      max-width: 30rem;
+      object-fit: cover;
+      margin-bottom: 2rem;
+    }
   }
 }
 
