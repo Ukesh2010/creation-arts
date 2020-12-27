@@ -155,7 +155,7 @@ const Products = ({ categories, products }) => {
               </div>
               <div className="filter-actions">
                 <button className="btn primary-outline-btn">Reset</button>
-                <button className="btn primary-btn">Apply</button>
+                <button className="btn accent-btn">Apply</button>
               </div>
             </div>
             <div className="product-list-container">

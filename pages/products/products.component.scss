@@ -30,7 +30,7 @@
 
     .product-filter-container {
       max-width: 15rem;
-      max-height: calc(100vh - 4rem - 6rem);
+      max-height: calc(100vh - 4rem - 5rem);
 
       @supports (position: sticky) {
         position: sticky;
