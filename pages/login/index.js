@@ -26,7 +26,11 @@ const Login = () => {
       setAuthToken(response.token);
       router.push("/");
     } catch (response) {
-      setErrors(response?.errors?.reduce((p, c) => ({ ...p, ...c }), {}));
+      if (response.errors) {
+        setErrors(response.errors.reduce((p, c) => ({ ...p, ...c }), {}));
+      } else {
+        console.log("error", response.message);
+      }
     }
   };
 

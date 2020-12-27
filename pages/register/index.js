@@ -24,7 +24,11 @@ const Register = () => {
       await register({ ...values, role: "customer" });
       router.push("/login");
     } catch (response) {
-      setErrors(response?.errors?.reduce((p, c) => ({ ...p, ...c }), {}));
+      if (response.errors) {
+        setErrors(response?.errors?.reduce((p, c) => ({ ...p, ...c }), {}));
+      } else {
+        console.log("error", response.message);
+      }
     } finally {
       setSubmitting(false);
     }
