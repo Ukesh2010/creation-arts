@@ -104,3 +104,11 @@ export const setNewPassword = async (data) => {
       throw e?.response?.data || e;
     });
 };
+export const changePassword = async (data) => {
+  return await getHttpClient(getItem("token"))
+    .post(`/users/change-password`, data)
+    .then((response) => response.data)
+    .catch((e) => {
+      throw e?.response?.data || e;
+    });
+};
