@@ -30,7 +30,7 @@ const ForgotPassword = () => {
   return (
     <Fragment>
       <Head>
-        <title>Products</title>
+        <title>Forgot password</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="auth-container">

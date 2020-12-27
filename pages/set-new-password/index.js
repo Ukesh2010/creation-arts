@@ -35,7 +35,7 @@ const SetNewPassword = ({ token }) => {
   return (
     <Fragment>
       <Head>
-        <title>Products</title>
+        <title>Set new password</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="auth-container">

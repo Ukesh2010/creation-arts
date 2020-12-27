@@ -37,7 +37,7 @@ const Login = () => {
   return (
     <Fragment>
       <Head>
-        <title>Products</title>
+        <title>Login</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="auth-container">

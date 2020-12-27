@@ -37,7 +37,7 @@ const Register = () => {
   return (
     <Fragment>
       <Head>
-        <title>Products</title>
+        <title>Register</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="auth-container">

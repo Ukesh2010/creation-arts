@@ -18,7 +18,7 @@ const Cart = () => {
     return (
       <Fragment>
         <Head>
-          <title>Products</title>
+          <title>Cart</title>
           <link rel="icon" href="/favicon.ico"/>
         </Head>
         <Nav/>
