@@ -78,10 +78,27 @@ export const login = async (data) => {
       throw e?.response?.data || e;
     });
 };
+export const forgotPassword = async (data) => {
+  return await getHttpClient()
+    .post(`/users/forgot-password`, data)
+    .then((response) => response.data)
+    .catch((e) => {
+      throw e?.response?.data || e;
+    });
+};
 
 export const register = async (data) => {
   return await getHttpClient()
     .post(`/users/register`, data)
+    .then((response) => response.data)
+    .catch((e) => {
+      throw e?.response?.data || e;
+    });
+};
+
+export const setNewPassword = async (data) => {
+  return await getHttpClient()
+    .post(`/users/set-new-password`, data)
     .then((response) => response.data)
     .catch((e) => {
       throw e?.response?.data || e;
