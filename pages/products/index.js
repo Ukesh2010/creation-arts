@@ -1,16 +1,16 @@
-import React, {Fragment, useEffect, useState} from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Head from "next/head";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
 import Product from "../../components/product";
 import IconSearch from "../../components/icons/icon-search";
 import IconChevronDown from "../../components/icons/icon-chevron-down";
-import {getCategories, getProducts} from "../../api";
+import { getCategories, getProducts } from "../../api";
 import MiniSearch from "minisearch";
-import {PRICE_FILTER_RANGES} from "../../utils/consts";
-import {getServerSideCookie} from "../../utils/serverSideStorage";
+import { PRICE_FILTER_RANGES } from "../../utils/consts";
+import { getServerSideCookie } from "../../utils/serverSideStorage";
 
-const Products = ({categories, products}) => {
+const Products = ({ categories, products }) => {
   const [searchText, setSearchText] = useState("");
   const [searchProducts, setSearchProducts] = useState();
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -22,38 +22,38 @@ const Products = ({categories, products}) => {
   const categoryFilteredProducts =
     selectedCategories.length > 0
       ? searchedProducts.filter((item) =>
-        selectedCategories.find(
-          (categoryId) => categoryId === item?.category?._id
+          selectedCategories.find(
+            (categoryId) => categoryId === item?.category?._id
+          )
         )
-      )
       : searchedProducts;
 
   const priceRangeFilteredProducts =
     priceRanges.length > 0
       ? categoryFilteredProducts.filter(
-      (item) =>
-        priceRanges.filter(
-          (index) =>
-            PRICE_FILTER_RANGES[index].min <= item.price &&
-            PRICE_FILTER_RANGES[index].max >= item.price
-        ).length > 0
-      )
+          (item) =>
+            priceRanges.filter(
+              (index) =>
+                PRICE_FILTER_RANGES[index].min <= item.price &&
+                PRICE_FILTER_RANGES[index].max >= item.price
+            ).length > 0
+        )
       : categoryFilteredProducts;
 
   const sortedProducts = sortBy
     ? priceRangeFilteredProducts.sort((a, b) => {
-      if (sortBy === "top-rated") {
-        return true;
-      }
-      if (sortBy === "high-low") {
-        return b.price - a.price;
-      }
-      if (sortBy === "low-high") {
-        return a.price - b.price;
-      }
+        if (sortBy === "top-rated") {
+          return true;
+        }
+        if (sortBy === "high-low") {
+          return b.price - a.price;
+        }
+        if (sortBy === "low-high") {
+          return a.price - b.price;
+        }
 
-      return true;
-    })
+        return true;
+      })
     : priceRangeFilteredProducts;
 
   const onCategoryChange = (checked, id) => {
@@ -97,9 +97,9 @@ const Products = ({categories, products}) => {
     <Fragment>
       <Head>
         <title>Products</title>
-        <link rel="icon" href="/favicon.ico"/>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav/>
+      <Nav />
       <section className="container">
         <div className="app-page-container">
           <div className="product-grid-container">
@@ -109,7 +109,7 @@ const Products = ({categories, products}) => {
                 <div className="accordion-block">
                   <div className="accordion-heading">
                     <span>Type</span>
-                    <IconChevronDown/>
+                    <IconChevronDown />
                   </div>
                   <div className="accordion-content">
                     {categories.map((item) => (
@@ -132,7 +132,7 @@ const Products = ({categories, products}) => {
                 <div className="accordion-block">
                   <div className="accordion-heading">
                     <span>Price Range</span>
-                    <IconChevronDown/>
+                    <IconChevronDown />
                   </div>
                   <div className="accordion-content">
                     {PRICE_FILTER_RANGES.map((item, index) => (
@@ -161,7 +161,7 @@ const Products = ({categories, products}) => {
             <div className="product-list-container">
               <div className="product-list-heading">
                 <div className="search-container">
-                  <IconSearch/>
+                  <IconSearch />
                   <input
                     type="search"
                     className={"form-control"}
@@ -190,14 +190,14 @@ const Products = ({categories, products}) => {
               </div>
               <div className="product-block">
                 {sortedProducts.map((item, index) => (
-                  <Product key={index} data={item}/>
+                  <Product key={index} data={item} />
                 ))}
               </div>
             </div>
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </Fragment>
   );
 };
@@ -205,14 +205,14 @@ const Products = ({categories, products}) => {
 export default Products;
 
 export const getServerSideProps = async (context) => {
-  const token = getServerSideCookie(context).token;
+  const token = getServerSideCookie(context)("token");
 
   try {
     const products = await getProducts(token)();
     const categories = await getCategories(token)();
-    return {props: {categories, products}};
+    return { props: { categories, products } };
   } catch (e) {
     console.log("error", e.message);
   }
-  return {props: {categories: [], products: []}};
+  return { props: { categories: [], products: [] } };
 };

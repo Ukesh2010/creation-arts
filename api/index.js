@@ -70,6 +70,15 @@ export const captureOrder = () => async (data) => {
   return response.data;
 };
 
+export const getOrders = (token) => async (params) => {
+  return await getHttpClient(token)
+    .get("/orders", { params })
+    .then((response) => response.data)
+    .catch((e) => {
+      throw e?.response?.data || e;
+    });
+};
+
 export const login = async (data) => {
   return await getHttpClient()
     .post(`/users/login`, data)
