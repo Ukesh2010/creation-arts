@@ -3,6 +3,7 @@
 .home-container {
   .banner {
     height: calc(100vh - 8rem);
+    min-height: 30rem;
     width: calc(100% - 8rem);
     max-width: 1920px;
     margin: 0 auto;
