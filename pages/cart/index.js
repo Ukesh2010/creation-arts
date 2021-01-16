@@ -26,8 +26,8 @@ const Cart = () => {
           <div className="app-page-container">
             <div className="info-container">
               <div className="empty-cart"></div>
-              <h3 className="mb-2">Shopping Cart</h3>
-              <div style={{ fontSize: "1.125rem" }}>
+              <h3 className="mb-2 text-center">Shopping Cart</h3>
+              <div className="text-center" style={{ fontSize: "1.125rem" }}>
                 No items added to the cart.
               </div>
             </div>

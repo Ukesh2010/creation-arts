@@ -46,7 +46,7 @@ const MyOrders = ({ orders }) => {
           <div className="app-page-container">
             <div className="info-container">
               <div className="login-required"></div>
-              <h3 className="mb-2">Please login to continue.</h3>
+              <h3 className="text-center">Please login to continue.</h3>
             </div>
           </div>
         </section>
