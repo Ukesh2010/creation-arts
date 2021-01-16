@@ -44,7 +44,10 @@ const MyOrders = ({ orders }) => {
         <Nav />
         <section className="container">
           <div className="app-page-container">
-            <h4 className="mb-2">Please login to continue.</h4>
+            <div className="info-container">
+              <div className="login-required"></div>
+              <h3 className="mb-2">Please login to continue.</h3>
+            </div>
           </div>
         </section>
       </Fragment>

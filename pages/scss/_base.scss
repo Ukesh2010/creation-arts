@@ -3,7 +3,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-size: 16px;
   line-height: 1.5;
   margin: 0;
@@ -16,7 +17,12 @@ html, body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.25;
   margin-bottom: 1rem;
   font-family: $heading-font;
@@ -41,7 +47,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 h6 {
@@ -60,8 +66,8 @@ a {
 svg {
   &.svg-inline--fa {
     fill: currentColor;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }
 
@@ -83,14 +89,13 @@ svg {
   margin: 0 auto;
 }
 
-
 // card
 .card {
   display: block;
   padding: 1rem;
   box-shadow: $default-shadow;
   position: relative;
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
 }
 
 // margin
@@ -134,7 +139,7 @@ svg {
   align-items: center;
   justify-content: center;
   line-height: 1;
-  padding: 0.25rem 0.5rem;
+  padding: 0.2rem 0.5rem;
   color: $primary-text;
   background-color: $light-gray;
   font-size: 0.875rem;
@@ -143,6 +148,54 @@ svg {
 
   &.accent {
     background-color: $accent;
-    color: $true-white
+    color: $true-white;
   }
+}
+
+// info container
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+// 404 - Page not found
+
+.page-not-found {
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+  height: 20rem;
+  background: url("/images/404.png") no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-bottom: 2rem;
+}
+
+// Login to continue
+
+.login-required {
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+  height: 20rem;
+  background: url("/images/Login.png") no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-bottom: 2rem;
+}
+
+// Empty Cart
+
+.empty-cart {
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+  height: 20rem;
+  background: url("/images/EmptyCart.png") no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-bottom: 4rem;
 }

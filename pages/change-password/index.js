@@ -45,9 +45,9 @@ const ChangePassword = () => {
         <Nav />
         <section className="container">
           <div className="app-page-container">
-            <div className="illustration-container">
-              <img className="img" src="/images/login.png" alt="login_to_continue"/>
-              <h4>Please login to continue.</h4>
+            <div className="info-container">
+              <div className="login-required"></div>
+              <h3 className="mb-2">Please login to continue.</h3>
             </div>
           </div>
         </section>
