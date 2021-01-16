@@ -1,0 +1,55 @@
+@import "../scss/variables";
+
+.my-orders-container {
+  > .title {
+    padding: 1rem;
+    border-bottom: 1px solid $light-gray;
+    z-index: 10;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
+  .my-orders-list {
+    padding-top: 1.5rem;
+  }
+
+  .order-details {
+    margin-bottom: 1.5rem;
+    box-shadow: $light-shadow;
+
+    .order-info {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      border-bottom: 1px solid rgba($light-gray, 0.4);
+    }
+
+    .order-items {
+      padding: 1rem;
+
+      .title {
+        margin-bottom: 1rem;
+      }
+
+      .items-list {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      }
+
+      .item-block {
+        display: inline-block;
+        border: 1px solid rgba($light-gray, 0.4);
+        padding: 1rem;
+
+        .name {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .item-block {
+    display: block;
+  }
+}

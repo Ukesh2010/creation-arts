@@ -6,7 +6,7 @@ $primary-light: lighten($primary, 40%);
 //$primary-light: lighten(#64396f, 40%);
 
 $accent: #f08080;
-$accent-light: lighten( $accent, 40%);
+$accent-light: lighten($accent, 40%);
 $accent-dark: darken($accent, 4%);
 
 $primary-text: #212529;
@@ -14,30 +14,32 @@ $secondary-text: #495057;
 $muted-text: #adb5bd;
 $light-gray: #ced4da;
 
-$true-white: #FFFFFF;
+$true-white: #ffffff;
 $white: #f8f9fa;
 
-$danger: #FF5E5B;
-$warning: #EF8354;
-$info: #275DAD;
-$success: #0F745F;
+$danger: #ff5e5b;
+$warning: #ef8354;
+$info: #275dad;
+$success: #0f745f;
 
 $nav-background: $primary;
 $nav-foreground: $white;
 
 $fb-color: #3b5998;
 
-
 // Font
-$heading-font: 'Jost', sans-serif;
-$body-font: 'Source Sans Pro', sans-serif;
-
+$heading-font: "Jost", sans-serif;
+$body-font: "Source Sans Pro", sans-serif;
 
 // Shadows
-$default-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
-$dropdown-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-$modal-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
-$light-shadow: 0 0px 15px 2px rgba(0,0,0,.2), 0 3px 18px 4px rgba(0,0,0,.14), 0 9px 24px 8px rgba(0,0,0,.12);
+$default-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+  0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+$dropdown-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+  0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+$modal-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2),
+  0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+$light-shadow: 0 0 2px rgba(0, 0, 0, 0.04), 0 0 4px rgba(0, 0, 0, 0.04),
+  0 0 8px rgba(0, 0, 0, 0.08);
 
 // purple: #64396f
 // orange: #f08080
