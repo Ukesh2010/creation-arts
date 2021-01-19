@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
@@ -10,9 +10,12 @@ const Nav = () => {
   const { authenticated } = useAuth();
   const { items } = useCartState();
 
+  const [opened, setOpened] = useState(false);
+  console.log("opened", opened);
+
   return (
     <nav className="app-navbar">
-      <div className="container">
+      <div className={`container ${opened && "opened"}`}>
         <div className="nav-left">
           <div className="logo">
             <Link href={"/"}>
@@ -50,7 +53,12 @@ const Nav = () => {
               <FontAwesomeIcon icon={faShoppingBag} size={"2x"} />
             </Link>
           </div>
-          <div className="nav-item mobile-nav">
+          <div
+            className="nav-item mobile-nav"
+            onClick={() => {
+              setOpened((prev) => !prev);
+            }}
+          >
             <FontAwesomeIcon icon={faBars} size={"2x"} />
           </div>
         </div>
