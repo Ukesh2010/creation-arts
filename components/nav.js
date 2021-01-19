@@ -4,18 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons/faShoppingBag";
 import { useAuth } from "../contexts/AuthContext";
-import { useRouter } from "next/router";
 import { useCartState } from "../contexts/CartContext";
 
 const Nav = () => {
-  const { authenticated, logout } = useAuth();
+  const { authenticated } = useAuth();
   const { items } = useCartState();
-  const router = useRouter();
 
-  const onLogoutClick = () => {
-    logout();
-    router.push("/login");
-  };
   return (
     <nav className="app-navbar">
       <div className="container">
@@ -43,10 +37,10 @@ const Nav = () => {
         <div className="nav-right">
           <div className="nav-item">
             {authenticated ? (
-              <span onClick={onLogoutClick}>Logout</span>
+              <Link href={"/profile"}>Profile</Link>
             ) : (
               <Link href={"/login"}>Login</Link>
-            )}{" "}
+            )}
           </div>
           <div className="nav-item nav-cart-item">
             {items.length > 0 && (
