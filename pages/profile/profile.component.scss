@@ -1,0 +1,87 @@
+@import "../scss/variables";
+
+.profile-details-container {
+  display: flex;
+  max-width: 40rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+
+  .profile-avatar {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin-right: 1rem;
+
+    svg {
+      height: 8rem;
+      width: 8rem;
+      fill: $primary;
+    }
+  }
+
+  .profile-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10rem;
+
+    .username {
+      display: block;
+      font-family: $heading-font;
+      font-size: 1.75rem;
+      color: $primary-text;
+      margin-bottom: 0.5rem;
+    }
+
+    .email {
+      display: block;
+      color: $secondary-text;
+      font-size: 1.125rem;
+    }
+  }
+
+  .action-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 2;
+  }
+
+
+  @media (max-width: 575px) {
+    flex-wrap: wrap;
+
+    .profile-avatar{
+      margin: 0;
+    }
+
+    .profile-info{
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+.label-value-list {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  grid-gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+
+  .label {
+    display: block;
+    color: $secondary-text;
+    font-family: $heading-font;
+    align-self: center;
+  }
+
+  .value {
+    display: block;
+    color: $primary-text;
+    align-self: center;
+  }
+}

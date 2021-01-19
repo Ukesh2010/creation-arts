@@ -1,24 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons/faShoppingBag";
 import { useAuth } from "../contexts/AuthContext";
-import { useRouter } from "next/router";
 import { useCartState } from "../contexts/CartContext";
 
 const Nav = () => {
-  const { authenticated, logout } = useAuth();
+  const { authenticated } = useAuth();
   const { items } = useCartState();
-  const router = useRouter();
 
-  const onLogoutClick = () => {
-    logout();
-    router.push("/login");
-  };
+  const [opened, setOpened] = useState(false);
+  console.log("opened", opened);
+
   return (
     <nav className="app-navbar">
-      <div className="container">
+      <div className={`container ${opened && "opened"}`}>
         <div className="nav-left">
           <div className="logo">
             <Link href={"/"}>
@@ -29,7 +26,7 @@ const Nav = () => {
         </div>
 
         <div className="nav-container">
-          <div className="nav-item">
+          <div className="nav-item active">
             <Link href={"/"}>Home</Link>
           </div>
           <div className="nav-item">
@@ -43,10 +40,10 @@ const Nav = () => {
         <div className="nav-right">
           <div className="nav-item">
             {authenticated ? (
-              <span onClick={onLogoutClick}>Logout</span>
+              <Link href={"/profile"}>Profile</Link>
             ) : (
               <Link href={"/login"}>Login</Link>
-            )}{" "}
+            )}
           </div>
           <div className="nav-item nav-cart-item">
             {items.length > 0 && (
@@ -56,7 +53,12 @@ const Nav = () => {
               <FontAwesomeIcon icon={faShoppingBag} size={"2x"} />
             </Link>
           </div>
-          <div className="nav-item mobile-nav">
+          <div
+            className="nav-item mobile-nav"
+            onClick={() => {
+              setOpened((prev) => !prev);
+            }}
+          >
             <FontAwesomeIcon icon={faBars} size={"2x"} />
           </div>
         </div>

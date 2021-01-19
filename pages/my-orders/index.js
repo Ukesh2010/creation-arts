@@ -7,49 +7,38 @@ import Footer from "../../components/footer";
 import { getOrders } from "../../api";
 
 const OrderItems = ({ items }) => {
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Total amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        {items.map((item, index) => (
-          <tr key={index}>
-            <td>{item.product.name}</td>
-            <td>{item.product.price}</td>
-            <td>{item.quantity}</td>
-            <td>{item.total_amount}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
+  return items.map((item) => (
+    <div className="item-block">
+      <div className="name">{item.product.name}</div>
+      <div>Price: ${item.product.price}</div>
+      <div>Quantity: {item.quantity}</div>
+      <div>Total: ${item.total_amount}</div>
+    </div>
+  ));
 };
 
 const MyOrders = ({ orders }) => {
   const { authenticated } = useAuth();
 
-  if (!authenticated) {
-    return (
-      <Fragment>
-        <Head>
-          <title>My orders</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Nav />
-        <section className="container">
-          <div className="app-page-container">
-            <h4 className="mb-2">Please login to continue.</h4>
-          </div>
-        </section>
-      </Fragment>
-    );
-  }
+  // if (!authenticated) {
+  //   return (
+  //     <Fragment>
+  //       <Head>
+  //         <title>My orders</title>
+  //         <link rel="icon" href="/favicon.ico" />
+  //       </Head>
+  //       <Nav />
+  //       <section className="container">
+  //         <div className="app-page-container">
+  //           <div className="info-container">
+  //             <div className="login-required"></div>
+  //             <h3 className="text-center">Please login to continue.</h3>
+  //           </div>
+  //         </div>
+  //       </section>
+  //     </Fragment>
+  //   );
+  // }
 
   return (
     <Fragment>
@@ -60,32 +49,28 @@ const MyOrders = ({ orders }) => {
       <Nav />
       <section className="container">
         <div className="app-page-container">
-          <div className="product-grid-container">
-            <div className="product-list-container">
-              <div className="product-block">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Id</th>
-                      <th>Items</th>
-                      <th>Amount</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {orders.map((item, index) => (
-                      <tr key={index}>
-                        <td>{item._id}</td>
-                        <td>
-                          <OrderItems items={item.items} />
-                        </td>
-                        <td>{item.total_amount}</td>
-                        <td>{item.status}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+          <div className="my-orders-container">
+            <h4 className="title">My Orders</h4>
+            <div className="my-orders-list">
+              {orders.map((item, index) => (
+                <div className="card order-details">
+                  <div className="order-info">
+                    <div className="id">{item._id}</div>
+                    <div>
+                      <span className="amount" style={{ padding: "0 2rem" }}>
+                        {item.total_amount}
+                      </span>
+                      <span className="badge">{item.status}</span>
+                    </div>
+                  </div>
+                  <div className="order-items">
+                    <div className="title">Items</div>
+                    <div className="items-list">
+                      <OrderItems items={item.items} />
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

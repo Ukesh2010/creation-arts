@@ -113,6 +113,7 @@ export const setNewPassword = async (data) => {
       throw e?.response?.data || e;
     });
 };
+
 export const changePassword = async (data) => {
   return await getHttpClient(getItem("token"))
     .post(`/users/change-password`, data)
@@ -120,4 +121,10 @@ export const changePassword = async (data) => {
     .catch((e) => {
       throw e?.response?.data || e;
     });
+};
+
+export const getUser = (token) => async (params) => {
+  return await getHttpClient(token)
+    .get("/users/current", { params })
+    .then((response) => response.data);
 };

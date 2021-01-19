@@ -15,24 +15,25 @@ const Products = ({ categories, products }) => {
   const [searchProducts, setSearchProducts] = useState();
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [priceRanges, setPriceRanges] = useState([]);
+  const [filters, setFilters] = useState({ categories: [], priceRanges: [] });
   const [sortBy, setSortBy] = useState();
 
   const searchedProducts = searchProducts || products;
 
   const categoryFilteredProducts =
-    selectedCategories.length > 0
+    filters.categories.length > 0
       ? searchedProducts.filter((item) =>
-          selectedCategories.find(
+          filters.categories.find(
             (categoryId) => categoryId === item?.category?._id
           )
         )
       : searchedProducts;
 
   const priceRangeFilteredProducts =
-    priceRanges.length > 0
+    filters.priceRanges.length > 0
       ? categoryFilteredProducts.filter(
           (item) =>
-            priceRanges.filter(
+            filters.priceRanges.filter(
               (index) =>
                 PRICE_FILTER_RANGES[index].min <= item.price &&
                 PRICE_FILTER_RANGES[index].max >= item.price
@@ -70,6 +71,16 @@ const Products = ({ categories, products }) => {
     } else {
       setPriceRanges(priceRanges.filter((item) => item !== index));
     }
+  };
+
+  const onApplyClick = () => {
+    setFilters({ categories: selectedCategories, priceRanges: priceRanges });
+  };
+
+  const onResetClick = () => {
+    setFilters({ categories: [], priceRanges: [] });
+    setSelectedCategories([]);
+    setPriceRanges([]);
   };
 
   useEffect(() => {
@@ -154,8 +165,15 @@ const Products = ({ categories, products }) => {
                 </div>
               </div>
               <div className="filter-actions">
-                <button className="btn primary-outline-btn">Reset</button>
-                <button className="btn primary-btn">Apply</button>
+                <button
+                  className="btn primary-outline-btn"
+                  onClick={onResetClick}
+                >
+                  Reset
+                </button>
+                <button className="btn accent-btn" onClick={onApplyClick}>
+                  Apply
+                </button>
               </div>
             </div>
             <div className="product-list-container">
