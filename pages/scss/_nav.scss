@@ -1,9 +1,7 @@
 // app navbar
 
 .app-navbar {
-  padding: 0.5rem 0;
   background-color: $nav-background;
-  position: relative;
 
   @supports (position:sticky) {
     position: sticky;
@@ -11,11 +9,14 @@
     z-index: 100;
   }
 
-
   > .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: $nav-background;
+    position: relative;
 
     .nav-item {
       padding: 0.75rem 1.25rem;
@@ -44,7 +45,7 @@
         width: 1.25rem;
       }
 
-      &.nav-cart-item{
+      &.nav-cart-item {
         position: relative;
 
         .badge {
@@ -104,19 +105,23 @@
         display: flex;
       }
 
-      .nav-container{
-        display: none;
+      .nav-container {
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background-color: $nav-background;
+        padding: 0.75rem 0;
+        z-index: -1;
+        transform: translateY(-100%);
+        transition: transform .3s ease, height 0.35s ease;
       }
 
       &.opened {
         .nav-container {
-          flex-direction: column;
-          position: absolute;
-          left: 0;
-          top: 100%;
-          width: 100%;
-          background-color: $nav-background;
-          padding: 0.75rem 0;
+          transform: translateY(0);
+          height: auto;
         }
       }
     }
