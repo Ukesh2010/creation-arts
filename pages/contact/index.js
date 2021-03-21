@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Head from "next/head";
 import Nav from "../../components/nav";
 
-const PageNotFound = () => {
+const Contact = () => {
   return (
     <Fragment>
       <Head>
@@ -13,13 +13,13 @@ const PageNotFound = () => {
       <section className="container">
         <div className="app-page-container">
           <div className="info-container">
-            <div className="contact-image"></div>
+            <div className="contact-image" />
             <h3 className="mb-2 text-center">Contact Us</h3>
-            <a className="contact-details" href="mailto:admin@mail.com">
-              admin@mail.com
+            <a className="contact-details" href="mailto:admin@yalatreasure.com">
+              admin@yalatreasure.com
             </a>
-            <a className="contact-details" href="tel:977">
-              00987612345
+            <a className="contact-details" href="tel:+977-9860777330">
+              +977-9860777330
             </a>
           </div>
         </div>
@@ -28,4 +28,4 @@ const PageNotFound = () => {
   );
 };
 
-export default PageNotFound;
+export default Contact;
