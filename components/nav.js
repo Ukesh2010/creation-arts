@@ -12,8 +12,6 @@ const Nav = () => {
   const { items } = useCartState();
   const router = useRouter();
 
-  console.log("pathname", router.pathname);
-
   const [opened, setOpened] = useState(false);
 
   return (
