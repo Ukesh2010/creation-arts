@@ -11,7 +11,6 @@ const Nav = () => {
   const { items } = useCartState();
 
   const [opened, setOpened] = useState(false);
-  console.log("opened", opened);
 
   return (
     <nav className="app-navbar">
@@ -20,7 +19,7 @@ const Nav = () => {
           <div className="logo">
             <Link href={"/"}>
               {/*<Image src={'/images/logo.png'} height={"3rem"} width={"auto"}/>*/}
-              <h4>Creation Arts</h4>
+              <h4>Yalatreasure</h4>
             </Link>
           </div>
         </div>

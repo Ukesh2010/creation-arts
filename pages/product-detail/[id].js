@@ -12,12 +12,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getServerSideCookie } from "../../utils/serverSideStorage";
 
 const ProductDetail = ({ product }) => {
-  const { _id, name, price, category, images: [image] = [] } = product;
+  const { _id, name, price, category, images = [], description } = product;
 
   const { findItem, addItem } = useCartActions();
-  const disableButton = Boolean(findItem(_id));
 
   const [quantity, setQuantity] = useState(1);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const disableButton = Boolean(findItem(_id));
 
   const onAddToCart = () => {
     addItem({ ...product, quantity, total_amount: price * quantity });
@@ -35,47 +37,44 @@ const ProductDetail = ({ product }) => {
           <div className="product-container">
             <div className="product-images-container">
               <div className="main-image">
-                <Image
-                  src={PRODUCT_IMAGE_FILLER}
-                  // src={image ? image.url : PRODUCT_IMAGE_FILLER}
-                  alt={name}
-                  layout="fill"
-                />
+                {images.map((item, index) => {
+                  if (index !== selectedImageIndex) {
+                    return null;
+                  }
+
+                  return (
+                    <Image
+                      src={item?.url || PRODUCT_IMAGE_FILLER}
+                      alt={item?.originalFileName || "product image"}
+                      layout="fill"
+                      key={selectedImageIndex}
+                    />
+                  );
+                })}
               </div>
               <div className="image-slider">
-                <div className="product-image">
-                  <Image
-                    src={PRODUCT_IMAGE_FILLER}
-                    alt="Picture of the author"
-                    layout="fill"
-                  />
-                </div>
-                <div className="product-image">
-                  <Image
-                    src={PRODUCT_IMAGE_FILLER}
-                    alt="Picture of the author"
-                    layout="fill"
-                  />
-                </div>
-                <div className="product-image">
-                  <Image
-                    src={PRODUCT_IMAGE_FILLER}
-                    alt="Picture of the author"
-                    layout="fill"
-                  />
-                </div>
-                <div className="product-image">
-                  <Image
-                    src={PRODUCT_IMAGE_FILLER}
-                    alt="Picture of the author"
-                    layout="fill"
-                  />
-                </div>
+                {images.map((item, index) => {
+                  return (
+                    <div
+                      className="product-image"
+                      key={index}
+                      onClick={() => {
+                        setSelectedImageIndex(index);
+                      }}
+                    >
+                      <Image
+                        src={item?.url || PRODUCT_IMAGE_FILLER}
+                        alt={item?.originalFileName || "product image"}
+                        layout="fill"
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <div className="product-details">
               <div className="mb-1">
-                <div className="badge">Category Name</div>
+                <div className="badge">{category?.name}</div>
               </div>
               <h4 className="product-title">{name}</h4>
               <div className="product-price">
@@ -98,18 +97,7 @@ const ProductDetail = ({ product }) => {
               </div>
               <div className="product-description">
                 <span className="label">Description</span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-                  eligendi ipsa iusto. Aspernatur optio, velit? Amet dolorem
-                  eius eligendi facere nam officia perspiciatis provident,
-                  quaerat recusandae! Aliquam eos hic maxime.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-                  eligendi ipsa iusto. Aspernatur optio, velit? Amet dolorem
-                  eius eligendi facere nam officia perspiciatis provident,
-                  quaerat recusandae! Aliquam eos hic maxime.
-                </p>
+                <p>{description}</p>
               </div>
             </div>
           </div>
