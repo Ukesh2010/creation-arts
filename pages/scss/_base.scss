@@ -178,6 +178,25 @@ svg {
   margin-bottom: 2rem;
 }
 
+// Contact
+
+.contact-image {
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+  height: 20rem;
+  background: url("/images/contact.svg") no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-bottom: 2rem;
+}
+
+.contact-details {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
 // Login to continue
 
 .login-required {
