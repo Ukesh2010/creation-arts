@@ -5,10 +5,12 @@ import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons/faShoppingBag";
 import { useAuth } from "../contexts/AuthContext";
 import { useCartState } from "../contexts/CartContext";
+import { useRouter } from "next/router";
 
 const Nav = () => {
   const { authenticated } = useAuth();
   const { items } = useCartState();
+  const router = useRouter();
 
   const [opened, setOpened] = useState(false);
 
@@ -25,19 +27,36 @@ const Nav = () => {
         </div>
 
         <div className="nav-container">
-          <div className="nav-item active">
+          <div
+            className={`nav-item ${router.pathname === "/" ? "active" : ""}`}
+          >
             <Link href={"/"}>Home</Link>
           </div>
-          <div className="nav-item">
+          <div
+            className={`nav-item ${
+              router.pathname === "/products" ||
+              router.pathname.startsWith("/product-detail")
+                ? "active"
+                : ""
+            }`}
+          >
             <Link href={"/products"}>Products</Link>
           </div>
-          <div className="nav-item">
+          <div
+            className={`nav-item ${
+              router.pathname === "/contact" ? "active" : ""
+            }`}
+          >
             <Link href={"/contact"}>Contact</Link>
           </div>
         </div>
 
         <div className="nav-right">
-          <div className="nav-item">
+          <div
+            className={`nav-item ${
+              ["/profile", "/login"].includes(router.pathname) ? "active" : ""
+            }`}
+          >
             {authenticated ? (
               <Link href={"/profile"}>Profile</Link>
             ) : (
