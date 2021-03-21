@@ -67,7 +67,7 @@ const Checkout = () => {
         <section className="container">
           <div className="app-page-container">
             <div className="info-container">
-              <div className="login-required"></div>
+              <div className="login-required" />
               <h3 className="text-center">Please login to continue.</h3>
             </div>
           </div>
@@ -94,12 +94,11 @@ const Checkout = () => {
               <div className="total-amount">Total Amount</div>
             </div>
             {cart.items.map(
-              ({ name, price, quantity, total_amount }, index) => (
+              ({ name, price, quantity, total_amount, images }, index) => (
                 <div className="cart-item" key={index}>
                   <div className="product-image">
                     <Image
-                      src={PRODUCT_IMAGE_FILLER}
-                      // src={image ? image.url : PRODUCT_IMAGE_FILLER}
+                      src={images?.[0]?.url || PRODUCT_IMAGE_FILLER}
                       alt={name}
                       layout="fill"
                     />

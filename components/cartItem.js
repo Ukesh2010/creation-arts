@@ -6,15 +6,9 @@ import { faTrashAlt } from "@fortawesome/free-solid-svg-icons/faTrashAlt";
 import { useCartActions } from "../contexts/CartContext";
 import { PRODUCT_IMAGE_FILLER } from "../utils/consts";
 
-
 const CartItem = ({ data }) => {
-  const {
-    _id,
-    name,
-    price,
-    images: [image],
-    quantity,
-  } = data;
+  const { _id, name, price, images, quantity } = data;
+  const [image] = images || [];
 
   const { updateItem, removeItem } = useCartActions();
   const onChange = (value) => {
@@ -29,10 +23,10 @@ const CartItem = ({ data }) => {
     <div className="cart-item">
       <div className="product-image">
         <Image
-          src={PRODUCT_IMAGE_FILLER}
-          // src={image ? image.url : PRODUCT_IMAGE_FILLER}
+          src={image?.url || PRODUCT_IMAGE_FILLER}
           alt={name}
-          layout="fill"
+          width={"60"}
+          height={"80"}
         />
       </div>
       <div className="product-name">

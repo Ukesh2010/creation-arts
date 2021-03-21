@@ -19,13 +19,13 @@ const Cart = () => {
       <Fragment>
         <Head>
           <title>Cart</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href={"/favicon.ico"} />
         </Head>
         <Nav />
         <section className="container">
           <div className="app-page-container">
             <div className="info-container">
-              <div className="empty-cart"></div>
+              <div className="empty-cart" />
               <h3 className="mb-2 text-center">Shopping Cart</h3>
               <div className="text-center" style={{ fontSize: "1.125rem" }}>
                 No items added to the cart.
@@ -41,7 +41,7 @@ const Cart = () => {
     <Fragment>
       <Head>
         <title>Products</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={"/favicon.ico"} />
       </Head>
       <Nav />
       <section className="container">
@@ -53,8 +53,8 @@ const Cart = () => {
               <div className="product-price">Product Price</div>
               <div className="product-qty">Quantity</div>
             </div>
-            {cart.items.map((item) => (
-              <CartItem data={item} />
+            {cart.items.map((item, index) => (
+              <CartItem data={item} key={index} />
             ))}
           </div>
 
