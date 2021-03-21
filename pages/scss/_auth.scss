@@ -58,7 +58,7 @@
       }
 
       &:after {
-        content: '';
+        content: "";
         display: block;
         height: 1px;
         background-color: $light-gray;
@@ -81,7 +81,7 @@
     }
 
     .primary-btn,
-    .accent-btn{
+    .accent-btn {
       width: 100%;
       margin-top: 2rem;
     }
@@ -91,7 +91,7 @@
     .auth-card {
       grid-template-columns: 1fr;
 
-      .right-container{
+      .right-container {
         padding: 5rem 4rem;
       }
     }
@@ -101,14 +101,18 @@
     .auth-card {
       width: 100%;
 
-     .right-container {
-       padding: 5rem 1.5rem 3rem 1.5rem;
-       width: 100%;
+      .right-container {
+        padding: 5rem 1.5rem 3rem 1.5rem;
+        width: 100%;
 
-       .form-group{
-         width: 100%;
-       }
-     }
+        .form-group {
+          width: 100%;
+        }
+      }
     }
   }
+}
+
+.error-message {
+  color: lightcoral;
 }

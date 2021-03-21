@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { useAuth } from "../../contexts/AuthContext";
 import { getServerSideCookie } from "../../utils/serverSideStorage";
 import { getUser } from "../../api";
+import Link from "next/link";
 
 const Profile = ({ user }) => {
   const { logout } = useAuth();
@@ -39,6 +40,7 @@ const Profile = ({ user }) => {
               <div className="profile-info">
                 <h3 className="username">{user?.role}</h3>
                 <span className="email">{user?.email}</span>
+                <Link href={"/my-orders"}>My orders</Link>
               </div>
               <div className="action-container">
                 <button

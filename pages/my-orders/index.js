@@ -7,8 +7,8 @@ import Footer from "../../components/footer";
 import { getOrders } from "../../api";
 
 const OrderItems = ({ items }) => {
-  return items.map((item) => (
-    <div className="item-block">
+  return items.map((item, index) => (
+    <div className="item-block" key={index}>
       <div className="name">{item.product.name}</div>
       <div>Price: ${item.product.price}</div>
       <div>Quantity: {item.quantity}</div>
@@ -20,31 +20,31 @@ const OrderItems = ({ items }) => {
 const MyOrders = ({ orders }) => {
   const { authenticated } = useAuth();
 
-  // if (!authenticated) {
-  //   return (
-  //     <Fragment>
-  //       <Head>
-  //         <title>My orders</title>
-  //         <link rel="icon" href="/favicon.ico" />
-  //       </Head>
-  //       <Nav />
-  //       <section className="container">
-  //         <div className="app-page-container">
-  //           <div className="info-container">
-  //             <div className="login-required"></div>
-  //             <h3 className="text-center">Please login to continue.</h3>
-  //           </div>
-  //         </div>
-  //       </section>
-  //     </Fragment>
-  //   );
-  // }
+  if (!authenticated) {
+    return (
+      <Fragment>
+        <Head>
+          <title>My orders</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <Nav />
+        <section className="container">
+          <div className="app-page-container">
+            <div className="info-container">
+              <div className="login-required" />
+              <h3 className="text-center">Please login to continue.</h3>
+            </div>
+          </div>
+        </section>
+      </Fragment>
+    );
+  }
 
   return (
     <Fragment>
       <Head>
         <title>My orders</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={"/favicon.ico"} />
       </Head>
       <Nav />
       <section className="container">
@@ -53,12 +53,12 @@ const MyOrders = ({ orders }) => {
             <h4 className="title">My Orders</h4>
             <div className="my-orders-list">
               {orders.map((item, index) => (
-                <div className="card order-details">
+                <div className="card order-details" key={index}>
                   <div className="order-info">
                     <div className="id">{item._id}</div>
                     <div>
                       <span className="amount" style={{ padding: "0 2rem" }}>
-                        {item.total_amount}
+                        ${item.total_amount}
                       </span>
                       <span className="badge">{item.status}</span>
                     </div>
