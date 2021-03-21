@@ -6,6 +6,8 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
 import { forgotPassword } from "../../api";
+import { useToasts } from "react-toast-notifications";
+import { PulseLoader } from "react-spinners";
 
 const ForgotPasswordSchema = Yup.object().shape({
   email: Yup.string().email().required(),
@@ -13,18 +15,22 @@ const ForgotPasswordSchema = Yup.object().shape({
 
 const ForgotPassword = () => {
   const router = useRouter();
+  const { addToast } = useToasts();
 
   const onSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
-      setSubmitting(false);
       await forgotPassword(values);
       router.push("/");
     } catch (response) {
       if (response.errors) {
         setErrors(response.errors.reduce((p, c) => ({ ...p, ...c }), {}));
       } else {
-        console.log("error", response.message);
+        addToast(response?.message || "Error while trying to reset password", {
+          appearance: "error",
+        });
       }
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -80,10 +86,11 @@ const ForgotPassword = () => {
                     )}
                   </div>
                   <div>
-                    <Link href="/login">Go back to Login</Link>
+                    <Link href={"/login"}>Go back to Login</Link>
                   </div>
                   <button className="btn accent-btn" disabled={isSubmitting}>
-                    Reset password
+                    Reset password{" "}
+                    <PulseLoader loading={isSubmitting} size={4} />
                   </button>
                 </form>
               )}

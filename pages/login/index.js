@@ -2,13 +2,13 @@ import React, { Fragment } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { login } from "../../api";
 import { useRouter } from "next/router";
 import { useAuth } from "../../contexts/AuthContext";
+import { useToasts } from "react-toast-notifications";
+import { BeatLoader, ClipLoader, PulseLoader } from "react-spinners";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email().required(),
@@ -18,10 +18,10 @@ const LoginSchema = Yup.object().shape({
 const Login = () => {
   const router = useRouter();
   const { login: setAuthToken } = useAuth();
+  const { addToast } = useToasts();
 
   const onSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
-      setSubmitting(false);
       const response = await login(values);
       setAuthToken(response.token);
       router.push("/");
@@ -29,8 +29,12 @@ const Login = () => {
       if (response.errors) {
         setErrors(response.errors.reduce((p, c) => ({ ...p, ...c }), {}));
       } else {
-        console.log("error", response.message);
+        addToast(response?.message || "Error while logging in.", {
+          appearance: "error",
+        });
       }
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -105,7 +109,7 @@ const Login = () => {
                     <Link href={"/forgot-password"}>Forgot Password?</Link>
                   </div>
                   <button className="btn accent-btn" disabled={isSubmitting}>
-                    login
+                    login <PulseLoader loading={isSubmitting} size={4} />
                   </button>
                 </form>
               )}

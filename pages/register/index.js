@@ -6,6 +6,8 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { register } from "../../api";
 import { useRouter } from "next/router";
+import { useToasts } from "react-toast-notifications";
+import {BeatLoader, PulseLoader} from "react-spinners";
 
 const RegisterSchema = Yup.object().shape({
   email: Yup.string().email().required(),
@@ -17,9 +19,9 @@ const RegisterSchema = Yup.object().shape({
 
 const Register = () => {
   const router = useRouter();
+  const { addToast } = useToasts();
 
   const onSubmit = async (values, { setSubmitting, setErrors }) => {
-    setSubmitting(true);
     try {
       await register({ ...values, role: "customer" });
       router.push("/login");
@@ -27,7 +29,9 @@ const Register = () => {
       if (response.errors) {
         setErrors(response?.errors?.reduce((p, c) => ({ ...p, ...c }), {}));
       } else {
-        console.log("error", response.message);
+        addToast(response?.message || "Error while registering user", {
+          appearance: "error",
+        });
       }
     } finally {
       setSubmitting(false);
@@ -102,7 +106,7 @@ const Register = () => {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="rePassword">Password</label>
+                    <label htmlFor="rePassword">Password confirmation</label>
                     <input
                       type="password"
                       className="form-control"
@@ -117,7 +121,9 @@ const Register = () => {
                       </span>
                     )}
                   </div>
-                  <button className="btn accent-btn">Register</button>
+                  <button className="btn accent-btn" disabled={isSubmitting}>
+                    Register <PulseLoader loading={isSubmitting} size={4} />
+                  </button>
                 </form>
               )}
             </Formik>

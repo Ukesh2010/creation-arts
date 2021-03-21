@@ -11,14 +11,17 @@ import App from "next/app";
 import { getServerSideCookie } from "../utils/serverSideStorage";
 import AuthProvider from "../contexts/AuthContext";
 import JWTValidator from "../utils/JWTValidator";
+import { ToastProvider } from "react-toast-notifications";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <AuthProvider>
-      <CartProvider>
-        <Component {...pageProps} />
-      </CartProvider>
-    </AuthProvider>
+    <ToastProvider placement={"bottom-center"} autoDismiss>
+      <AuthProvider>
+        <CartProvider>
+          <Component {...pageProps} />
+        </CartProvider>
+      </AuthProvider>
+    </ToastProvider>
   );
 };
 
