@@ -38,7 +38,7 @@ const Login = () => {
     <Fragment>
       <Head>
         <title>Login</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={"/favicon.ico"} />
       </Head>
       <section className="auth-container">
         <div className="auth-card">
@@ -102,7 +102,7 @@ const Login = () => {
                     )}
                   </div>
                   <div>
-                    <Link href="/forgot-password">Forgot Password?</Link>
+                    <Link href={"/forgot-password"}>Forgot Password?</Link>
                   </div>
                   <button className="btn accent-btn" disabled={isSubmitting}>
                     login

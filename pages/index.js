@@ -18,7 +18,6 @@ import { PRODUCT_IMAGE_FILLER } from "../utils/consts";
 const Home = (props) => {
   const { featuredProducts, newProducts } = props;
 
-  console.log("props", props);
   return (
     <>
       <Head>

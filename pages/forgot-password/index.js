@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
+import { forgotPassword } from "../../api";
 
 const ForgotPasswordSchema = Yup.object().shape({
   email: Yup.string().email().required(),
