@@ -10,6 +10,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 const Home = () => (
   <>
@@ -52,7 +53,9 @@ const Home = () => (
             molestias neque nihil perspiciatis, praesentium quae, quibusdam
             repellat ut vel? Accusantium fuga in ipsum?
           </p>
-          <button className="btn accent-btn">Shop Now</button>
+          <Link href={`/products`}>
+            <button className="btn accent-btn">Shop Now</button>
+          </Link>
         </div>
       </div>
       <div className="container">
