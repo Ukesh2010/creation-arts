@@ -728,7 +728,7 @@ __webpack_require__.d(__webpack_exports__, "f", function() { return /* binding *
 __webpack_require__.d(__webpack_exports__, "j", function() { return /* binding */ login; });
 __webpack_require__.d(__webpack_exports__, "d", function() { return /* binding */ forgotPassword; });
 __webpack_require__.d(__webpack_exports__, "k", function() { return /* binding */ register; });
-__webpack_require__.d(__webpack_exports__, "l", function() { return /* binding */ setNewPassword; });
+__webpack_require__.d(__webpack_exports__, "l", function() { return /* binding */ resetPassword; });
 __webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ changePassword; });
 __webpack_require__.d(__webpack_exports__, "i", function() { return /* binding */ getUser; });
 
@@ -855,8 +855,8 @@ const register = async data => {
     throw (e === null || e === void 0 ? void 0 : (_e$response4 = e.response) === null || _e$response4 === void 0 ? void 0 : _e$response4.data) || e;
   });
 };
-const setNewPassword = async data => {
-  return await getHttpClient().post(`/users/set-new-password`, data).then(response => response.data).catch(e => {
+const resetPassword = async data => {
+  return await getHttpClient().post(`/users/reset-password`, data).then(response => response.data).catch(e => {
     var _e$response5;
 
     throw (e === null || e === void 0 ? void 0 : (_e$response5 = e.response) === null || _e$response5 === void 0 ? void 0 : _e$response5.data) || e;

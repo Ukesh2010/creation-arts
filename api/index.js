@@ -105,9 +105,9 @@ export const register = async (data) => {
     });
 };
 
-export const setNewPassword = async (data) => {
+export const resetPassword = async (data) => {
   return await getHttpClient()
-    .post(`/users/set-new-password`, data)
+    .post(`/users/reset-password`, data)
     .then((response) => response.data)
     .catch((e) => {
       throw e?.response?.data || e;

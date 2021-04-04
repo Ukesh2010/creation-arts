@@ -13,7 +13,7 @@
   "/products": "pages/products.js",
   "/profile": "pages/profile.js",
   "/register": "pages/register.js",
-  "/set-new-password": "pages/set-new-password.js",
+  "/reset-password": "pages/reset-password.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js"
 }
