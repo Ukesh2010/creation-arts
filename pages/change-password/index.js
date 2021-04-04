@@ -6,6 +6,8 @@ import { changePassword } from "../../api";
 import { useRouter } from "next/router";
 import { useAuth } from "../../contexts/AuthContext";
 import Nav from "../../components/nav";
+import { useToasts } from "react-toast-notifications";
+import { PulseLoader } from "react-spinners";
 
 const ChangePasswordSchema = Yup.object().shape({
   old_password: Yup.string().min(8).max(16).required(),
@@ -18,6 +20,7 @@ const ChangePasswordSchema = Yup.object().shape({
 const ChangePassword = () => {
   const router = useRouter();
   const { authenticated, logout } = useAuth();
+  const { addToast } = useToasts();
 
   const onSubmit = async (values, { setSubmitting, setErrors }) => {
     setSubmitting(true);
@@ -25,11 +28,16 @@ const ChangePassword = () => {
       await changePassword(values);
       logout();
       router.push("/login");
+      addToast("Password changed successfully", {
+        appearance: "success",
+      });
     } catch (response) {
       if (response.errors) {
         setErrors(response?.errors?.reduce((p, c) => ({ ...p, ...c }), {}));
       } else {
-        console.log("error", response.message);
+        addToast(response.message || "Error while changing password", {
+          appearance: "error",
+        });
       }
     } finally {
       setSubmitting(false);
@@ -46,7 +54,7 @@ const ChangePassword = () => {
         <section className="container">
           <div className="app-page-container">
             <div className="info-container">
-              <div className="login-required"></div>
+              <div className="login-required" />
               <h3 className="text-center">Please login to continue.</h3>
             </div>
           </div>
@@ -135,11 +143,9 @@ const ChangePassword = () => {
                         </span>
                       )}
                     </div>
-                    <button
-                      className="btn accent-btn"
-                      disabled={isSubmitting || !isValid}
-                    >
-                      Change password
+                    <button className="btn accent-btn" disabled={isSubmitting}>
+                      Change password{" "}
+                      <PulseLoader loading={isSubmitting} size={4} />
                     </button>
                   </form>
                 )}

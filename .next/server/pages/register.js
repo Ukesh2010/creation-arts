@@ -706,6 +706,7 @@ __webpack_require__.d(__webpack_exports__, "k", function() { return /* binding *
 __webpack_require__.d(__webpack_exports__, "l", function() { return /* binding */ resetPassword; });
 __webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ changePassword; });
 __webpack_require__.d(__webpack_exports__, "i", function() { return /* binding */ getUser; });
+__webpack_require__.d(__webpack_exports__, "m", function() { return /* binding */ updateUser; });
 
 // EXTERNAL MODULE: external "axios"
 var external_axios_ = __webpack_require__("zr5I");
@@ -848,6 +849,13 @@ const getUser = token => async params => {
   return await getHttpClient(token).get("/users/current", {
     params
   }).then(response => response.data);
+};
+const updateUser = async data => {
+  return await getHttpClient().put(`/users/current`, data).then(response => response.data).catch(e => {
+    var _e$response7;
+
+    throw (e === null || e === void 0 ? void 0 : (_e$response7 = e.response) === null || _e$response7 === void 0 ? void 0 : _e$response7.data) || e;
+  });
 };
 
 /***/ }),

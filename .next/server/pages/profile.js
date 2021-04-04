@@ -275,6 +275,13 @@ module.exports = require("next-cookies");
 
 /***/ }),
 
+/***/ "46kV":
+/***/ (function(module, exports) {
+
+module.exports = require("react-spinners");
+
+/***/ }),
+
 /***/ "4A05":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -474,6 +481,13 @@ const removeItem = key => {
 
 /***/ }),
 
+/***/ "C1xe":
+/***/ (function(module, exports) {
+
+module.exports = require("react-toast-notifications");
+
+/***/ }),
+
 /***/ "F5FC":
 /***/ (function(module, exports) {
 
@@ -606,6 +620,13 @@ const Nav = () => {
 /***/ (function(module, exports) {
 
 module.exports = require("next/dist/next-server/lib/router-context.js");
+
+/***/ }),
+
+/***/ "QxnH":
+/***/ (function(module, exports) {
+
+module.exports = require("formik");
 
 /***/ }),
 
@@ -1001,6 +1022,7 @@ __webpack_require__.d(__webpack_exports__, "k", function() { return /* binding *
 __webpack_require__.d(__webpack_exports__, "l", function() { return /* binding */ resetPassword; });
 __webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ changePassword; });
 __webpack_require__.d(__webpack_exports__, "i", function() { return /* binding */ getUser; });
+__webpack_require__.d(__webpack_exports__, "m", function() { return /* binding */ updateUser; });
 
 // EXTERNAL MODULE: external "axios"
 var external_axios_ = __webpack_require__("zr5I");
@@ -1143,6 +1165,13 @@ const getUser = token => async params => {
   return await getHttpClient(token).get("/users/current", {
     params
   }).then(response => response.data);
+};
+const updateUser = async data => {
+  return await getHttpClient().put(`/users/current`, data).then(response => response.data).catch(e => {
+    var _e$response7;
+
+    throw (e === null || e === void 0 ? void 0 : (_e$response7 = e.response) === null || _e$response7 === void 0 ? void 0 : _e$response7.data) || e;
+  });
 };
 
 /***/ }),
@@ -1594,6 +1623,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("bMwp");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("YFqc");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__("QxnH");
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(formik__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var react_spinners__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("46kV");
+/* harmony import */ var react_spinners__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react_spinners__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__("C1xe");
+/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_toast_notifications__WEBPACK_IMPORTED_MODULE_14__);
+
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -1612,9 +1657,17 @@ const Profile = ({
   user
 }) => {
   const {
+    name,
+    contact_no,
+    full_address
+  } = user;
+  const {
     logout
   } = Object(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_8__[/* useAuth */ "b"])();
   const router = Object(next_router__WEBPACK_IMPORTED_MODULE_7__["useRouter"])();
+  const {
+    addToast
+  } = Object(react_toast_notifications__WEBPACK_IMPORTED_MODULE_14__["useToasts"])();
 
   const onLogoutClick = () => {
     logout();
@@ -1623,6 +1676,28 @@ const Profile = ({
 
   const onChangePasswordClick = () => {
     router.push("/change-password");
+  };
+
+  const onSubmit = async (values, {
+    setSubmitting,
+    setErrors
+  }) => {
+    try {
+      const response = await Object(_api__WEBPACK_IMPORTED_MODULE_10__[/* updateUser */ "m"])(values);
+      addToast((response === null || response === void 0 ? void 0 : response.message) || "User updated successfully.", {
+        appearance: "success"
+      });
+    } catch (response) {
+      if (response.errors) {
+        setErrors(response.errors.reduce((p, c) => _objectSpread(_objectSpread({}, p), c), {}));
+      } else {
+        addToast((response === null || response === void 0 ? void 0 : response.message) || "Error while updating user.", {
+          appearance: "error"
+        });
+      }
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
@@ -1669,6 +1744,85 @@ const Profile = ({
                 onClick: onLogoutClick,
                 children: "Logout"
               })]
+            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
+              style: {
+                marginTop: "1rem"
+              },
+              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(formik__WEBPACK_IMPORTED_MODULE_12__["Formik"], {
+                initialValues: {
+                  name,
+                  contact_no,
+                  full_address
+                },
+                onSubmit: onSubmit,
+                children: ({
+                  values,
+                  errors,
+                  touched,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                  isSubmitting
+                }) => /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("form", {
+                  onSubmit: handleSubmit,
+                  children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
+                    className: "form-group",
+                    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("label", {
+                      htmlFor: "name",
+                      children: "Name"
+                    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("input", {
+                      className: "form-control",
+                      type: "text",
+                      name: "name",
+                      onChange: handleChange,
+                      onBlur: handleBlur,
+                      value: values.name
+                    }), errors.name && touched.name && /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("span", {
+                      className: "error-message",
+                      children: errors.name
+                    })]
+                  }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
+                    className: "form-group",
+                    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("label", {
+                      htmlFor: "contact_no",
+                      children: "Contact no"
+                    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("input", {
+                      className: "form-control",
+                      type: "text",
+                      name: "contact_no",
+                      onChange: handleChange,
+                      onBlur: handleBlur,
+                      value: values.contact_no
+                    }), errors.contact_no && touched.contact_no && /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("span", {
+                      className: "error-message",
+                      children: errors.contact_no
+                    })]
+                  }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
+                    className: "form-group",
+                    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("label", {
+                      htmlFor: "full_address",
+                      children: "Full address"
+                    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("input", {
+                      className: "form-control",
+                      type: "text",
+                      name: "full_address",
+                      onChange: handleChange,
+                      onBlur: handleBlur,
+                      value: values.full_address
+                    }), errors.full_address && touched.full_address && /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("span", {
+                      className: "error-message",
+                      children: errors.full_address
+                    })]
+                  }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("button", {
+                    className: "btn accent-btn",
+                    disabled: isSubmitting,
+                    children: ["Update ", /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_spinners__WEBPACK_IMPORTED_MODULE_13__["PulseLoader"], {
+                      loading: isSubmitting,
+                      size: 4
+                    })]
+                  })]
+                })
+              })
             })]
           })]
         })

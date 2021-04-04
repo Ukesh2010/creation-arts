@@ -128,3 +128,12 @@ export const getUser = (token) => async (params) => {
     .get("/users/current", { params })
     .then((response) => response.data);
 };
+
+export const updateUser = async (data) => {
+  return await getHttpClient()
+    .put(`/users/current`, data)
+    .then((response) => response.data)
+    .catch((e) => {
+      throw e?.response?.data || e;
+    });
+};

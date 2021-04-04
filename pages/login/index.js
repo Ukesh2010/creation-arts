@@ -111,6 +111,16 @@ const Login = () => {
                   <button className="btn accent-btn" disabled={isSubmitting}>
                     login <PulseLoader loading={isSubmitting} size={4} />
                   </button>
+
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      marginTop: "1rem",
+                    }}
+                  >
+                    <Link href={"/"}>back to home page</Link>
+                  </div>
                 </form>
               )}
             </Formik>
