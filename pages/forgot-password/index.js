@@ -20,7 +20,13 @@ const ForgotPassword = () => {
   const onSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
       await forgotPassword(values);
-      router.push("/");
+      router.push("/login");
+      addToast(
+        "Password reset link has been sent to your email. Please check your email.",
+        {
+          appearance: "info",
+        }
+      );
     } catch (response) {
       if (response.errors) {
         setErrors(response.errors.reduce((p, c) => ({ ...p, ...c }), {}));
