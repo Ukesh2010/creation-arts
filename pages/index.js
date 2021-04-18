@@ -12,11 +12,11 @@ import {
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { getServerSideCookie } from "../utils/serverSideStorage";
-import { getProducts } from "../api";
+import { getProducts, getSetting } from "../api";
 import { PRODUCT_IMAGE_FILLER } from "../utils/consts";
 
 const Home = (props) => {
-  const { featuredProducts, newProducts } = props;
+  const { featuredProducts, newProducts, setting } = props;
 
   return (
     <>
@@ -29,7 +29,7 @@ const Home = (props) => {
         <div className="banner">
           <div className="banner-image">
             <Image
-              src={"/images/bg.jpeg"}
+              src={setting?.url || "/images/bg.jpeg"}
               alt={"banner image"}
               layout={"fill"}
             />
@@ -57,12 +57,7 @@ const Home = (props) => {
 
           <div className="banner-details">
             <h3 className="title">Hand Crafted Products</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-              atque consequatur cumque doloribus ducimus fugiat inventore,
-              molestias neque nihil perspiciatis, praesentium quae, quibusdam
-              repellat ut vel? Accusantium fuga in ipsum?
-            </p>
+            <p>{setting?.description || ""}</p>
             <Link href={`/products`}>
               <button className="btn accent-btn">Shop Now</button>
             </Link>
@@ -139,9 +134,11 @@ export const getServerSideProps = async (context) => {
     const newProducts = await getProducts(token)({
       limit: 8,
     });
-    return { props: { featuredProducts, newProducts } };
+    const setting = await getSetting(token)();
+
+    return { props: { featuredProducts, newProducts, setting } };
   } catch (e) {
     console.log("error", e.message);
   }
-  return { props: { featuredProducts: [], newProducts: [] } };
+  return { props: { featuredProducts: [], newProducts: [], setting: {} } };
 };

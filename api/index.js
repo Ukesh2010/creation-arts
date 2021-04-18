@@ -137,3 +137,9 @@ export const updateUser = async (data) => {
       throw e?.response?.data || e;
     });
 };
+
+export const getSetting = (token) => async () => {
+  return await getHttpClient(token)
+    .get("/setting")
+    .then((response) => response.data.data);
+};
