@@ -730,7 +730,8 @@ __webpack_require__.r(__webpack_exports__);
 const Home = props => {
   const {
     featuredProducts,
-    newProducts
+    newProducts,
+    setting
   } = props;
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -747,7 +748,7 @@ const Home = props => {
         children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
           className: "banner-image",
           children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_3___default.a, {
-            src: "/images/bg.jpeg",
+            src: (setting === null || setting === void 0 ? void 0 : setting.url) || "/images/bg.jpeg",
             alt: "banner image",
             layout: "fill"
           })
@@ -793,7 +794,7 @@ const Home = props => {
             className: "title",
             children: "Hand Crafted Products"
           }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("p", {
-            children: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque consequatur cumque doloribus ducimus fugiat inventore, molestias neque nihil perspiciatis, praesentium quae, quibusdam repellat ut vel? Accusantium fuga in ipsum?"
+            children: (setting === null || setting === void 0 ? void 0 : setting.description) || ""
           }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
             href: `/products`,
             children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("button", {
@@ -890,10 +891,12 @@ const getServerSideProps = async context => {
     const newProducts = await Object(_api__WEBPACK_IMPORTED_MODULE_11__[/* getProducts */ "h"])(token)({
       limit: 8
     });
+    const setting = await Object(_api__WEBPACK_IMPORTED_MODULE_11__[/* getSetting */ "i"])(token)();
     return {
       props: {
         featuredProducts,
-        newProducts
+        newProducts,
+        setting
       }
     };
   } catch (e) {
@@ -903,7 +906,8 @@ const getServerSideProps = async context => {
   return {
     props: {
       featuredProducts: [],
-      newProducts: []
+      newProducts: [],
+      setting: {}
     }
   };
 };
@@ -1303,13 +1307,14 @@ __webpack_require__.d(__webpack_exports__, "g", function() { return /* binding *
 __webpack_require__.d(__webpack_exports__, "c", function() { return /* binding */ createPayPalTransaction; });
 __webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ captureOrder; });
 __webpack_require__.d(__webpack_exports__, "f", function() { return /* binding */ getOrders; });
-__webpack_require__.d(__webpack_exports__, "j", function() { return /* binding */ login; });
+__webpack_require__.d(__webpack_exports__, "k", function() { return /* binding */ login; });
 __webpack_require__.d(__webpack_exports__, "d", function() { return /* binding */ forgotPassword; });
-__webpack_require__.d(__webpack_exports__, "k", function() { return /* binding */ register; });
-__webpack_require__.d(__webpack_exports__, "l", function() { return /* binding */ resetPassword; });
+__webpack_require__.d(__webpack_exports__, "l", function() { return /* binding */ register; });
+__webpack_require__.d(__webpack_exports__, "m", function() { return /* binding */ resetPassword; });
 __webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ changePassword; });
-__webpack_require__.d(__webpack_exports__, "i", function() { return /* binding */ getUser; });
-__webpack_require__.d(__webpack_exports__, "m", function() { return /* binding */ updateUser; });
+__webpack_require__.d(__webpack_exports__, "j", function() { return /* binding */ getUser; });
+__webpack_require__.d(__webpack_exports__, "n", function() { return /* binding */ updateUser; });
+__webpack_require__.d(__webpack_exports__, "i", function() { return /* binding */ getSetting; });
 
 // EXTERNAL MODULE: external "axios"
 var external_axios_ = __webpack_require__("zr5I");
@@ -1459,6 +1464,9 @@ const updateUser = async data => {
 
     throw (e === null || e === void 0 ? void 0 : (_e$response7 = e.response) === null || _e$response7 === void 0 ? void 0 : _e$response7.data) || e;
   });
+};
+const getSetting = token => async () => {
+  return await getHttpClient(token).get("/setting").then(response => response.data.data);
 };
 
 /***/ }),

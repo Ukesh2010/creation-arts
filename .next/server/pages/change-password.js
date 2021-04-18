@@ -1200,13 +1200,14 @@ __webpack_require__.d(__webpack_exports__, "g", function() { return /* binding *
 __webpack_require__.d(__webpack_exports__, "c", function() { return /* binding */ createPayPalTransaction; });
 __webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ captureOrder; });
 __webpack_require__.d(__webpack_exports__, "f", function() { return /* binding */ getOrders; });
-__webpack_require__.d(__webpack_exports__, "j", function() { return /* binding */ login; });
+__webpack_require__.d(__webpack_exports__, "k", function() { return /* binding */ login; });
 __webpack_require__.d(__webpack_exports__, "d", function() { return /* binding */ forgotPassword; });
-__webpack_require__.d(__webpack_exports__, "k", function() { return /* binding */ register; });
-__webpack_require__.d(__webpack_exports__, "l", function() { return /* binding */ resetPassword; });
+__webpack_require__.d(__webpack_exports__, "l", function() { return /* binding */ register; });
+__webpack_require__.d(__webpack_exports__, "m", function() { return /* binding */ resetPassword; });
 __webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ changePassword; });
-__webpack_require__.d(__webpack_exports__, "i", function() { return /* binding */ getUser; });
-__webpack_require__.d(__webpack_exports__, "m", function() { return /* binding */ updateUser; });
+__webpack_require__.d(__webpack_exports__, "j", function() { return /* binding */ getUser; });
+__webpack_require__.d(__webpack_exports__, "n", function() { return /* binding */ updateUser; });
+__webpack_require__.d(__webpack_exports__, "i", function() { return /* binding */ getSetting; });
 
 // EXTERNAL MODULE: external "axios"
 var external_axios_ = __webpack_require__("zr5I");
@@ -1356,6 +1357,9 @@ const updateUser = async data => {
 
     throw (e === null || e === void 0 ? void 0 : (_e$response7 = e.response) === null || _e$response7 === void 0 ? void 0 : _e$response7.data) || e;
   });
+};
+const getSetting = token => async () => {
+  return await getHttpClient(token).get("/setting").then(response => response.data.data);
 };
 
 /***/ }),
