@@ -23,6 +23,7 @@ const Home = (props) => {
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="google-site-verification" content="zB_tM14jKBTm4YVBHNZd0rzwJjt_9tqtvVnaIsMPvt4" />
       </Head>
       <Nav />
       <section className="home-container">
