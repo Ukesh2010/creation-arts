@@ -23,7 +23,10 @@ const Home = (props) => {
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="google-site-verification" content="zB_tM14jKBTm4YVBHNZd0rzwJjt_9tqtvVnaIsMPvt4" />
+        <meta
+          name="google-site-verification"
+          content="zB_tM14jKBTm4YVBHNZd0rzwJjt_9tqtvVnaIsMPvt4"
+        />
       </Head>
       <Nav />
       <section className="home-container">
@@ -37,15 +40,19 @@ const Home = (props) => {
           </div>
 
           <div className="social-icons">
-            <div className="icon-button">
-              <FontAwesomeIcon icon={faFacebookF} size={"2x"} />
-            </div>
-            <div className="icon-button">
-              <FontAwesomeIcon icon={faInstagram} size={"2x"} />
-            </div>
-            <div className="icon-button">
+            <a href="https://www.facebook.com/yelatreasure">
+              <div className="icon-button">
+                <FontAwesomeIcon icon={faFacebookF} size={"2x"} />
+              </div>
+            </a>
+            <a href="https://www.instagram.com/creation_arts05/?igshid=9tv0ltuk84xh&fbclid=IwAR0pChQaJEqTQW-2HGLSI4OoIqCwV0zDkYFJESgsO5bo9m9wP5IqKcVi6j8">
+              <div className="icon-button">
+                <FontAwesomeIcon icon={faInstagram} size={"2x"} />
+              </div>
+            </a>
+            {/* <div className="icon-button">
               <FontAwesomeIcon icon={faTwitter} size={"2x"} />
-            </div>
+            </div> */}
           </div>
           <div className="control-icons">
             <div className="icon-button arrow-up">
