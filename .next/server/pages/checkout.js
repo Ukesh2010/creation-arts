@@ -268,6 +268,13 @@ module.exports = __webpack_require__("5UCQ");
 
 /***/ }),
 
+/***/ "46kV":
+/***/ (function(module, exports) {
+
+module.exports = require("react-spinners");
+
+/***/ }),
+
 /***/ "4Q3z":
 /***/ (function(module, exports) {
 
@@ -325,6 +332,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("4Q3z");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__("crtY");
+/* harmony import */ var react_spinners__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("46kV");
+/* harmony import */ var react_spinners__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react_spinners__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__("C1xe");
+/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_toast_notifications__WEBPACK_IMPORTED_MODULE_14__);
+
+
 
 
 
@@ -357,6 +370,13 @@ const Checkout = () => {
     authenticated
   } = Object(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_12__[/* useAuth */ "b"])();
   const router = Object(next_router__WEBPACK_IMPORTED_MODULE_11__["useRouter"])();
+  const {
+    addToast
+  } = Object(react_toast_notifications__WEBPACK_IMPORTED_MODULE_14__["useToasts"])();
+  const {
+    0: isSubmitting,
+    1: setIsSubmitting
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false);
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
     paypal_load(() => {
       window.paypal.Buttons({
@@ -487,8 +507,47 @@ const Checkout = () => {
               icon: _fortawesome_free_solid_svg_icons_faArrowLeft__WEBPACK_IMPORTED_MODULE_6__["faArrowLeft"],
               size: "2x"
             }), "Back to Cart"]
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
-            id: "paypal-button-container"
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
+            style: {
+              display: "flex",
+              alignItems: "center"
+            },
+            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
+              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("button", {
+                className: "btn accent-btn",
+                onClick: () => {
+                  setIsSubmitting(true);
+                  Object(_api__WEBPACK_IMPORTED_MODULE_8__[/* captureOrder */ "a"])()({
+                    paypal_order_id: null,
+                    order: cart
+                  }).then(() => {
+                    addToast("Order checkout successfully.", {
+                      appearance: "success"
+                    });
+                    clearCart();
+                    router.push("/products");
+                  }).catch(err => {
+                    addToast((err === null || err === void 0 ? void 0 : err.message) || "Error while checking out.", {
+                      appearance: "error"
+                    });
+                  }).finally(() => {
+                    setIsSubmitting(false);
+                  });
+                },
+                disabled: isSubmitting,
+                children: ["Pay on delivery", " ", /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_spinners__WEBPACK_IMPORTED_MODULE_13__["PulseLoader"], {
+                  loading: isSubmitting,
+                  size: 4
+                })]
+              })
+            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
+              style: {
+                marginLeft: "16px"
+              },
+              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
+                id: "paypal-button-container"
+              })
+            })]
           })]
         })]
       })
@@ -680,6 +739,13 @@ const removeItem = key => {
 
 module.exports = __webpack_require__("dQHF")
 
+
+/***/ }),
+
+/***/ "C1xe":
+/***/ (function(module, exports) {
+
+module.exports = require("react-toast-notifications");
 
 /***/ }),
 
