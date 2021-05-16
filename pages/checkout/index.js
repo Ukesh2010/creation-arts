@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Head from "next/head";
 import Nav from "../../components/nav";
 import Footer from "../../components/footer";
@@ -10,6 +10,8 @@ import Image from "next/image";
 import { PRODUCT_IMAGE_FILLER } from "../../utils/consts";
 import { useRouter } from "next/router";
 import { useAuth } from "../../contexts/AuthContext";
+import { PulseLoader } from "react-spinners";
+import { useToasts } from "react-toast-notifications";
 
 const paypal_load = (onLoad = () => {}) => {
   const aScript = document.createElement("script");
@@ -26,6 +28,9 @@ const Checkout = () => {
   const { clearCart } = useCartActions();
   const { authenticated } = useAuth();
   const router = useRouter();
+  const { addToast } = useToasts();
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     paypal_load(() => {
@@ -122,7 +127,42 @@ const Checkout = () => {
               <FontAwesomeIcon icon={faArrowLeft} size={"2x"} />
               Back to Cart
             </button>
-            <div id="paypal-button-container" />
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div>
+                <button
+                  className="btn accent-btn"
+                  onClick={() => {
+                    setIsSubmitting(true);
+                    captureOrder()({
+                      paypal_order_id: null,
+                      order: cart,
+                    })
+                      .then(() => {
+                        addToast("Order checkout successfully.", {
+                          appearance: "success",
+                        });
+                        clearCart();
+                        router.push("/products");
+                      })
+                      .catch((err) => {
+                        addToast(err?.message || "Error while checking out.", {
+                          appearance: "error",
+                        });
+                      })
+                      .finally(() => {
+                        setIsSubmitting(false);
+                      });
+                  }}
+                  disabled={isSubmitting}
+                >
+                  Pay on delivery{" "}
+                  <PulseLoader loading={isSubmitting} size={4} />
+                </button>
+              </div>
+              <div style={{ marginLeft: "16px" }}>
+                <div id="paypal-button-container" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
