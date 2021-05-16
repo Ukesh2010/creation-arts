@@ -1,19 +1,10 @@
 {
-  "/404": "pages/404.js",
   "/_app": "pages/_app.js",
-  "/cart": "pages/cart.js",
-  "/change-password": "pages/change-password.js",
-  "/checkout": "pages/checkout.js",
-  "/contact": "pages/contact.js",
-  "/forgot-password": "pages/forgot-password.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/login": "pages/login.js",
-  "/my-orders": "pages/my-orders.js",
-  "/product-detail/[id]": "pages/product-detail/[id].js",
+  "/404": "pages/404.js",
   "/products": "pages/products.js",
   "/profile": "pages/profile.js",
-  "/register": "pages/register.js",
-  "/reset-password": "pages/reset-password.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js"
+  "/login": "pages/login.js"
 }
