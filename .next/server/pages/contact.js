@@ -809,6 +809,26 @@ const Contact = () => {
     }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(_components_nav__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {}), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("section", {
       className: "container",
       children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
+        className: "about-us-container",
+        children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
+          style: {
+            display: "flex",
+            alignItems: "center"
+          },
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("img", {
+            src: "/images/prabin.jpg",
+            className: "about-us-image",
+            alt: "owner"
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("p", {
+            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("strong", {
+              children: "Yala Treasure"
+            }), " is an online handicraft store with the coolest and unique monuments and ornaments designed by our professionals."]
+          })]
+        })
+      })
+    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("section", {
+      className: "container",
+      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
         className: "app-page-container",
         children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
           className: "info-container",
@@ -823,8 +843,8 @@ const Contact = () => {
             children: "admin@yalatreasure.com"
           }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("a", {
             className: "contact-details",
-            href: "tel:+977-9860777330",
-            children: "+977-9860777330"
+            href: "tel:+977-9803001320",
+            children: "+977-9803001320 / +977-01-5261764"
           })]
         })
       })
