@@ -133,6 +133,16 @@
   background: $white;
   padding: 1rem;
 
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .data-content {
+      max-width: 300px;
+    }
+  }
+
   .copyright-text {
     font-size: 1rem;
     color: $primary-text;
