@@ -197,6 +197,26 @@ svg {
   margin-bottom: 0.75rem;
 }
 
+// About us
+
+.about-us-container {
+  padding: 20px;
+  background: $white;
+  margin-top: 25px;
+
+  p{
+    margin-left: 10px;
+  }
+}
+
+.about-us-image {
+  border-radius: 50%;
+  height: 300px;
+  width: 200px;
+  background: $true-white;
+  object-fit: cover;
+}
+
 // Login to continue
 
 .login-required {
