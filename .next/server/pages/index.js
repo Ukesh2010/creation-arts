@@ -670,13 +670,6 @@ const Nav = () => {
 
 /***/ }),
 
-/***/ "No/t":
-/***/ (function(module, exports) {
-
-module.exports = require("@fortawesome/free-solid-svg-icons");
-
-/***/ }),
-
 /***/ "Osoz":
 /***/ (function(module, exports) {
 
@@ -704,14 +697,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("JVe5");
 /* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("No/t");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("YFqc");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("4A05");
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("bMwp");
-/* harmony import */ var _utils_consts__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__("Ii6Q");
-
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("YFqc");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("4A05");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("bMwp");
+/* harmony import */ var _utils_consts__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("Ii6Q");
 
 
 
@@ -785,7 +775,7 @@ const Home = props => {
             children: "Hand Crafted Products"
           }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("p", {
             children: (setting === null || setting === void 0 ? void 0 : setting.description) || ""
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
             href: `/products`,
             children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("button", {
               className: "btn accent-btn",
@@ -804,14 +794,14 @@ const Home = props => {
             className: "product-container",
             children: featuredProducts.map((item, index) => {
               const [image] = (item === null || item === void 0 ? void 0 : item.images) || [];
-              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
+              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
                 href: `/product-detail/${item === null || item === void 0 ? void 0 : item._id}`,
                 children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
                   className: "product-item",
                   children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
                     className: "product-image",
                     children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_3___default.a, {
-                      src: (image === null || image === void 0 ? void 0 : image.url) || _utils_consts__WEBPACK_IMPORTED_MODULE_12__[/* PRODUCT_IMAGE_FILLER */ "b"],
+                      src: (image === null || image === void 0 ? void 0 : image.url) || _utils_consts__WEBPACK_IMPORTED_MODULE_11__[/* PRODUCT_IMAGE_FILLER */ "b"],
                       alt: (image === null || image === void 0 ? void 0 : image.originalFileName) || "Product image",
                       layout: "fill"
                     })
@@ -838,14 +828,14 @@ const Home = props => {
             className: "product-container",
             children: newProducts.map((item, index) => {
               const [image] = (item === null || item === void 0 ? void 0 : item.images) || [];
-              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
+              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
                 href: `/product-detail/${item === null || item === void 0 ? void 0 : item._id}`,
                 children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
                   className: "product-item",
                   children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
                     className: "product-image",
                     children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_3___default.a, {
-                      src: (image === null || image === void 0 ? void 0 : image.url) || _utils_consts__WEBPACK_IMPORTED_MODULE_12__[/* PRODUCT_IMAGE_FILLER */ "b"],
+                      src: (image === null || image === void 0 ? void 0 : image.url) || _utils_consts__WEBPACK_IMPORTED_MODULE_11__[/* PRODUCT_IMAGE_FILLER */ "b"],
                       alt: (image === null || image === void 0 ? void 0 : image.originalFileName) || "Product image",
                       layout: "fill"
                     })
@@ -871,17 +861,17 @@ const Home = props => {
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
 const getServerSideProps = async context => {
-  const token = Object(_utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_10__[/* getServerSideCookie */ "a"])(context)("token");
+  const token = Object(_utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_9__[/* getServerSideCookie */ "a"])(context)("token");
 
   try {
-    const featuredProducts = await Object(_api__WEBPACK_IMPORTED_MODULE_11__[/* getProducts */ "h"])(token)({
+    const featuredProducts = await Object(_api__WEBPACK_IMPORTED_MODULE_10__[/* getProducts */ "h"])(token)({
       isFeatured: true,
       limit: 8
     });
-    const newProducts = await Object(_api__WEBPACK_IMPORTED_MODULE_11__[/* getProducts */ "h"])(token)({
+    const newProducts = await Object(_api__WEBPACK_IMPORTED_MODULE_10__[/* getProducts */ "h"])(token)({
       limit: 8
     });
-    const setting = await Object(_api__WEBPACK_IMPORTED_MODULE_11__[/* getSetting */ "i"])(token)();
+    const setting = await Object(_api__WEBPACK_IMPORTED_MODULE_10__[/* getSetting */ "i"])(token)();
     return {
       props: {
         featuredProducts,
