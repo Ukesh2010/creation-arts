@@ -165,7 +165,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 const tagManagerArgs = {
-  id: 'GTM-W33J9RJ'
+  gtmId: 'GTM-W33J9RJ'
 };
 
 const MyApp = ({
