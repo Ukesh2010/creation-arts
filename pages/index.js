@@ -4,12 +4,7 @@ import Image from "next/image";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {
-    faFacebookF,
-    faInstagram,
-    faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import {faArrowDown, faArrowUp} from "@fortawesome/free-solid-svg-icons";
+import {faFacebookF, faInstagram,} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import {getServerSideCookie} from "../utils/serverSideStorage";
 import {getProducts, getSetting} from "../api";
