@@ -15,7 +15,7 @@ import {ToastProvider} from "react-toast-notifications";
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
-    id: 'GTM-W33J9RJ'
+    gtmId: 'GTM-W33J9RJ'
 }
 
 const MyApp = ({Component, pageProps}) => {
