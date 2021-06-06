@@ -139,8 +139,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_JWTValidator__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("5N38");
 /* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__("C1xe");
 /* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_toast_notifications__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var react_gtm_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__("hI02");
-/* harmony import */ var react_gtm_module__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_gtm_module__WEBPACK_IMPORTED_MODULE_15__);
 
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -162,19 +160,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-
-const tagManagerArgs = {
-  id: 'GTM-W33J9RJ'
-};
+ // import TagManager from 'react-gtm-module'
+// const tagManagerArgs = {
+//     id: 'GTM-W33J9RJ'
+// }
 
 const MyApp = ({
   Component,
   pageProps
 }) => {
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    react_gtm_module__WEBPACK_IMPORTED_MODULE_15___default.a.initialize(tagManagerArgs);
-  });
+  // useEffect(() => {
+  //     TagManager.initialize(tagManagerArgs)
+  // })
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_toast_notifications__WEBPACK_IMPORTED_MODULE_14__["ToastProvider"], {
     placement: "bottom-center",
     autoDismiss: true,
@@ -746,13 +743,6 @@ const useAuth = () => {
     logout
   };
 };
-
-/***/ }),
-
-/***/ "hI02":
-/***/ (function(module, exports) {
-
-module.exports = require("react-gtm-module");
 
 /***/ }),
 

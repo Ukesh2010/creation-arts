@@ -1222,7 +1222,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 const config = {
-  baseURL: "https://creation-arts-api.herokuapp.com/" + "api/",
+  baseURL: "https://api.yalatreasure.com/api/",
   timeout: "60000"
 };
 /* harmony default export */ var httpClient = (axiosConfig => external_axios_default.a.create(_objectSpread(_objectSpread({}, config), axiosConfig)));
