@@ -12,17 +12,17 @@ import {getServerSideCookie} from "../utils/serverSideStorage";
 import AuthProvider from "../contexts/AuthContext";
 import JWTValidator from "../utils/JWTValidator";
 import {ToastProvider} from "react-toast-notifications";
-// import TagManager from 'react-gtm-module'
+import TagManager from 'react-gtm-module'
 
-// const tagManagerArgs = {
-//     id: 'GTM-W33J9RJ'
-// }
+const tagManagerArgs = {
+    id: 'GTM-W33J9RJ'
+}
 
 const MyApp = ({Component, pageProps}) => {
 
-    // useEffect(() => {
-    //     TagManager.initialize(tagManagerArgs)
-    // })
+    useEffect(() => {
+        TagManager.initialize(tagManagerArgs)
+    })
     return (
         <ToastProvider placement={"bottom-center"} autoDismiss>
             <AuthProvider>
