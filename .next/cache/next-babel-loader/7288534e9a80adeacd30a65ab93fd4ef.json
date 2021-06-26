@@ -1,1 +1,0 @@
-{"ast":null,"code":"import cookies from \"next-cookies\";\nexport var getServerSideCookie = function getServerSideCookie(context) {\n  return function (key) {\n    return cookies(context)[key];\n  };\n};","map":null,"metadata":{},"sourceType":"module"}
