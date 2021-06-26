@@ -15,7 +15,9 @@ const Contact = () => {
                     <div style={{display: "flex", alignItems: "center"}}>
                         <img src={"/images/prabin.jpg"} className={"about-us-image"} alt={"owner"}/>
                         <p><strong>Yala Treasure</strong> is an online handicraft store with the coolest and unique
-                            monuments and ornaments designed by our professionals.</p>
+                            monuments and ornaments designed by our professionals. We offer all kinds of Nepali
+                            handicrafts and other products at a cheap price. Apart from selling products in different
+                            parts of Nepal, we also export our reliable products to different nations.</p>
                     </div>
                 </div>
             </section>
