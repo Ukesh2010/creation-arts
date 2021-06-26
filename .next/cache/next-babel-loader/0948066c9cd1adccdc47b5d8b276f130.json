@@ -1,1 +1,0 @@
-{"ast":null,"code":"import Cookies from \"js-cookie\";\nexport const setItem = (key, value) => {\n  Cookies.set(key, value);\n};\nexport const getItem = key => {\n  return Cookies.get(key);\n};\nexport const removeItem = key => {\n  Cookies.remove(key);\n};","map":null,"metadata":{},"sourceType":"module"}
