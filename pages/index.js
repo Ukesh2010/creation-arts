@@ -22,6 +22,11 @@ const Home = (props) => {
                     name="google-site-verification"
                     content="zB_tM14jKBTm4YVBHNZd0rzwJjt_9tqtvVnaIsMPvt4"
                 />
+                <meta property={"og:title"} content={"Leading Online Handicraft Shop in Nepal | Yala Treasure"}
+                      key={"index_title"}/>
+                <meta property={"og:description"}
+                      content={"Searching for a trusted online handicraft shop in Nepal? Yala Treasure offers all kinds of Nepali arts and handicrafts at a cheaper price. Buy now!"}
+                      key={"index_description"}/>
             </Head>
             <Nav/>
             <section className="home-container">

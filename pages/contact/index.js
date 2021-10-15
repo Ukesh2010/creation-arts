@@ -8,6 +8,11 @@ const Contact = () => {
             <Head>
                 <title>Contact</title>
                 <link rel="icon" href="/favicon.ico"/>
+                <meta property={"og:title"} content={"Yala Treasure Handicraft Services | Contact us"}
+                      key={"contact_title"}/>
+                <meta property={"og:description"}
+                      content={"Yala Treasure has been offering high-quality and professional handicrafts services for several years. For any queries, please feel free to contact us."}
+                      key={"contact_description"}/>
             </Head>
             <Nav/>
             <section className={"container"}>
