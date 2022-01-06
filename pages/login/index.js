@@ -43,8 +43,8 @@ const Login = () => {
             <Head>
                 <title>Login</title>
                 <link rel="icon" href={"/favicon.ico"}/>
-                <meta property={"og:title"} content={"Login to your account | Yala Treasure"} key={"login_title"}/>
-                <meta property={"og:description"}
+                <meta property={"title"} content={"Login to your account | Yala Treasure"} key={"login_title"}/>
+                <meta property={"description"}
                       content={"Don’t have a Yala Treasure account? Register now for free and buy the best quality handicrafts to preserve your culture and traditions. Let’s hurry up!"}
                       key={"login_description"}/>
             </Head>
