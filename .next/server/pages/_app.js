@@ -93,7 +93,6 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-
 /***/ "09Of":
 /***/ (function(module, exports) {
 
@@ -114,41 +113,40 @@ module.exports = __webpack_require__("1TCz");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("F5FC");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("09Of");
-/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_app_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _home_component_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("WWc9");
-/* harmony import */ var _home_component_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_home_component_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _products_products_component_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("yL/3");
-/* harmony import */ var _products_products_component_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_products_products_component_scss__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _product_detail_product_details_component_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("4eXE");
-/* harmony import */ var _product_detail_product_details_component_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_product_detail_product_details_component_scss__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _profile_profile_component_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("vd6T");
-/* harmony import */ var _profile_profile_component_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_profile_profile_component_scss__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _cart_cart_component_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("FJmU");
-/* harmony import */ var _cart_cart_component_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_cart_cart_component_scss__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _my_orders_my_orders_component_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("izVh");
-/* harmony import */ var _my_orders_my_orders_component_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_my_orders_my_orders_component_scss__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _contexts_CartContext__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("TJRf");
-/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("8Bbg");
-/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("4A05");
-/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__("crtY");
-/* harmony import */ var _utils_JWTValidator__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("5N38");
-/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__("C1xe");
-/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_toast_notifications__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var react_gtm_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__("hI02");
-/* harmony import */ var react_gtm_module__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_gtm_module__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("09Of");
+/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_app_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _home_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("WWc9");
+/* harmony import */ var _home_component_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_home_component_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _products_products_component_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("yL/3");
+/* harmony import */ var _products_products_component_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_products_products_component_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _product_detail_product_details_component_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("4eXE");
+/* harmony import */ var _product_detail_product_details_component_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_product_detail_product_details_component_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _profile_profile_component_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("vd6T");
+/* harmony import */ var _profile_profile_component_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_profile_profile_component_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _cart_cart_component_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("FJmU");
+/* harmony import */ var _cart_cart_component_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_cart_cart_component_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _my_orders_my_orders_component_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("izVh");
+/* harmony import */ var _my_orders_my_orders_component_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_my_orders_my_orders_component_scss__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _contexts_CartContext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("TJRf");
+/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("8Bbg");
+/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("4A05");
+/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("crtY");
+/* harmony import */ var _utils_JWTValidator__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__("5N38");
+/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("C1xe");
+/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react_toast_notifications__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var react_gtm_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__("hI02");
+/* harmony import */ var react_gtm_module__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_gtm_module__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__("F5FC");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -173,15 +171,15 @@ const MyApp = ({
   Component,
   pageProps
 }) => {
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    react_gtm_module__WEBPACK_IMPORTED_MODULE_15___default.a.initialize(tagManagerArgs);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    react_gtm_module__WEBPACK_IMPORTED_MODULE_14___default.a.initialize(tagManagerArgs);
   });
-  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(react_toast_notifications__WEBPACK_IMPORTED_MODULE_14__["ToastProvider"], {
+  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(react_toast_notifications__WEBPACK_IMPORTED_MODULE_13__["ToastProvider"], {
     placement: "bottom-center",
     autoDismiss: true,
-    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_12__[/* default */ "a"], {
-      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(_contexts_CartContext__WEBPACK_IMPORTED_MODULE_9__[/* default */ "a"], {
-        children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(Component, _objectSpread({}, pageProps))
+    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"], {
+      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(_contexts_CartContext__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"], {
+        children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__["jsx"])(Component, _objectSpread({}, pageProps))
       })
     })
   });
@@ -193,8 +191,8 @@ MyApp.getInitialProps = async appContext => {
   const {
     ctx
   } = appContext;
-  const token = Object(_utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_11__[/* getServerSideCookie */ "a"])(ctx)("token");
-  const authenticated = token && Object(_utils_JWTValidator__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"])(token);
+  const token = Object(_utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_10__[/* getServerSideCookie */ "a"])(ctx)("token");
+  const authenticated = token && Object(_utils_JWTValidator__WEBPACK_IMPORTED_MODULE_12__[/* default */ "a"])(token);
   const NoAuthPages = ["/login"];
   const AuthPages = ["/checkout", "/change-password"];
 
@@ -208,7 +206,7 @@ MyApp.getInitialProps = async appContext => {
     }
   }
 
-  const appProps = await next_app__WEBPACK_IMPORTED_MODULE_10___default.a.getInitialProps(appContext);
+  const appProps = await next_app__WEBPACK_IMPORTED_MODULE_9___default.a.getInitialProps(appContext);
   return _objectSpread({}, appProps);
 };
 
@@ -450,23 +448,22 @@ module.exports = require("react/jsx-runtime");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return useCartState; });
 /* unused harmony export useCartDispatchContext */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return useCartActions; });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("F5FC");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_localStorage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("8WVE");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_localStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("8WVE");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("F5FC");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
-const CartStateContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createContext"])();
-const CartDispatchContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createContext"])();
+
+const CartStateContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+const CartDispatchContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
 const ID_KEY = "_id";
 
 const calculateTotal = (items, key = "total_amount") => {
@@ -480,7 +477,7 @@ const CartProvider = ({
   const {
     0: state,
     1: dispatch
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useReducer"])((state, action) => {
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])((state, action) => {
     switch (action.type) {
       case "ADD_CART_ITEM":
         if (!state.items.find(item => item[ID_KEY] === action.payload.item[ID_KEY])) state.items.push(action.payload.item);
@@ -511,18 +508,18 @@ const CartProvider = ({
     }
 
     state.total_amount = calculateTotal(state.items, "total_amount");
-    Object(_utils_localStorage__WEBPACK_IMPORTED_MODULE_2__[/* setItem */ "c"])("cart", JSON.stringify(state));
+    Object(_utils_localStorage__WEBPACK_IMPORTED_MODULE_1__[/* setItem */ "c"])("cart", JSON.stringify(state));
     return _objectSpread(_objectSpread({}, state), {}, {
       items: [...state.items]
     });
-  }, JSON.parse(Object(_utils_localStorage__WEBPACK_IMPORTED_MODULE_2__[/* getItem */ "a"])("cart") || null) || {
+  }, JSON.parse(Object(_utils_localStorage__WEBPACK_IMPORTED_MODULE_1__[/* getItem */ "a"])("cart") || null) || {
     items: [],
     total_amount: 0,
     shipping_address_id: null
   });
-  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(CartStateContext.Provider, {
+  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__["jsx"])(CartStateContext.Provider, {
     value: state,
-    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(CartDispatchContext.Provider, {
+    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__["jsx"])(CartDispatchContext.Provider, {
       value: dispatch,
       children: children
     })
@@ -531,7 +528,7 @@ const CartProvider = ({
 
 /* harmony default export */ __webpack_exports__["a"] = (CartProvider);
 const useCartState = () => {
-  const context = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(CartStateContext);
+  const context = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(CartStateContext);
 
   if (context === undefined) {
     throw new Error("useCartStateContext must be used within a CartProvider");
@@ -540,7 +537,7 @@ const useCartState = () => {
   return context;
 };
 const useCartDispatchContext = () => {
-  const context = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(CartDispatchContext);
+  const context = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(CartDispatchContext);
 
   if (context === undefined) {
     throw new Error("useCartDispatchContext must be used within a CartProvider");
@@ -633,7 +630,6 @@ module.exports = _interopRequireDefault;
 
 /***/ }),
 
-
 /***/ "cDcd":
 /***/ (function(module, exports) {
 
@@ -648,25 +644,24 @@ module.exports = require("react");
 /* unused harmony export useAuthContext */
 /* unused harmony export useAuthDispatch */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return useAuth; });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("F5FC");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_localStorage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("8WVE");
-/* harmony import */ var _utils_JWTValidator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("5N38");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_localStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("8WVE");
+/* harmony import */ var _utils_JWTValidator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("5N38");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("F5FC");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
-const AuthStateContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createContext"])();
-const AuthDispatchContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createContext"])();
+
+const AuthStateContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+const AuthDispatchContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
 
 const AuthProvider = ({
   children
@@ -674,16 +669,16 @@ const AuthProvider = ({
   const {
     0: state,
     1: dispatch
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useReducer"])((state, action) => {
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])((state, action) => {
     switch (action.type) {
       case "LOGIN":
-        Object(_utils_localStorage__WEBPACK_IMPORTED_MODULE_2__[/* setItem */ "c"])("token", action.payload.token);
+        Object(_utils_localStorage__WEBPACK_IMPORTED_MODULE_1__[/* setItem */ "c"])("token", action.payload.token);
         return _objectSpread(_objectSpread({}, state), {}, {
           authenticated: true
         });
 
       case "LOGOUT":
-        Object(_utils_localStorage__WEBPACK_IMPORTED_MODULE_2__[/* removeItem */ "b"])("token");
+        Object(_utils_localStorage__WEBPACK_IMPORTED_MODULE_1__[/* removeItem */ "b"])("token");
         return {
           authenticated: false
         };
@@ -692,11 +687,11 @@ const AuthProvider = ({
         throw new Error("undefined action type used");
     }
   }, {
-    authenticated: !!Object(_utils_localStorage__WEBPACK_IMPORTED_MODULE_2__[/* getItem */ "a"])("token") && Object(_utils_JWTValidator__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(Object(_utils_localStorage__WEBPACK_IMPORTED_MODULE_2__[/* getItem */ "a"])("token"))
+    authenticated: !!Object(_utils_localStorage__WEBPACK_IMPORTED_MODULE_1__[/* getItem */ "a"])("token") && Object(_utils_JWTValidator__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(Object(_utils_localStorage__WEBPACK_IMPORTED_MODULE_1__[/* getItem */ "a"])("token"))
   });
-  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(AuthStateContext.Provider, {
+  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsx"])(AuthStateContext.Provider, {
     value: state,
-    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(AuthDispatchContext.Provider, {
+    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsx"])(AuthDispatchContext.Provider, {
       value: dispatch,
       children: children
     })
@@ -705,7 +700,7 @@ const AuthProvider = ({
 
 /* harmony default export */ __webpack_exports__["a"] = (AuthProvider);
 const useAuthContext = () => {
-  const context = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(AuthStateContext);
+  const context = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(AuthStateContext);
 
   if (context === undefined) {
     throw new Error("useAuthContext must be used within a AuthProvider");
@@ -714,7 +709,7 @@ const useAuthContext = () => {
   return context;
 };
 const useAuthDispatch = () => {
-  const context = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(AuthDispatchContext);
+  const context = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(AuthDispatchContext);
 
   if (context === undefined) {
     throw new Error("useAuthDispatch must be used within a AuthProvider");

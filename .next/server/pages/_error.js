@@ -88,9 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-
 /******/ 	return __webpack_require__(__webpack_require__.s = 15);
-
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -230,7 +228,6 @@ module.exports = require("next/dist/next-server/lib/head.js");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
-
 
 /***/ })
 
