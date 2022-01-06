@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Cookies from \"js-cookie\";\nexport var setItem = function setItem(key, value) {\n  Cookies.set(key, value);\n};\nexport var getItem = function getItem(key) {\n  return Cookies.get(key);\n};\nexport var removeItem = function removeItem(key) {\n  Cookies.remove(key);\n};","map":null,"metadata":{},"sourceType":"module"}
