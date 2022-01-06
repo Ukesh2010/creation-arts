@@ -22,9 +22,9 @@ const Home = (props) => {
                     name="google-site-verification"
                     content="zB_tM14jKBTm4YVBHNZd0rzwJjt_9tqtvVnaIsMPvt4"
                 />
-                <meta property={"og:title"} content={"Leading Online Handicraft Shop in Nepal | Yala Treasure"}
+                <meta property={"title"} content={"Leading Online Handicraft Shop in Nepal | Yala Treasure"}
                       key={"index_title"}/>
-                <meta property={"og:description"}
+                <meta property={"description"}
                       content={"Searching for a trusted online handicraft shop in Nepal? Yala Treasure offers all kinds of Nepali arts and handicrafts at a cheaper price. Buy now!"}
                       key={"index_description"}/>
             </Head>
@@ -51,25 +51,6 @@ const Home = (props) => {
                                 <FontAwesomeIcon icon={faInstagram} size={"2x"}/>
                             </div>
                         </a>
-                        {/* <div className="icon-button">
-              <FontAwesomeIcon icon={faTwitter} size={"2x"} />
-            </div> */}
-                    </div>
-                    {/*<div className="control-icons">*/}
-                    {/*  <div className="icon-button arrow-up">*/}
-                    {/*    <FontAwesomeIcon icon={faArrowUp} size={"2x"} />*/}
-                    {/*  </div>*/}
-                    {/*  <div className="icon-button arrow-down">*/}
-                    {/*    <FontAwesomeIcon icon={faArrowDown} size={"2x"} />*/}
-                    {/*  </div>*/}
-                    {/*</div>*/}
-
-                    <div className="banner-details">
-                        <h3 className="title">Hand Crafted Products</h3>
-                        <p>{setting?.description || ""}</p>
-                        <Link href={`/products`}>
-                            <button className="btn accent-btn">Shop Now</button>
-                        </Link>
                     </div>
                 </div>
                 <div className="container">

@@ -100,8 +100,8 @@
 
     .product-container {
       display: grid;
-      grid-gap: 2rem 1rem;
-      grid-template-columns: repeat(auto-fill, 15rem);
+      grid-gap: 2rem 1.5rem;
+      grid-template-columns: repeat(auto-fit, 21rem);
       justify-content: center;
       padding: 0;
 
@@ -111,6 +111,7 @@
         .product-image {
           position: relative;
           height: 22.5rem;
+          flex: 0 0 22.5rem;
 
           img {
             object-fit: contain;
@@ -120,7 +121,7 @@
         .item-detail {
           display: flex;
           justify-content: space-between;
-          padding: 0.5rem 0;
+          padding: 1rem 0.5rem;
 
           .name {
             flex: 1 1 auto;
