@@ -5,12 +5,13 @@
   grid-template-columns: 30rem 1fr;
 
   .product-images-container {
+    display: flex;
     padding: 0 2rem;
 
     .main-image {
       position: relative;
       height: auto;
-      min-height: 39rem;
+      min-height: 33rem;
     }
 
     .product-image {
@@ -19,17 +20,20 @@
 
     .image-slider {
       display: flex;
+      flex-direction: column;
       overflow: hidden;
       width: 100%;
-      overflow-x: auto;
-      margin-top: 1.5rem;
+      overflow-y: auto;
+      margin-right: 5px;
 
       .product-image {
-        height: 8rem;
-        margin: 0 1rem;
-        flex: 0 0 8rem;
+        width: 4rem;
+        height: 4rem;
+        flex: 0 0 5rem;
 
         img {
+          height: 4rem;
+          width: 4rem;
           object-fit: cover;
         }
 

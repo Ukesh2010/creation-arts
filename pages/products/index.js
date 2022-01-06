@@ -109,9 +109,9 @@ const Products = ({categories, products}) => {
             <Head>
                 <title>Products</title>
                 <link rel="icon" href="/favicon.ico"/>
-                <meta property={"og:title"} content={"Best-priced handicraft products from Nepal | Yala Treasure"}
+                <meta property={"title"} content={"Best-priced handicraft products from Nepal | Yala Treasure"}
                       key={"product_title"}/>
-                <meta property={"og:description"}
+                <meta property={"description"}
                       content={"Yala Treasure - an online shopping platform for Nepali arts and crafts. Buy all kinds of unique, local, and best-priced handicraft products made in Nepal now!"}
                       key={"product_description"}/>
             </Head>
