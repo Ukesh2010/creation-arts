@@ -12,7 +12,8 @@ import {getServerSideCookie} from "../utils/serverSideStorage";
 import AuthProvider from "../contexts/AuthContext";
 import JWTValidator from "../utils/JWTValidator";
 import {ToastProvider} from "react-toast-notifications";
-import TagManager from 'react-gtm-module'
+import TagManager from 'react-gtm-module';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const tagManagerArgs = {
     gtmId: 'GTM-W33J9RJ'
@@ -24,13 +25,16 @@ const MyApp = ({Component, pageProps}) => {
         TagManager.initialize(tagManagerArgs)
     })
     return (
-        <ToastProvider placement={"bottom-center"} autoDismiss>
-            <AuthProvider>
-                <CartProvider>
-                    <Component {...pageProps} />
-                </CartProvider>
-            </AuthProvider>
-        </ToastProvider>
+        <>
+            <MessengerCustomerChat pageId={"109690790907445"} appId={"296371549180638"}/>
+            <ToastProvider placement={"bottom-center"} autoDismiss>
+                <AuthProvider>
+                    <CartProvider>
+                        <Component {...pageProps} />
+                    </CartProvider>
+                </AuthProvider>
+            </ToastProvider>
+        </>
     );
 };
 
