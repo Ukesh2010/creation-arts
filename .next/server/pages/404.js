@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -107,6 +107,14 @@ const TEST_ROUTE = /\/\[[^/]+?\](?=\/|$)/;
 function isDynamicRoute(route) {
   return TEST_ROUTE.test(route);
 }
+
+/***/ }),
+
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("won1");
+
 
 /***/ }),
 
@@ -257,27 +265,6 @@ function assign(target, ...searchParamsList) {
   });
   return target;
 }
-
-/***/ }),
-
-/***/ "3i/4":
-/***/ (function(module, exports) {
-
-module.exports = require("next-cookies");
-
-/***/ }),
-
-/***/ "4A05":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getServerSideCookie; });
-/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("3i/4");
-/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_cookies__WEBPACK_IMPORTED_MODULE_0__);
-
-const getServerSideCookie = context => key => {
-  return next_cookies__WEBPACK_IMPORTED_MODULE_0___default()(context)[key];
-};
 
 /***/ }),
 
@@ -444,36 +431,6 @@ function formatUrl(urlObj) {
 
 /***/ }),
 
-/***/ 7:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("RNiq");
-
-
-/***/ }),
-
-/***/ "8OQS":
-/***/ (function(module, exports) {
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-module.exports = _objectWithoutPropertiesLoose;
-
-/***/ }),
-
 /***/ "8WVE":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -496,56 +453,10 @@ const removeItem = key => {
 
 /***/ }),
 
-/***/ "Aiso":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("dQHF")
-
-
-/***/ }),
-
 /***/ "F5FC":
 /***/ (function(module, exports) {
 
 module.exports = require("react/jsx-runtime");
-
-/***/ }),
-
-/***/ "Ii6Q":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return PRODUCT_IMAGE_FILLER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PRICE_FILTER_RANGES; });
-const PRODUCT_IMAGE_FILLER = "/images/product1.jpg";
-const PRICE_FILTER_RANGES = [{
-  min: 0,
-  max: 30,
-  label: "$30 and Under"
-}, {
-  min: 31,
-  max: 50,
-  label: "$31 to $50"
-}, {
-  min: 51,
-  max: 75,
-  label: "$51 to $75"
-}, {
-  min: 76,
-  max: 100,
-  label: "$76 to $100"
-}, {
-  min: 101,
-  max: 100000,
-  label: "Above $100"
-}];
-
-/***/ }),
-
-/***/ "JVe5":
-/***/ (function(module, exports) {
-
-module.exports = require("@fortawesome/free-brands-svg-icons");
 
 /***/ }),
 
@@ -674,215 +585,6 @@ const Nav = () => {
 /***/ (function(module, exports) {
 
 module.exports = require("next/dist/next-server/lib/router-context.js");
-
-/***/ }),
-
-/***/ "RNiq":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("xnum");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("Aiso");
-/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("MbLX");
-/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("aIN1");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("uhWA");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("JVe5");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("YFqc");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("4A05");
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("bMwp");
-/* harmony import */ var _utils_consts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("Ii6Q");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("F5FC");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const Home = props => {
-  const {
-    featuredProducts,
-    newProducts,
-    setting
-  } = props;
-  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["Fragment"], {
-    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("title", {
-        children: "Home"
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("link", {
-        rel: "icon",
-        href: "/favicon.ico"
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("meta", {
-        name: "google-site-verification",
-        content: "zB_tM14jKBTm4YVBHNZd0rzwJjt_9tqtvVnaIsMPvt4"
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("meta", {
-        property: "title",
-        content: "Leading Online Handicraft Shop in Nepal | Yala Treasure"
-      }, "index_title"), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("meta", {
-        property: "description",
-        content: "Searching for a trusted online handicraft shop in Nepal? Yala Treasure offers all kinds of Nepali arts and handicrafts at a cheaper price. Buy now!"
-      }, "index_description")]
-    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_components_nav__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {}), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("section", {
-      className: "home-container",
-      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-        className: "banner",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-          className: "banner-image",
-          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-            src: (setting === null || setting === void 0 ? void 0 : setting.url) || "/images/bg.jpeg",
-            alt: "banner image",
-            layout: "fill"
-          })
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-          className: "social-icons",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("a", {
-            href: "https://www.facebook.com/yelatreasure",
-            target: "_blank",
-            children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-              className: "icon-button",
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
-                icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faFacebookF"],
-                size: "2x"
-              })
-            })
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("a", {
-            href: "https://www.instagram.com/creation_arts05/?igshid=9tv0ltuk84xh&fbclid=IwAR0pChQaJEqTQW-2HGLSI4OoIqCwV0zDkYFJESgsO5bo9m9wP5IqKcVi6j8",
-            target: "_blank",
-            children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-              className: "icon-button",
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
-                icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faInstagram"],
-                size: "2x"
-              })
-            })
-          })]
-        })]
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-        className: "container",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-          className: "featured-container",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-            className: "heading",
-            children: "Featured products"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-            className: "product-container",
-            children: featuredProducts.map((item, index) => {
-              const [image] = (item === null || item === void 0 ? void 0 : item.images) || [];
-              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-                href: `/product-detail/${item === null || item === void 0 ? void 0 : item._id}`,
-                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                  className: "product-item",
-                  children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-                    className: "product-image",
-                    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-                      src: (image === null || image === void 0 ? void 0 : image.url) || _utils_consts__WEBPACK_IMPORTED_MODULE_10__[/* PRODUCT_IMAGE_FILLER */ "b"],
-                      alt: (image === null || image === void 0 ? void 0 : image.originalFileName) || "Product image",
-                      layout: "fill"
-                    })
-                  }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                    className: "item-detail",
-                    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-                      className: "name",
-                      children: item.name
-                    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                      className: "price",
-                      children: ["$", item.price]
-                    })]
-                  })]
-                })
-              }, index);
-            })
-          })]
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-          className: "new-arrivals-container",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-            className: "heading",
-            children: "New Arrivals"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-            className: "product-container",
-            children: newProducts.map((item, index) => {
-              const [image] = (item === null || item === void 0 ? void 0 : item.images) || [];
-              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-                href: `/product-detail/${item === null || item === void 0 ? void 0 : item._id}`,
-                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                  className: "product-item",
-                  children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-                    className: "product-image",
-                    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-                      src: (image === null || image === void 0 ? void 0 : image.url) || _utils_consts__WEBPACK_IMPORTED_MODULE_10__[/* PRODUCT_IMAGE_FILLER */ "b"],
-                      alt: (image === null || image === void 0 ? void 0 : image.originalFileName) || "Product image",
-                      layout: "fill"
-                    })
-                  }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                    className: "item-detail",
-                    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-                      className: "name",
-                      children: item.name
-                    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                      className: "price",
-                      children: ["$", item.price]
-                    })]
-                  })]
-                })
-              }, index);
-            })
-          })]
-        })]
-      })]
-    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_components_footer__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], {})]
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Home);
-const getServerSideProps = async context => {
-  const token = Object(_utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_8__[/* getServerSideCookie */ "a"])(context)("token");
-
-  try {
-    const featuredProducts = await Object(_api__WEBPACK_IMPORTED_MODULE_9__[/* getProducts */ "h"])(token)({
-      isFeatured: true,
-      limit: 8
-    });
-    const newProducts = await Object(_api__WEBPACK_IMPORTED_MODULE_9__[/* getProducts */ "h"])(token)({
-      limit: 8
-    });
-    const setting = await Object(_api__WEBPACK_IMPORTED_MODULE_9__[/* getSetting */ "i"])(token)();
-    return {
-      props: {
-        featuredProducts,
-        newProducts,
-        setting
-      }
-    };
-  } catch (e) {
-    console.log("error", e.message);
-  }
-
-  return {
-    props: {
-      featuredProducts: [],
-      newProducts: [],
-      setting: {}
-    }
-  };
-};
 
 /***/ }),
 
@@ -1076,13 +778,6 @@ module.exports = _interopRequireDefault;
 
 /***/ }),
 
-/***/ "UlpK":
-/***/ (function(module, exports) {
-
-module.exports = require("next/dist/next-server/lib/head.js");
-
-/***/ }),
-
 /***/ "X24+":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1240,301 +935,6 @@ function getRouteRegex(normalizedRoute) {
     groups
   };
 }
-
-/***/ }),
-
-/***/ "aIN1":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("uhWA");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("JVe5");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("crtY");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("F5FC");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
-
-
-
-
-
-
-
-const Footer = () => {
-  const {
-    authenticated
-  } = Object(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_3__[/* useAuth */ "b"])();
-  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("div", {
-    className: "app-footer",
-    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxs"])("div", {
-      className: "container",
-      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxs"])("div", {
-        className: "footer-content",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxs"])("div", {
-          className: "data-content",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("h5", {
-            children: "About us"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxs"])("p", {
-            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("strong", {
-              children: "Yala Treasure"
-            }), " is an online handicraft store with the coolest and unique monuments and ornaments designed by our professionals."]
-          })]
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxs"])("div", {
-          className: "data-content",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("h5", {
-            children: "Links"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxs"])("ul", {
-            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("li", {
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("a", {
-                href: "/products",
-                children: " Products"
-              })
-            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("li", {
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("a", {
-                href: "/contact",
-                children: "About us"
-              })
-            }), !authenticated && /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("li", {
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("a", {
-                href: "/login",
-                children: "Login"
-              })
-            })]
-          })]
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxs"])("div", {
-          className: "data-content",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("h5", {
-            children: "contact us"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxs"])("ul", {
-            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("li", {
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("a", {
-                className: "contact-details",
-                href: "mailto:admin@yalatreasure.com",
-                children: "admin@yalatreasure.com"
-              })
-            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("li", {
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("a", {
-                className: "contact-details",
-                href: "tel:+977-9803001320",
-                children: "+977-9803001320 / +977-01-5261764"
-              })
-            })]
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsxs"])("div", {
-            style: {
-              display: "flex",
-              marginTop: 25
-            },
-            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("a", {
-              href: "https://www.facebook.com/yelatreasure",
-              target: "_blank",
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("div", {
-                className: "icon-button",
-                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
-                  icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faFacebookF"],
-                  size: "2x"
-                })
-              })
-            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("a", {
-              href: "https://www.instagram.com/creation_arts05/?igshid=9tv0ltuk84xh&fbclid=IwAR0pChQaJEqTQW-2HGLSI4OoIqCwV0zDkYFJESgsO5bo9m9wP5IqKcVi6j8",
-              target: "_blank",
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("div", {
-                className: "icon-button",
-                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
-                  icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faInstagram"],
-                  size: "2x"
-                })
-              })
-            })]
-          })]
-        })]
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__["jsx"])("div", {
-        className: "copyright-text",
-        children: "\xA9 2021 Yalatreasure, All Rights Reserved."
-      })]
-    })
-  });
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (Footer);
-
-/***/ }),
-
-/***/ "bMwp":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, "e", function() { return /* binding */ getCategories; });
-__webpack_require__.d(__webpack_exports__, "h", function() { return /* binding */ getProducts; });
-__webpack_require__.d(__webpack_exports__, "g", function() { return /* binding */ getProductDetail; });
-__webpack_require__.d(__webpack_exports__, "c", function() { return /* binding */ createPayPalTransaction; });
-__webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ captureOrder; });
-__webpack_require__.d(__webpack_exports__, "f", function() { return /* binding */ getOrders; });
-__webpack_require__.d(__webpack_exports__, "k", function() { return /* binding */ login; });
-__webpack_require__.d(__webpack_exports__, "d", function() { return /* binding */ forgotPassword; });
-__webpack_require__.d(__webpack_exports__, "l", function() { return /* binding */ register; });
-__webpack_require__.d(__webpack_exports__, "m", function() { return /* binding */ resetPassword; });
-__webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ changePassword; });
-__webpack_require__.d(__webpack_exports__, "j", function() { return /* binding */ getUser; });
-__webpack_require__.d(__webpack_exports__, "n", function() { return /* binding */ updateUser; });
-__webpack_require__.d(__webpack_exports__, "i", function() { return /* binding */ getSetting; });
-
-// EXTERNAL MODULE: external "axios"
-var external_axios_ = __webpack_require__("zr5I");
-var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_);
-
-// CONCATENATED MODULE: ./api/httpClient.js
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-const config = {
-  baseURL: "https://api.yalatreasure.com/api/",
-  timeout: "60000"
-};
-/* harmony default export */ var httpClient = (axiosConfig => external_axios_default.a.create(_objectSpread(_objectSpread({}, config), axiosConfig)));
-// CONCATENATED MODULE: ./utils/convertJsonToFormData.js
-/* harmony default export */ var convertJsonToFormData = (data => {
-  const formData = new FormData();
-
-  for (let key in data) {
-    if (Array.isArray(data[key])) {
-      for (let i = 0; i < data[key].length; i++) {
-        formData.append(`${key}[${i}]`, data[key][i]);
-      }
-    } else {
-      formData.append(key, data[key]);
-    }
-  }
-
-  return formData;
-});
-// EXTERNAL MODULE: ./utils/localStorage.js
-var localStorage = __webpack_require__("8WVE");
-
-// CONCATENATED MODULE: ./api/index.js
-
-
-
-
-const getHttpClient = (token = Object(localStorage["a" /* getItem */])("token"), isMultipartRequest = false, validateStatus = false) => {
-  const axiosConfig = {
-    transformRequest: [(data, headers) => {
-      headers["Accept"] = "application/json";
-
-      if (token) {
-        headers["Authorization"] = `Bearer ${token}`;
-      }
-
-      if (isMultipartRequest) {
-        headers["Content-Type"] = "multipart/form-data";
-        return convertJsonToFormData(data);
-      }
-
-      headers["Content-Type"] = "application/json";
-      return JSON.stringify(data);
-    }]
-  };
-
-  if (validateStatus) {
-    axiosConfig.validateStatus = function (status) {
-      if (status === 401) {
-        Object(localStorage["b" /* removeItem */])("token");
-        Object(localStorage["b" /* removeItem */])("cart");
-        window.location.reload();
-      }
-
-      return status >= 200 && status < 300;
-    };
-  }
-
-  return httpClient(axiosConfig);
-};
-
-const getCategories = token => async params => {
-  return await getHttpClient(token).get("/categories", {
-    params
-  }).then(response => response.data);
-};
-const getProducts = token => async params => {
-  return await getHttpClient(token).get("/products", {
-    params
-  }).then(response => response.data);
-};
-const getProductDetail = token => async id => {
-  return await getHttpClient(token).get(`/products/${id}`).then(response => response.data);
-};
-const createPayPalTransaction = () => async data => await getHttpClient(Object(localStorage["a" /* getItem */])("token")).post(`/orders/create-paypal-transaction`, data).then(response => response.data);
-const captureOrder = () => async data => {
-  const response = await getHttpClient(Object(localStorage["a" /* getItem */])("token")).post(`/orders/capture-order`, data);
-  return response.data;
-};
-const getOrders = token => async params => {
-  return await getHttpClient(token).get("/orders", {
-    params
-  }).then(response => response.data).catch(e => {
-    var _e$response;
-
-    throw (e === null || e === void 0 ? void 0 : (_e$response = e.response) === null || _e$response === void 0 ? void 0 : _e$response.data) || e;
-  });
-};
-const login = async data => {
-  return await getHttpClient().post(`/users/login`, data).then(response => response.data).catch(e => {
-    var _e$response2;
-
-    throw (e === null || e === void 0 ? void 0 : (_e$response2 = e.response) === null || _e$response2 === void 0 ? void 0 : _e$response2.data) || e;
-  });
-};
-const forgotPassword = async data => {
-  return await getHttpClient().post(`/users/forgot-password`, data).then(response => response.data).catch(e => {
-    var _e$response3;
-
-    throw (e === null || e === void 0 ? void 0 : (_e$response3 = e.response) === null || _e$response3 === void 0 ? void 0 : _e$response3.data) || e;
-  });
-};
-const register = async data => {
-  return await getHttpClient().post(`/users/register`, data).then(response => response.data).catch(e => {
-    var _e$response4;
-
-    throw (e === null || e === void 0 ? void 0 : (_e$response4 = e.response) === null || _e$response4 === void 0 ? void 0 : _e$response4.data) || e;
-  });
-};
-const resetPassword = async data => {
-  return await getHttpClient().post(`/users/reset-password`, data).then(response => response.data).catch(e => {
-    var _e$response5;
-
-    throw (e === null || e === void 0 ? void 0 : (_e$response5 = e.response) === null || _e$response5 === void 0 ? void 0 : _e$response5.data) || e;
-  });
-};
-const changePassword = async data => {
-  return await getHttpClient(Object(localStorage["a" /* getItem */])("token")).post(`/users/change-password`, data).then(response => response.data).catch(e => {
-    var _e$response6;
-
-    throw (e === null || e === void 0 ? void 0 : (_e$response6 = e.response) === null || _e$response6 === void 0 ? void 0 : _e$response6.data) || e;
-  });
-};
-const getUser = token => async params => {
-  return await getHttpClient(token).get("/users/current", {
-    params
-  }).then(response => response.data);
-};
-const updateUser = async data => {
-  return await getHttpClient().put(`/users/current`, data).then(response => response.data).catch(e => {
-    var _e$response7;
-
-    throw (e === null || e === void 0 ? void 0 : (_e$response7 = e.response) === null || _e$response7 === void 0 ? void 0 : _e$response7.data) || e;
-  });
-};
-const getSetting = token => async () => {
-  return await getHttpClient(token).get("/setting").then(response => response.data.data);
-};
 
 /***/ }),
 
@@ -1903,468 +1303,6 @@ const useAuth = () => {
     logout
   };
 };
-
-/***/ }),
-
-/***/ "dQHF":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireWildcard = __webpack_require__("284h");
-
-var _interopRequireDefault = __webpack_require__("TqRt");
-
-exports.__esModule = true;
-exports.default = Image;
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(__webpack_require__("8OQS"));
-
-var _extends2 = _interopRequireDefault(__webpack_require__("pVnL"));
-
-var _react = _interopRequireWildcard(__webpack_require__("cDcd"));
-
-var _head = _interopRequireDefault(__webpack_require__("UlpK"));
-
-const VALID_LOADING_VALUES = ['lazy', 'eager', undefined];
-const loaders = new Map([['imgix', imgixLoader], ['cloudinary', cloudinaryLoader], ['akamai', akamaiLoader], ['default', defaultLoader]]);
-const VALID_LAYOUT_VALUES = ['fill', 'fixed', 'intrinsic', 'responsive', undefined];
-const imageData = {"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default"};
-const {
-  deviceSizes: configDeviceSizes,
-  imageSizes: configImageSizes,
-  loader: configLoader,
-  path: configPath,
-  domains: configDomains
-} = imageData; // sort smallest to largest
-
-const allSizes = [...configDeviceSizes, ...configImageSizes];
-configDeviceSizes.sort((a, b) => a - b);
-allSizes.sort((a, b) => a - b);
-let cachedObserver;
-
-function getObserver() {
-  const IntersectionObserver = false ? undefined : null; // Return shared instance of IntersectionObserver if already created
-
-  if (cachedObserver) {
-    return cachedObserver;
-  } // Only create shared IntersectionObserver if supported in browser
-
-
-  if (!IntersectionObserver) {
-    return undefined;
-  }
-
-  return cachedObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        let lazyImage = entry.target;
-        unLazifyImage(lazyImage);
-        cachedObserver.unobserve(lazyImage);
-      }
-    });
-  }, {
-    rootMargin: '200px'
-  });
-}
-
-function unLazifyImage(lazyImage) {
-  if (lazyImage.dataset.src) {
-    lazyImage.src = lazyImage.dataset.src;
-  }
-
-  if (lazyImage.dataset.srcset) {
-    lazyImage.srcset = lazyImage.dataset.srcset;
-  }
-
-  lazyImage.style.visibility = 'visible';
-  lazyImage.classList.remove('__lazy');
-}
-
-function getSizes(width, layout) {
-  if (typeof width !== 'number' || layout === 'fill' || layout === 'responsive') {
-    return {
-      sizes: configDeviceSizes,
-      kind: 'w'
-    };
-  }
-
-  const sizes = [...new Set([width, width * 2, width * 3].map(w => allSizes.find(p => p >= w) || allSizes[allSizes.length - 1]))];
-  return {
-    sizes,
-    kind: 'x'
-  };
-}
-
-function computeSrc(src, unoptimized, layout, width, quality) {
-  if (unoptimized) {
-    return src;
-  }
-
-  const {
-    sizes
-  } = getSizes(width, layout);
-  const largest = sizes[sizes.length - 1];
-  return callLoader({
-    src,
-    width: largest,
-    quality
-  });
-}
-
-function callLoader(loaderProps) {
-  const load = loaders.get(configLoader) || defaultLoader;
-  return load((0, _extends2.default)({
-    root: configPath
-  }, loaderProps));
-}
-
-function generateSrcSet({
-  src,
-  unoptimized,
-  layout,
-  width,
-  quality
-}) {
-  // At each breakpoint, generate an image url using the loader, such as:
-  // ' www.example.com/foo.jpg?w=480 480w, '
-  if (unoptimized) {
-    return undefined;
-  }
-
-  const {
-    sizes,
-    kind
-  } = getSizes(width, layout);
-  return sizes.map((size, i) => `${callLoader({
-    src,
-    width: size,
-    quality
-  })} ${kind === 'w' ? size : i + 1}${kind}`).join(', ');
-}
-
-function generatePreload({
-  src,
-  unoptimized = false,
-  layout,
-  width,
-  sizes,
-  quality
-}) {
-  // This function generates an image preload that makes use of the "imagesrcset" and "imagesizes"
-  // attributes for preloading responsive images. They're still experimental, but fully backward
-  // compatible, as the link tag includes all necessary attributes, even if the final two are ignored.
-  // See: https://web.dev/preload-responsive-images/
-  return /*#__PURE__*/_react.default.createElement(_head.default, null, /*#__PURE__*/_react.default.createElement("link", {
-    rel: "preload",
-    as: "image",
-    href: computeSrc(src, unoptimized, layout, width, quality) // @ts-ignore: imagesrcset and imagesizes not yet in the link element type
-    ,
-    imagesrcset: generateSrcSet({
-      src,
-      unoptimized,
-      layout,
-      width,
-      quality
-    }),
-    imagesizes: sizes
-  }));
-}
-
-function getInt(x) {
-  if (typeof x === 'number') {
-    return x;
-  }
-
-  if (typeof x === 'string') {
-    return parseInt(x, 10);
-  }
-
-  return undefined;
-}
-
-function Image(_ref) {
-  let {
-    src,
-    sizes,
-    unoptimized = false,
-    priority = false,
-    loading,
-    className,
-    quality,
-    width,
-    height
-  } = _ref,
-      all = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["src", "sizes", "unoptimized", "priority", "loading", "className", "quality", "width", "height"]);
-  const thisEl = (0, _react.useRef)(null);
-  let rest = all;
-  let layout = sizes ? 'responsive' : 'intrinsic';
-  let unsized = false;
-
-  if ('unsized' in rest) {
-    unsized = Boolean(rest.unsized); // Remove property so it's not spread into image:
-
-    delete rest['unsized'];
-  } else if ('layout' in rest) {
-    // Override default layout if the user specified one:
-    if (rest.layout) layout = rest.layout; // Remove property so it's not spread into image:
-
-    delete rest['layout'];
-  }
-
-  if (false) {}
-
-  let lazy = loading === 'lazy';
-
-  if (!priority && typeof loading === 'undefined') {
-    lazy = true;
-  }
-
-  if (false) {}
-
-  (0, _react.useEffect)(() => {
-    const target = thisEl.current;
-
-    if (target && lazy) {
-      const observer = getObserver();
-
-      if (observer) {
-        observer.observe(target);
-        return () => {
-          observer.unobserve(target);
-        };
-      } else {
-        //browsers without intersection observer
-        unLazifyImage(target);
-      }
-    }
-  }, [thisEl, lazy]);
-  const widthInt = getInt(width);
-  const heightInt = getInt(height);
-  const qualityInt = getInt(quality);
-  let wrapperStyle;
-  let sizerStyle;
-  let sizerSvg;
-  let imgStyle = {
-    visibility: lazy ? 'hidden' : 'visible',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    boxSizing: 'border-box',
-    padding: 0,
-    border: 'none',
-    margin: 'auto',
-    display: 'block',
-    width: 0,
-    height: 0,
-    minWidth: '100%',
-    maxWidth: '100%',
-    minHeight: '100%',
-    maxHeight: '100%'
-  };
-
-  if (typeof widthInt !== 'undefined' && typeof heightInt !== 'undefined' && layout !== 'fill') {
-    // <Image src="i.png" width="100" height="100" />
-    const quotient = heightInt / widthInt;
-    const paddingTop = isNaN(quotient) ? '100%' : `${quotient * 100}%`;
-
-    if (layout === 'responsive') {
-      // <Image src="i.png" width="100" height="100" layout="responsive" />
-      wrapperStyle = {
-        display: 'block',
-        overflow: 'hidden',
-        position: 'relative',
-        boxSizing: 'border-box',
-        margin: 0
-      };
-      sizerStyle = {
-        display: 'block',
-        boxSizing: 'border-box',
-        paddingTop
-      };
-    } else if (layout === 'intrinsic') {
-      // <Image src="i.png" width="100" height="100" layout="intrinsic" />
-      wrapperStyle = {
-        display: 'inline-block',
-        maxWidth: '100%',
-        overflow: 'hidden',
-        position: 'relative',
-        boxSizing: 'border-box',
-        margin: 0
-      };
-      sizerStyle = {
-        boxSizing: 'border-box',
-        display: 'block',
-        maxWidth: '100%'
-      };
-      sizerSvg = `<svg width="${widthInt}" height="${heightInt}" xmlns="http://www.w3.org/2000/svg" version="1.1"/>`;
-    } else if (layout === 'fixed') {
-      // <Image src="i.png" width="100" height="100" layout="fixed" />
-      wrapperStyle = {
-        overflow: 'hidden',
-        boxSizing: 'border-box',
-        display: 'inline-block',
-        position: 'relative',
-        width: widthInt,
-        height: heightInt
-      };
-    }
-  } else if (typeof widthInt === 'undefined' && typeof heightInt === 'undefined' && layout === 'fill') {
-    // <Image src="i.png" layout="fill" />
-    wrapperStyle = {
-      display: 'block',
-      overflow: 'hidden',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      bottom: 0,
-      right: 0,
-      boxSizing: 'border-box',
-      margin: 0
-    };
-  } else {
-    // <Image src="i.png" />
-    if (false) {}
-  } // Generate attribute values
-
-
-  const imgSrc = computeSrc(src, unoptimized, layout, widthInt, qualityInt);
-  const imgSrcSet = generateSrcSet({
-    src,
-    unoptimized,
-    layout,
-    width: widthInt,
-    quality: qualityInt
-  });
-  let imgAttributes;
-
-  if (!lazy) {
-    imgAttributes = {
-      src: imgSrc
-    };
-
-    if (imgSrcSet) {
-      imgAttributes.srcSet = imgSrcSet;
-    }
-  } else {
-    imgAttributes = {
-      'data-src': imgSrc
-    };
-
-    if (imgSrcSet) {
-      imgAttributes['data-srcset'] = imgSrcSet;
-    }
-
-    className = className ? className + ' __lazy' : '__lazy';
-  } // No need to add preloads on the client side--by the time the application is hydrated,
-  // it's too late for preloads
-
-
-  const shouldPreload = priority && true;
-
-  if (unsized) {
-    wrapperStyle = undefined;
-    sizerStyle = undefined;
-    imgStyle = undefined;
-  }
-
-  return /*#__PURE__*/_react.default.createElement("div", {
-    style: wrapperStyle
-  }, shouldPreload ? generatePreload({
-    src,
-    layout,
-    unoptimized,
-    width: widthInt,
-    sizes,
-    quality: qualityInt
-  }) : null, sizerStyle ? /*#__PURE__*/_react.default.createElement("div", {
-    style: sizerStyle
-  }, sizerSvg ? /*#__PURE__*/_react.default.createElement("img", {
-    style: {
-      maxWidth: '100%',
-      display: 'block'
-    },
-    alt: "",
-    "aria-hidden": true,
-    role: "presentation",
-    src: `data:image/svg+xml;charset=utf-8,${sizerSvg}`
-  }) : null) : null, /*#__PURE__*/_react.default.createElement("img", Object.assign({}, rest, imgAttributes, {
-    decoding: "async",
-    className: className,
-    sizes: sizes,
-    ref: thisEl,
-    style: imgStyle
-  })));
-} //BUILT IN LOADERS
-
-
-function normalizeSrc(src) {
-  return src[0] === '/' ? src.slice(1) : src;
-}
-
-function imgixLoader({
-  root,
-  src,
-  width,
-  quality
-}) {
-  // Demo: https://static.imgix.net/daisy.png?format=auto&fit=max&w=300
-  const params = ['auto=format', 'fit=max', 'w=' + width];
-  let paramsString = '';
-
-  if (quality) {
-    params.push('q=' + quality);
-  }
-
-  if (params.length) {
-    paramsString = '?' + params.join('&');
-  }
-
-  return `${root}${normalizeSrc(src)}${paramsString}`;
-}
-
-function akamaiLoader({
-  root,
-  src,
-  width
-}) {
-  return `${root}${normalizeSrc(src)}?imwidth=${width}`;
-}
-
-function cloudinaryLoader({
-  root,
-  src,
-  width,
-  quality
-}) {
-  // Demo: https://res.cloudinary.com/demo/image/upload/w_300,c_limit/turtles.jpg
-  const params = ['f_auto', 'c_limit', 'w_' + width];
-  let paramsString = '';
-
-  if (quality) {
-    params.push('q_' + quality);
-  }
-
-  if (params.length) {
-    paramsString = params.join(',') + '/';
-  }
-
-  return `${root}${paramsString}${normalizeSrc(src)}`;
-}
-
-function defaultLoader({
-  root,
-  src,
-  width,
-  quality
-}) {
-  if (false) {}
-
-  return `${root}?url=${encodeURIComponent(src)}&w=${width}&q=${quality || 75}`;
-}
 
 /***/ }),
 
@@ -3763,31 +2701,6 @@ module.exports = require("@fortawesome/free-solid-svg-icons/faShoppingBag");
 
 /***/ }),
 
-/***/ "pVnL":
-/***/ (function(module, exports) {
-
-function _extends() {
-  module.exports = _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-module.exports = _extends;
-
-/***/ }),
-
 /***/ "tMJi":
 /***/ (function(module, exports) {
 
@@ -3825,17 +2738,62 @@ exports.__esModule=true;exports.normalizePathSep=normalizePathSep;exports.denorm
 
 /***/ }),
 
+/***/ "won1":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("xnum");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("MbLX");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("F5FC");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+
+const PageNotFound = () => {
+  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxs"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxs"])(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsx"])("title", {
+        children: "Page Not Found"
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsx"])("link", {
+        rel: "icon",
+        href: "/favicon.ico"
+      })]
+    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsx"])(_components_nav__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], {}), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsx"])("section", {
+      className: "container",
+      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsx"])("div", {
+        className: "app-page-container",
+        children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxs"])("div", {
+          className: "info-container",
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsx"])("div", {
+            className: "page-not-found"
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsx"])("h3", {
+            className: "mb-2 text-center",
+            children: "404 - Page Not Found"
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsx"])("a", {
+            href: "/login",
+            children: "Go back to login"
+          })]
+        })
+      })
+    })]
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (PageNotFound);
+
+/***/ }),
+
 /***/ "xnum":
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
-
-/***/ }),
-
-/***/ "zr5I":
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
 
 /***/ })
 

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -260,24 +260,18 @@ function assign(target, ...searchParamsList) {
 
 /***/ }),
 
-/***/ "3i/4":
-/***/ (function(module, exports) {
+/***/ 4:
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("next-cookies");
+module.exports = __webpack_require__("5UCQ");
+
 
 /***/ }),
 
-/***/ "4A05":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "46kV":
+/***/ (function(module, exports) {
 
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getServerSideCookie; });
-/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("3i/4");
-/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_cookies__WEBPACK_IMPORTED_MODULE_0__);
-
-const getServerSideCookie = context => key => {
-  return next_cookies__WEBPACK_IMPORTED_MODULE_0___default()(context)[key];
-};
+module.exports = require("react-spinners");
 
 /***/ }),
 
@@ -310,6 +304,258 @@ module.exports = require("next/router");
 
   return false;
 });
+
+/***/ }),
+
+/***/ "5UCQ":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("xnum");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("MbLX");
+/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("aIN1");
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("uhWA");
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _fortawesome_free_solid_svg_icons_faArrowLeft__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("Nk4F");
+/* harmony import */ var _fortawesome_free_solid_svg_icons_faArrowLeft__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_solid_svg_icons_faArrowLeft__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _contexts_CartContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("TJRf");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("bMwp");
+/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("Aiso");
+/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _utils_consts__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("Ii6Q");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("4Q3z");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _contexts_AuthContext__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("crtY");
+/* harmony import */ var react_spinners__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__("46kV");
+/* harmony import */ var react_spinners__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_spinners__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("C1xe");
+/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react_toast_notifications__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__("F5FC");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const paypal_load = (onLoad = () => {}) => {
+  const aScript = document.createElement("script");
+  aScript.type = "text/javascript";
+  aScript.src = "https://www.paypal.com/sdk/js?client-id=Ac1N1G72VYm_9nP3q3KFWX_RCfpUZkwLbRcUI8_NrerFWVSBDvDRXGYKoSNYLdKiYC_C7_gOT6R2Yy-Q&currency=USD";
+  document.head.appendChild(aScript);
+  aScript.onload = onLoad;
+};
+
+const Checkout = () => {
+  const cart = Object(_contexts_CartContext__WEBPACK_IMPORTED_MODULE_6__[/* useCartState */ "c"])();
+  const {
+    clearCart
+  } = Object(_contexts_CartContext__WEBPACK_IMPORTED_MODULE_6__[/* useCartActions */ "b"])();
+  const {
+    authenticated
+  } = Object(_contexts_AuthContext__WEBPACK_IMPORTED_MODULE_11__[/* useAuth */ "b"])();
+  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_10__["useRouter"])();
+  const {
+    addToast
+  } = Object(react_toast_notifications__WEBPACK_IMPORTED_MODULE_13__["useToasts"])();
+  const {
+    0: isSubmitting,
+    1: setIsSubmitting
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    paypal_load(() => {
+      window.paypal.Buttons({
+        createOrder: function () {
+          return Object(_api__WEBPACK_IMPORTED_MODULE_7__[/* createPayPalTransaction */ "c"])()({
+            total_amount: cart === null || cart === void 0 ? void 0 : cart.total_amount
+          }).then(data => {
+            return data.result.id;
+          });
+        },
+        onApprove: function (data, actions) {
+          return Object(_api__WEBPACK_IMPORTED_MODULE_7__[/* captureOrder */ "a"])()({
+            paypal_order_id: data.orderID,
+            order: cart
+          }).then(response => {
+            if (response.error === "INSTRUMENT_DECLINED") {
+              return actions.restart();
+            }
+
+            clearCart();
+            router.push("/products");
+          });
+        }
+      }).render("#paypal-button-container");
+    });
+  }, []);
+
+  if (!authenticated) {
+    return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("title", {
+          children: "Checkout"
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("link", {
+          rel: "icon",
+          href: "/favicon.ico"
+        })]
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_nav__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], {}), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("section", {
+        className: "container",
+        children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
+          className: "app-page-container",
+          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])("div", {
+            className: "info-container",
+            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
+              className: "login-required"
+            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("h3", {
+              className: "text-center",
+              children: "Please login to continue."
+            })]
+          })
+        })
+      })]
+    });
+  }
+
+  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("title", {
+        children: "Checkout"
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("link", {
+        rel: "icon",
+        href: "/favicon.ico"
+      })]
+    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_nav__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], {}), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("section", {
+      className: "container",
+      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])("div", {
+        className: "app-page-container",
+        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("h4", {
+          className: "mb-2",
+          children: "Checkout"
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])("div", {
+          className: "cart-item-container checkout-page",
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])("div", {
+            className: "cart-item-header",
+            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
+              className: "product-name",
+              children: "Product"
+            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
+              className: "product-price",
+              children: "Product Price"
+            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
+              className: "product-qty",
+              children: "Quantity"
+            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
+              className: "total-amount",
+              children: "Total Amount"
+            })]
+          }), cart.items.map(({
+            name,
+            price,
+            quantity,
+            total_amount,
+            images
+          }, index) => {
+            var _images$;
+
+            return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])("div", {
+              className: "cart-item",
+              children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
+                className: "product-image",
+                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_8___default.a, {
+                  src: (images === null || images === void 0 ? void 0 : (_images$ = images[0]) === null || _images$ === void 0 ? void 0 : _images$.url) || _utils_consts__WEBPACK_IMPORTED_MODULE_9__[/* PRODUCT_IMAGE_FILLER */ "b"],
+                  alt: name,
+                  layout: "fill"
+                })
+              }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
+                className: "product-name",
+                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("span", {
+                  children: name
+                })
+              }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])("div", {
+                className: "product-price",
+                children: ["$", price]
+              }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
+                className: "product-qty",
+                children: quantity
+              }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])("div", {
+                className: "total-amount",
+                children: ["$", total_amount]
+              })]
+            }, index);
+          })]
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])("div", {
+          className: "checkout-container paypal-container",
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])("button", {
+            className: "btn primary-outline-btn checkout-btn",
+            onClick: () => router.push("/cart"),
+            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__["FontAwesomeIcon"], {
+              icon: _fortawesome_free_solid_svg_icons_faArrowLeft__WEBPACK_IMPORTED_MODULE_5__["faArrowLeft"],
+              size: "2x"
+            }), "Back to Cart"]
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])("div", {
+            style: {
+              display: "flex",
+              alignItems: "center"
+            },
+            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
+              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsxs"])("button", {
+                className: "btn accent-btn",
+                onClick: () => {
+                  setIsSubmitting(true);
+                  Object(_api__WEBPACK_IMPORTED_MODULE_7__[/* captureOrder */ "a"])()({
+                    paypal_order_id: null,
+                    order: cart
+                  }).then(() => {
+                    addToast("Order checkout successfully.", {
+                      appearance: "success"
+                    });
+                    clearCart();
+                    router.push("/products");
+                  }).catch(err => {
+                    addToast((err === null || err === void 0 ? void 0 : err.message) || "Error while checking out.", {
+                      appearance: "error"
+                    });
+                  }).finally(() => {
+                    setIsSubmitting(false);
+                  });
+                },
+                disabled: isSubmitting,
+                children: ["Pay on delivery", " ", /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(react_spinners__WEBPACK_IMPORTED_MODULE_12__["PulseLoader"], {
+                  loading: isSubmitting,
+                  size: 4
+                })]
+              })
+            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
+              style: {
+                marginLeft: "16px"
+              },
+              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])("div", {
+                id: "paypal-button-container"
+              })
+            })]
+          })]
+        })]
+      })
+    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__["jsx"])(_components_footer__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {})]
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Checkout);
 
 /***/ }),
 
@@ -444,14 +690,6 @@ function formatUrl(urlObj) {
 
 /***/ }),
 
-/***/ 7:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("RNiq");
-
-
-/***/ }),
-
 /***/ "8OQS":
 /***/ (function(module, exports) {
 
@@ -501,6 +739,13 @@ const removeItem = key => {
 
 module.exports = __webpack_require__("dQHF")
 
+
+/***/ }),
+
+/***/ "C1xe":
+/***/ (function(module, exports) {
+
+module.exports = require("react-toast-notifications");
 
 /***/ }),
 
@@ -670,219 +915,17 @@ const Nav = () => {
 
 /***/ }),
 
+/***/ "Nk4F":
+/***/ (function(module, exports) {
+
+module.exports = require("@fortawesome/free-solid-svg-icons/faArrowLeft");
+
+/***/ }),
+
 /***/ "Osoz":
 /***/ (function(module, exports) {
 
 module.exports = require("next/dist/next-server/lib/router-context.js");
-
-/***/ }),
-
-/***/ "RNiq":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("xnum");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("Aiso");
-/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("MbLX");
-/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("aIN1");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("uhWA");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("JVe5");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("YFqc");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("4A05");
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("bMwp");
-/* harmony import */ var _utils_consts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("Ii6Q");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("F5FC");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const Home = props => {
-  const {
-    featuredProducts,
-    newProducts,
-    setting
-  } = props;
-  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["Fragment"], {
-    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("title", {
-        children: "Home"
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("link", {
-        rel: "icon",
-        href: "/favicon.ico"
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("meta", {
-        name: "google-site-verification",
-        content: "zB_tM14jKBTm4YVBHNZd0rzwJjt_9tqtvVnaIsMPvt4"
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("meta", {
-        property: "title",
-        content: "Leading Online Handicraft Shop in Nepal | Yala Treasure"
-      }, "index_title"), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("meta", {
-        property: "description",
-        content: "Searching for a trusted online handicraft shop in Nepal? Yala Treasure offers all kinds of Nepali arts and handicrafts at a cheaper price. Buy now!"
-      }, "index_description")]
-    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_components_nav__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {}), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("section", {
-      className: "home-container",
-      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-        className: "banner",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-          className: "banner-image",
-          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-            src: (setting === null || setting === void 0 ? void 0 : setting.url) || "/images/bg.jpeg",
-            alt: "banner image",
-            layout: "fill"
-          })
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-          className: "social-icons",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("a", {
-            href: "https://www.facebook.com/yelatreasure",
-            target: "_blank",
-            children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-              className: "icon-button",
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
-                icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faFacebookF"],
-                size: "2x"
-              })
-            })
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("a", {
-            href: "https://www.instagram.com/creation_arts05/?igshid=9tv0ltuk84xh&fbclid=IwAR0pChQaJEqTQW-2HGLSI4OoIqCwV0zDkYFJESgsO5bo9m9wP5IqKcVi6j8",
-            target: "_blank",
-            children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-              className: "icon-button",
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
-                icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faInstagram"],
-                size: "2x"
-              })
-            })
-          })]
-        })]
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-        className: "container",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-          className: "featured-container",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-            className: "heading",
-            children: "Featured products"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-            className: "product-container",
-            children: featuredProducts.map((item, index) => {
-              const [image] = (item === null || item === void 0 ? void 0 : item.images) || [];
-              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-                href: `/product-detail/${item === null || item === void 0 ? void 0 : item._id}`,
-                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                  className: "product-item",
-                  children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-                    className: "product-image",
-                    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-                      src: (image === null || image === void 0 ? void 0 : image.url) || _utils_consts__WEBPACK_IMPORTED_MODULE_10__[/* PRODUCT_IMAGE_FILLER */ "b"],
-                      alt: (image === null || image === void 0 ? void 0 : image.originalFileName) || "Product image",
-                      layout: "fill"
-                    })
-                  }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                    className: "item-detail",
-                    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-                      className: "name",
-                      children: item.name
-                    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                      className: "price",
-                      children: ["$", item.price]
-                    })]
-                  })]
-                })
-              }, index);
-            })
-          })]
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-          className: "new-arrivals-container",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-            className: "heading",
-            children: "New Arrivals"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-            className: "product-container",
-            children: newProducts.map((item, index) => {
-              const [image] = (item === null || item === void 0 ? void 0 : item.images) || [];
-              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-                href: `/product-detail/${item === null || item === void 0 ? void 0 : item._id}`,
-                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                  className: "product-item",
-                  children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-                    className: "product-image",
-                    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-                      src: (image === null || image === void 0 ? void 0 : image.url) || _utils_consts__WEBPACK_IMPORTED_MODULE_10__[/* PRODUCT_IMAGE_FILLER */ "b"],
-                      alt: (image === null || image === void 0 ? void 0 : image.originalFileName) || "Product image",
-                      layout: "fill"
-                    })
-                  }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                    className: "item-detail",
-                    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-                      className: "name",
-                      children: item.name
-                    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                      className: "price",
-                      children: ["$", item.price]
-                    })]
-                  })]
-                })
-              }, index);
-            })
-          })]
-        })]
-      })]
-    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_components_footer__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], {})]
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Home);
-const getServerSideProps = async context => {
-  const token = Object(_utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_8__[/* getServerSideCookie */ "a"])(context)("token");
-
-  try {
-    const featuredProducts = await Object(_api__WEBPACK_IMPORTED_MODULE_9__[/* getProducts */ "h"])(token)({
-      isFeatured: true,
-      limit: 8
-    });
-    const newProducts = await Object(_api__WEBPACK_IMPORTED_MODULE_9__[/* getProducts */ "h"])(token)({
-      limit: 8
-    });
-    const setting = await Object(_api__WEBPACK_IMPORTED_MODULE_9__[/* getSetting */ "i"])(token)();
-    return {
-      props: {
-        featuredProducts,
-        newProducts,
-        setting
-      }
-    };
-  } catch (e) {
-    console.log("error", e.message);
-  }
-
-  return {
-    props: {
-      featuredProducts: [],
-      newProducts: [],
-      setting: {}
-    }
-  };
-};
 
 /***/ }),
 

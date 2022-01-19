@@ -88,10 +88,17 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "+bZt":
+/***/ (function(module, exports) {
+
+module.exports = require("minisearch");
+
+/***/ }),
 
 /***/ "/jkW":
 /***/ (function(module, exports, __webpack_require__) {
@@ -140,6 +147,14 @@ function withRouter(ComposedComponent) {
 
   return WithRouterWrapper;
 }
+
+/***/ }),
+
+/***/ 11:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("my7y");
+
 
 /***/ }),
 
@@ -444,14 +459,6 @@ function formatUrl(urlObj) {
 
 /***/ }),
 
-/***/ 7:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("RNiq");
-
-
-/***/ }),
-
 /***/ "8OQS":
 /***/ (function(module, exports) {
 
@@ -674,215 +681,6 @@ const Nav = () => {
 /***/ (function(module, exports) {
 
 module.exports = require("next/dist/next-server/lib/router-context.js");
-
-/***/ }),
-
-/***/ "RNiq":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("xnum");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("Aiso");
-/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("MbLX");
-/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("aIN1");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("uhWA");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("JVe5");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("YFqc");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("4A05");
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("bMwp");
-/* harmony import */ var _utils_consts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("Ii6Q");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("F5FC");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const Home = props => {
-  const {
-    featuredProducts,
-    newProducts,
-    setting
-  } = props;
-  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["Fragment"], {
-    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("title", {
-        children: "Home"
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("link", {
-        rel: "icon",
-        href: "/favicon.ico"
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("meta", {
-        name: "google-site-verification",
-        content: "zB_tM14jKBTm4YVBHNZd0rzwJjt_9tqtvVnaIsMPvt4"
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("meta", {
-        property: "title",
-        content: "Leading Online Handicraft Shop in Nepal | Yala Treasure"
-      }, "index_title"), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("meta", {
-        property: "description",
-        content: "Searching for a trusted online handicraft shop in Nepal? Yala Treasure offers all kinds of Nepali arts and handicrafts at a cheaper price. Buy now!"
-      }, "index_description")]
-    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_components_nav__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {}), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("section", {
-      className: "home-container",
-      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-        className: "banner",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-          className: "banner-image",
-          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-            src: (setting === null || setting === void 0 ? void 0 : setting.url) || "/images/bg.jpeg",
-            alt: "banner image",
-            layout: "fill"
-          })
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-          className: "social-icons",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("a", {
-            href: "https://www.facebook.com/yelatreasure",
-            target: "_blank",
-            children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-              className: "icon-button",
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
-                icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faFacebookF"],
-                size: "2x"
-              })
-            })
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("a", {
-            href: "https://www.instagram.com/creation_arts05/?igshid=9tv0ltuk84xh&fbclid=IwAR0pChQaJEqTQW-2HGLSI4OoIqCwV0zDkYFJESgsO5bo9m9wP5IqKcVi6j8",
-            target: "_blank",
-            children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-              className: "icon-button",
-              children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
-                icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faInstagram"],
-                size: "2x"
-              })
-            })
-          })]
-        })]
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-        className: "container",
-        children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-          className: "featured-container",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-            className: "heading",
-            children: "Featured products"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-            className: "product-container",
-            children: featuredProducts.map((item, index) => {
-              const [image] = (item === null || item === void 0 ? void 0 : item.images) || [];
-              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-                href: `/product-detail/${item === null || item === void 0 ? void 0 : item._id}`,
-                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                  className: "product-item",
-                  children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-                    className: "product-image",
-                    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-                      src: (image === null || image === void 0 ? void 0 : image.url) || _utils_consts__WEBPACK_IMPORTED_MODULE_10__[/* PRODUCT_IMAGE_FILLER */ "b"],
-                      alt: (image === null || image === void 0 ? void 0 : image.originalFileName) || "Product image",
-                      layout: "fill"
-                    })
-                  }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                    className: "item-detail",
-                    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-                      className: "name",
-                      children: item.name
-                    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                      className: "price",
-                      children: ["$", item.price]
-                    })]
-                  })]
-                })
-              }, index);
-            })
-          })]
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-          className: "new-arrivals-container",
-          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-            className: "heading",
-            children: "New Arrivals"
-          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-            className: "product-container",
-            children: newProducts.map((item, index) => {
-              const [image] = (item === null || item === void 0 ? void 0 : item.images) || [];
-              return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
-                href: `/product-detail/${item === null || item === void 0 ? void 0 : item._id}`,
-                children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                  className: "product-item",
-                  children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-                    className: "product-image",
-                    children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(next_image__WEBPACK_IMPORTED_MODULE_2___default.a, {
-                      src: (image === null || image === void 0 ? void 0 : image.url) || _utils_consts__WEBPACK_IMPORTED_MODULE_10__[/* PRODUCT_IMAGE_FILLER */ "b"],
-                      alt: (image === null || image === void 0 ? void 0 : image.originalFileName) || "Product image",
-                      layout: "fill"
-                    })
-                  }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                    className: "item-detail",
-                    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])("div", {
-                      className: "name",
-                      children: item.name
-                    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsxs"])("div", {
-                      className: "price",
-                      children: ["$", item.price]
-                    })]
-                  })]
-                })
-              }, index);
-            })
-          })]
-        })]
-      })]
-    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__["jsx"])(_components_footer__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], {})]
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Home);
-const getServerSideProps = async context => {
-  const token = Object(_utils_serverSideStorage__WEBPACK_IMPORTED_MODULE_8__[/* getServerSideCookie */ "a"])(context)("token");
-
-  try {
-    const featuredProducts = await Object(_api__WEBPACK_IMPORTED_MODULE_9__[/* getProducts */ "h"])(token)({
-      isFeatured: true,
-      limit: 8
-    });
-    const newProducts = await Object(_api__WEBPACK_IMPORTED_MODULE_9__[/* getProducts */ "h"])(token)({
-      limit: 8
-    });
-    const setting = await Object(_api__WEBPACK_IMPORTED_MODULE_9__[/* getSetting */ "i"])(token)();
-    return {
-      props: {
-        featuredProducts,
-        newProducts,
-        setting
-      }
-    };
-  } catch (e) {
-    console.log("error", e.message);
-  }
-
-  return {
-    props: {
-      featuredProducts: [],
-      newProducts: [],
-      setting: {}
-    }
-  };
-};
 
 /***/ }),
 
@@ -3601,6 +3399,463 @@ function parseRelativeUrl(url, base) {
     href: href.slice(DUMMY_BASE.origin.length)
   };
 }
+
+/***/ }),
+
+/***/ "my7y":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return /* binding */ getServerSideProps; });
+
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__("cDcd");
+
+// EXTERNAL MODULE: external "next/head"
+var head_ = __webpack_require__("xnum");
+var head_default = /*#__PURE__*/__webpack_require__.n(head_);
+
+// EXTERNAL MODULE: ./components/nav.js
+var nav = __webpack_require__("MbLX");
+
+// EXTERNAL MODULE: ./components/footer.js
+var footer = __webpack_require__("aIN1");
+
+// EXTERNAL MODULE: ./node_modules/next/image.js
+var next_image = __webpack_require__("Aiso");
+var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
+
+// EXTERNAL MODULE: ./utils/consts.js
+var consts = __webpack_require__("Ii6Q");
+
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__("YFqc");
+var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
+
+// EXTERNAL MODULE: ./contexts/CartContext.js
+var CartContext = __webpack_require__("TJRf");
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__("F5FC");
+
+// CONCATENATED MODULE: ./components/product.js
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+const Product = ({
+  data
+}) => {
+  const {
+    _id,
+    name,
+    price,
+    images: [image]
+  } = data;
+  const {
+    findItem,
+    addItem
+  } = Object(CartContext["b" /* useCartActions */])();
+  const disableButton = Boolean(findItem(_id));
+
+  const onAddToCart = () => {
+    addItem(_objectSpread(_objectSpread({}, data), {}, {
+      quantity: 1,
+      total_amount: price
+    }));
+  };
+
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+    className: "product-item",
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+      className: "product-image",
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
+        href: `/product-detail/${_id}`,
+        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(image_default.a, {
+          src: (image === null || image === void 0 ? void 0 : image.url) || consts["b" /* PRODUCT_IMAGE_FILLER */],
+          alt: name,
+          layout: "fill"
+        })
+      })
+    }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+      className: "product-details",
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        className: "product-name",
+        children: name
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: "product-price",
+        children: ["$", price]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+        className: "btn primary-outline-btn",
+        disabled: disableButton,
+        onClick: onAddToCart,
+        children: "Add to Cart"
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ var product = (Product);
+// CONCATENATED MODULE: ./components/icons/icon-search.js
+/* eslint-disable react/prop-types */
+
+
+
+const IconSearch = ({
+  fill = "inherit",
+  width = "1.5rem",
+  height = "1.5rem",
+  className = "",
+  viewBox = "0 0 24 24"
+}) => /*#__PURE__*/Object(jsx_runtime_["jsx"])("svg", {
+  width: width,
+  fill: fill,
+  height: height,
+  viewBox: viewBox,
+  xmlns: "http://www.w3.org/2000/svg",
+  className: `svg-icon ${className || ""}`,
+  xmlnsXlink: "http://www.w3.org/1999/xlink",
+  children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("path", {
+    d: "M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z"
+  })
+});
+
+/* harmony default export */ var icon_search = (IconSearch);
+// CONCATENATED MODULE: ./components/icons/icon-chevron-down.js
+/* eslint-disable react/prop-types */
+
+
+
+const IconChevronDown = ({
+  fill = "inherit",
+  width = "1.5rem",
+  height = "1.5rem",
+  className = "",
+  viewBox = "0 0 24 24",
+  onClick
+}) => /*#__PURE__*/Object(jsx_runtime_["jsx"])("svg", {
+  onClick: onClick,
+  width: width,
+  fill: fill,
+  height: height,
+  viewBox: viewBox,
+  xmlns: "http://www.w3.org/2000/svg",
+  className: `svg-icon ${className || ""}`,
+  xmlnsXlink: "http://www.w3.org/1999/xlink",
+  children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("path", {
+    d: "M16.293 9.293L12 13.586 7.707 9.293 6.293 10.707 12 16.414 17.707 10.707z"
+  })
+});
+
+/* harmony default export */ var icon_chevron_down = (IconChevronDown);
+// EXTERNAL MODULE: ./api/index.js + 2 modules
+var api = __webpack_require__("bMwp");
+
+// EXTERNAL MODULE: external "minisearch"
+var external_minisearch_ = __webpack_require__("+bZt");
+var external_minisearch_default = /*#__PURE__*/__webpack_require__.n(external_minisearch_);
+
+// EXTERNAL MODULE: ./utils/serverSideStorage.js
+var serverSideStorage = __webpack_require__("4A05");
+
+// CONCATENATED MODULE: ./pages/products/index.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const Products = ({
+  categories,
+  products
+}) => {
+  const {
+    0: searchText,
+    1: setSearchText
+  } = Object(external_react_["useState"])("");
+  const {
+    0: searchProducts,
+    1: setSearchProducts
+  } = Object(external_react_["useState"])();
+  const {
+    0: selectedCategories,
+    1: setSelectedCategories
+  } = Object(external_react_["useState"])([]);
+  const {
+    0: priceRanges,
+    1: setPriceRanges
+  } = Object(external_react_["useState"])([]);
+  const {
+    0: filters,
+    1: setFilters
+  } = Object(external_react_["useState"])({
+    categories: [],
+    priceRanges: []
+  });
+  const {
+    0: sortBy,
+    1: setSortBy
+  } = Object(external_react_["useState"])();
+  const searchedProducts = searchProducts || products;
+  const categoryFilteredProducts = filters.categories.length > 0 ? searchedProducts.filter(item => filters.categories.find(categoryId => {
+    var _item$category;
+
+    return categoryId === (item === null || item === void 0 ? void 0 : (_item$category = item.category) === null || _item$category === void 0 ? void 0 : _item$category._id);
+  })) : searchedProducts;
+  const priceRangeFilteredProducts = filters.priceRanges.length > 0 ? categoryFilteredProducts.filter(item => filters.priceRanges.filter(index => consts["a" /* PRICE_FILTER_RANGES */][index].min <= item.price && consts["a" /* PRICE_FILTER_RANGES */][index].max >= item.price).length > 0) : categoryFilteredProducts;
+  const sortedProducts = sortBy ? priceRangeFilteredProducts.sort((a, b) => {
+    if (sortBy === "top-rated") {
+      return true;
+    }
+
+    if (sortBy === "high-low") {
+      return b.price - a.price;
+    }
+
+    if (sortBy === "low-high") {
+      return a.price - b.price;
+    }
+
+    return true;
+  }) : priceRangeFilteredProducts;
+
+  const onCategoryChange = (checked, id) => {
+    if (checked) {
+      setSelectedCategories(prev => [...prev, id]);
+    } else {
+      setSelectedCategories(selectedCategories.filter(item => item !== id));
+    }
+  };
+
+  const onPriceRangeChange = (checked, index) => {
+    if (checked) {
+      setPriceRanges(prev => [...prev, index]);
+    } else {
+      setPriceRanges(priceRanges.filter(item => item !== index));
+    }
+  };
+
+  const onApplyClick = () => {
+    setFilters({
+      categories: selectedCategories,
+      priceRanges: priceRanges
+    });
+  };
+
+  const onResetClick = () => {
+    setFilters({
+      categories: [],
+      priceRanges: []
+    });
+    setSelectedCategories([]);
+    setPriceRanges([]);
+  };
+
+  Object(external_react_["useEffect"])(() => {
+    if (searchText === "") {
+      setSearchProducts(null);
+      return;
+    }
+
+    const miniSearch = new external_minisearch_default.a({
+      fields: ["name", "price"],
+      idField: "_id"
+    });
+    miniSearch.addAll(products);
+    const searchResults = miniSearch.search(searchText, {
+      fuzzy: 0.2,
+      prefix: true
+    });
+    setSearchProducts(products.filter(product => searchResults.find(searchItem => product._id === searchItem.id)));
+  }, [searchText]);
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])(external_react_["Fragment"], {
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])(head_default.a, {
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("title", {
+        children: "Products"
+      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("link", {
+        rel: "icon",
+        href: "/favicon.ico"
+      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
+        property: "title",
+        content: "Best-priced handicraft products from Nepal | Yala Treasure"
+      }, "product_title"), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
+        property: "description",
+        content: "Yala Treasure - an online shopping platform for Nepali arts and crafts. Buy all kinds of unique, local, and best-priced handicraft products made in Nepal now!"
+      }, "product_description")]
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(nav["a" /* default */], {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])("section", {
+      className: "container",
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        className: "app-page-container",
+        children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+          className: "product-grid-container",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+            className: "product-filter-container",
+            children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h3", {
+              className: "filter-title",
+              children: "Filters"
+            }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+              className: "filter-block-list",
+              children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+                className: "accordion-block",
+                children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+                  className: "accordion-heading",
+                  children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+                    children: "Type"
+                  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(icon_chevron_down, {})]
+                }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+                  className: "accordion-content",
+                  children: categories.map(item => /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+                    className: "list-item",
+                    children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("label", {
+                      className: "checkbox-wrapper",
+                      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("input", {
+                        type: "checkbox",
+                        className: "form-control",
+                        checked: selectedCategories.includes(item._id),
+                        onChange: e => {
+                          onCategoryChange(e.target.checked, item._id);
+                        }
+                      }), item.name]
+                    })
+                  }, item._id))
+                })]
+              }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+                className: "accordion-block",
+                children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+                  className: "accordion-heading",
+                  children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+                    children: "Price Range"
+                  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(icon_chevron_down, {})]
+                }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+                  className: "accordion-content",
+                  children: consts["a" /* PRICE_FILTER_RANGES */].map((item, index) => /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+                    className: "list-item",
+                    children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("label", {
+                      className: "checkbox-wrapper",
+                      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("input", {
+                        type: "checkbox",
+                        className: "form-control",
+                        checked: priceRanges.includes(index),
+                        onChange: e => {
+                          onPriceRangeChange(e.target.checked, index);
+                        }
+                      }), item.label]
+                    })
+                  }, index))
+                })]
+              })]
+            }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+              className: "filter-actions",
+              children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+                className: "btn primary-outline-btn",
+                onClick: onResetClick,
+                children: "Reset"
+              }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+                className: "btn accent-btn",
+                onClick: onApplyClick,
+                children: "Apply"
+              })]
+            })]
+          }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+            className: "product-list-container",
+            children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+              className: "product-list-heading",
+              children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+                className: "search-container",
+                children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(icon_search, {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])("input", {
+                  type: "search",
+                  className: "form-control",
+                  placeholder: "Search",
+                  value: searchText,
+                  onChange: e => {
+                    setSearchText(e.target.value);
+                  }
+                })]
+              }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+                className: "filter-toggle",
+                children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+                  className: "btn primary-outline-btn",
+                  children: "Filter"
+                })
+              }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+                className: "select-container",
+                children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("select", {
+                  className: "form-control",
+                  value: sortBy,
+                  onChange: e => setSortBy(e.target.value),
+                  children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("option", {
+                    children: "Sort By"
+                  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("option", {
+                    value: "top-rated",
+                    children: "Top Rated"
+                  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("option", {
+                    value: "high-low",
+                    children: "Price: High to Low"
+                  }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("option", {
+                    value: "low-high",
+                    children: "Price: Low to High"
+                  })]
+                })
+              })]
+            }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+              className: "product-block",
+              children: sortedProducts.map((item, index) => /*#__PURE__*/Object(jsx_runtime_["jsx"])(product, {
+                data: item
+              }, index))
+            })]
+          })]
+        })
+      })
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(footer["a" /* default */], {})]
+  });
+};
+
+/* harmony default export */ var pages_products = __webpack_exports__["default"] = (Products);
+const getServerSideProps = async context => {
+  const token = Object(serverSideStorage["a" /* getServerSideCookie */])(context)("token");
+
+  try {
+    const products = await Object(api["h" /* getProducts */])(token)();
+    const categories = await Object(api["e" /* getCategories */])(token)();
+    return {
+      props: {
+        categories,
+        products
+      }
+    };
+  } catch (e) {
+    console.log("error", e.message);
+  }
+
+  return {
+    props: {
+      categories: [],
+      products: []
+    }
+  };
+};
 
 /***/ }),
 
